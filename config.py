@@ -1,4 +1,11 @@
+import datetime
+
+
 class Config:
+    # Current date time
+    current_date_and_time = datetime.datetime.now()
+    current_date_and_time_string = str(current_date_and_time)
+
     # gnb config
     gnbProcessPerSecond = 1280
     gnbCarMeanTranfer = 0.0009765625
@@ -9,7 +16,9 @@ class Config:
     yList = [1, 1, 1, 1, 1, 1]
     zList = [10, 10, 10, 10, 10, 10]
     rsuCoverRadius = 151
+
     rsuProcessPerSecond = 320
+
     rsuRsuMeanTranfer = 0.00001
     rsuCarMeanTranfer = 0.0004768371582
     rsuGnbMeanTranfer = 0.00004768371582
@@ -23,10 +32,21 @@ class Config:
     carGnbMeanTranfer = 0.0004768371582
 
     # other
+    # Chiến lược xuất hiện xe
     carAppearStrategy = "resources/car_deu5.inp"
     carPacketStrategy = "resources/poisson_70.inp"
-    simTime = 300
+
+    # simulator Time
+    simTime = 50
+
+    # Khe thời gian
     cycleTime = 1.0
+
+    # deltaTime: thời gian ngưỡng
+    deltaTime = 10
+
+    # Độ dài của đường (hiện tại đang mô phỏng là đường thẳng)
     roadLength = 1500
-    dumpDelayDetail = "result/delayDetail.txt"
-    dumDelayGeneral = "result/delayGeneral.txt"
+
+    dumpDelayDetail = "results/delayDetail/" + current_date_and_time_string + ".txt"
+    dumDelayGeneral = "results/delayGeneral.txt"

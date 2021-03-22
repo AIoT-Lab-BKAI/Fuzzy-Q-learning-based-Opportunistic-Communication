@@ -1,0 +1,6 @@
+2021-03-22 20:25:59.883980 	 resources/poisson_70.inp 	 resources/car_deu5.inp 	         6 	 0.003817150551782649 	 12 	         15651 
+2021-03-22 20:26:27.271771 	 resources/poisson_70.inp 	 resources/car_deu5.inp 	         6 	 0.0037758194403439732 	 12 	         15653 
+2021-03-22 20:26:34.862583 	 resources/poisson_70.inp 	 resources/car_deu5.inp 	         6 	 0.0038197303557810747 	 9 	         15654 
+2021-03-22 20:56:41.911791 	 resources/poisson_70.inp 	 resources/car_deu5.inp 	         6 	 0.0038551502395207477 	 19 	         15654 
+2021-03-22 20:56:57.815236 	 resources/poisson_70.inp 	 resources/car_deu5.inp 	         6 	 0.0038391818024337064 	 17 	         15653 
+2021-03-22 20:59:31.369409 	 resources/poisson_70.inp 	 resources/car_deu5.inp 	         6 	 0.003852181841340998 	 16 	         15653 
