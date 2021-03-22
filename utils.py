@@ -6,6 +6,7 @@ from dataclasses import dataclass, field
 def getConfig():
     """
     Get config
+    Sử dụng khi thay đổi các tham số đầu vào
     """
     # Get config path from user
     parser = argparse.ArgumentParser()
