@@ -3,7 +3,7 @@ from config import Config
 
 
 class GnbSimulator(Object):
-    def sendToCar(self, car, message, currentTime, network):
+    def sendToCar(self, car, message, currentTime, network, numOfPacket=1):
         """Simulate send message from gnb to car
 
         Args:
@@ -20,11 +20,12 @@ class GnbSimulator(Object):
             preReceive=car.preReceiveFromGnb,
             meanTranfer=Config.gnbCarMeanTranfer,
             message=message,
+            numOfPacket=numOfPacket
         )
 
         # Add current location to list locations of message
         # and change preReceiveFromGnb of this car
-        message.locations.append(0)
+        message.locations.append([0, car.id])
         car.preReceiveFromGnb = message.currentTime
 
         if message.currentTime > currentTime + Config.cycleTime:
@@ -33,10 +34,9 @@ class GnbSimulator(Object):
         else:
             network.output.append(message)
 
-    def process(self, message, currentTime, network):
-        # Simulate process time
-        self.simulateProcessTime(
-            processPerSecond=Config.gnbProcessPerSecond,
+    def working(self, message, currentTime, network):
+        # Simulate working time
+        self.simulateSuccessTransmission(
             message=message,
         )
 
@@ -48,4 +48,4 @@ class GnbSimulator(Object):
                 message.isDropt = True
                 network.output.append(message)
             else:
-                self.sendToCar(startCar, message, currentTime, network)
+                self.sendToCar(startCar, message, currentTime, network, numOfPacket=1)

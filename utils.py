@@ -1,5 +1,7 @@
 import argparse
 import json
+import math
+import random
 from dataclasses import dataclass, field
 
 
@@ -18,6 +20,13 @@ def getConfig():
         config = json.load(f)
 
     return config
+
+
+def getNext(x):
+    """
+    Sinh thời gian theo phân phối Poisson 
+    """
+    return -math.log(1.0 - random.random()) / x
 
 
 @dataclass(order=True)

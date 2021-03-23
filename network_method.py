@@ -1,5 +1,3 @@
-import datetime
-
 from config import Config
 
 
@@ -8,7 +6,7 @@ def dumpOutputPerCycle(network, currentTime):
         return
 
     network.totalOutsize += len(network.output)
-    f = open(Config.dumpDelayDetail, "w")
+    f = open(Config.dumpDelayDetail, "a")
     for mes in network.output:
         delay = mes.currentTime - mes.sendTime[0]
         network.maxDelay = max(delay, network.maxDelay)

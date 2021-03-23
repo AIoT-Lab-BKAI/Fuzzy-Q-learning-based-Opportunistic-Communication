@@ -11,7 +11,10 @@ class CarSimulator(Object):
         Object.__init__(self)
         self.id = id
         self.startTime = startTime
-        self.numMessage = 0
+        self.numMessage = 0  # Total num Message
+
+        self.preTransferNumMessage = 0
+        self.currentNumMessage = 0
         self.preReceiveFromGnb = 0.0
 
     def collectMessages(self, currentTime, listTimeMessages):
@@ -45,13 +48,14 @@ class CarSimulator(Object):
             mes = Message(indexCar=self.id, time=sendTime)
             res.append(mes)
             self.numMessage += 1
+            self.currentNumMessage = self.numMessage - self.preTransferNumMessage
             if (self.numMessage >= len(listTimeMessages)):
                 return res
             curTime = listTimeMessages[self.numMessage]
 
         return res
 
-    def sendToCar(self, car, message, currentTime, network):
+    def sendToCar(self, car, message, currentTime, network, numOfPacket):
         """Simualte send message from car to car
 
         Args:
@@ -68,11 +72,12 @@ class CarSimulator(Object):
             preReceive=car.preReceiveFromCar,
             meanTranfer=Config.carCarMeanTranfer,
             message=message,
+            numOfPacket=numOfPacket,
         )
 
         # Add current location to list locations of message
         # and change preReceiveFromCar of this car
-        message.locations.append(0)
+        message.locations.append([0, car.id])
         car.preReceiveFromCar = message.currentTime
 
         # Check the currentTime of message
@@ -81,7 +86,7 @@ class CarSimulator(Object):
         else:
             network.addToHeap(message)
 
-    def sendToRsu(self, rsu, message, currentTime, network):
+    def sendToRsu(self, rsu, message, currentTime, network, numOfPacket):
         """Simualte send message from car to rsu
 
         Args:
@@ -98,11 +103,12 @@ class CarSimulator(Object):
             preReceive=rsu.preReceiveFromCar,
             meanTranfer=Config.carRsuMeanTranfer,
             message=message,
+            numOfPacket=numOfPacket,
         )
 
         # Add current location to list locations of message
         # and change preReceiveFromCar of this rsu
-        message.locations.append(1)
+        message.locations.append([1, rsu.id])
         rsu.preReceiveFromCar = message.currentTime
 
         # Check the currentTime of message
@@ -111,7 +117,7 @@ class CarSimulator(Object):
         else:
             network.addToHeap(message)
 
-    def sendToGnb(self, gnb, message, currentTime, network):
+    def sendToGnb(self, gnb, message, currentTime, network, numOfPacket):
         """Simualte send message from car to gnb
 
         Args:
@@ -120,17 +126,17 @@ class CarSimulator(Object):
             currentTime ([float]): [description]
             network ([Network]): [description]
         """
-
-        # Simulate tranfer time to rsu
+        # Simulate tranfer time to gnb
         self.simulateTranferTime(
             preReceive=gnb.preReceiveFromCar,
             meanTranfer=Config.carGnbMeanTranfer,
             message=message,
+            numOfPacket=numOfPacket,
         )
 
         # Add current location to list locations of message
         # and change preReceiveFromCar of gnb
-        message.locations.append(2)
+        message.locations.append([2])
         gnb.preReceiveFromCar = message.currentTime
 
         # Check the currentTime of message
@@ -139,25 +145,8 @@ class CarSimulator(Object):
         else:
             network.addToHeap(message)
 
-    def process(self, message, currentTime, network):
-        # Simulate process time
-        self.simulateProcessTime(
-            processPerSecond=Config.carProcessPerSecond,
-            message=message,
-        )
-        if message.currentTime > currentTime + Config.cycleTime:
-            self.waitList.append(message)
-        else:
-            network.addToHeap(message)
-
     def getPosition(self, currentTime):
         """Get the current position of the car
-
-        Args:
-            currentTime ([float]): [description]
-
-        Returns:
-            [float]: [description]
         """
         return Config.carSpeed * (currentTime - self.startTime)
 
@@ -177,6 +166,9 @@ class CarSimulator(Object):
         return func(self, currentTime, network)
 
     def working(self, message, currentTime, network, getAction=getAction):
+
+        transferNumMesseage = 0
+
         if message.isDone:
             startCar = network.carList[message.indexCar[0]]
             if startCar.getPosition(currentTime) > Config.roadLength or \
@@ -186,16 +178,21 @@ class CarSimulator(Object):
             elif startCar.id == self.id:
                 network.output.append(message)
             else:
-                self.sendToCar(startCar, message, currentTime, network)
+                self.sendToCar(startCar, message, currentTime, network, numOfPacket=1)
             return
         else:
             action, nextLocation = getAction(self, message, currentTime, network)
-            # 0: sendToCar, 1:sendToRsu, 2: sendToGnb, 3:process
+            # 0: sendToCar, 1:sendToRsu, 2: sendToGnb, 3:noChange
             if action == 0:
-                self.sendToCar(nextLocation, message, currentTime, network)
+                transferNumMesseage = int(self.currentNumMessage / 2)
+                self.sendToCar(nextLocation, message, currentTime, network, numOfPacket=transferNumMesseage)
             elif action == 1:
-                self.sendToRsu(nextLocation, message, currentTime, network)
+                transferNumMesseage = self.currentNumMessage
+                self.sendToRsu(nextLocation, message, currentTime, network, numOfPacket=transferNumMesseage)
             elif action == 2:
-                self.sendToGnb(nextLocation, message, currentTime, network)
-            else:
-                self.process(message, currentTime, network)
+                transferNumMesseage = int(self.currentNumMessage / 3)
+                self.sendToGnb(nextLocation, message, currentTime, network, numOfPacket=transferNumMesseage)
+
+        self.preTransferNumMessage += transferNumMesseage
+        self.currentNumMessage = self.numMessage - self.preTransferNumMessage
+

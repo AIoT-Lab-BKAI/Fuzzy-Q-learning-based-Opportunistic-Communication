@@ -10,30 +10,22 @@ class Network:
         self.rsuList = rsuList
         self.carList = carList
         self.listTimeMessages = listTimeMessages
-
         self.q = PriorityQueue()
         self.output = []
         self.meanDelay = 0.0
         self.countDropt = 0
         self.totalOutsize = 0
         self.maxDelay = 0
-        self.setNearRsuList()
-
-    def setNearRsuList(self):
-        for i in range(len(self.rsuList)):
-            for j in range(i, len(self.rsuList)):
-                distance = self.rsuList[i].distanceToRsu(self.rsuList[j])
-                if distance > Config.rsuCoverRadius:
-                    continue
-                else:
-                    self.rsuList[i].nearRsuList.append(self.rsuList[j])
-                    self.rsuList[j].nearRsuList.append(self.rsuList[i])
 
     def collectMessages(self, currentTime):
         res = []
         for car in self.carList:
             res.append(car.collectMessages(
                 currentTime, self.listTimeMessages))
+
+        for car in self.carList:
+            print(car.id, car.numMessage, car.currentNumMessage, car.preTransferNumMessage)
+
         for rsu in self.rsuList:
             res.append(rsu.collectMessages(currentTime))
         res.append(self.gnb.collectMessages(currentTime))
@@ -50,7 +42,6 @@ class Network:
         self.collectMessages(currentTime)
         while not self.q.empty():
             mes = self.q.get().item
-            # print(type(mes.currentObject))
             currentLocation = mes.locations[-1]
             if currentLocation == 0:
                 car = self.carList[mes.indexCar[-1]]
@@ -63,7 +54,7 @@ class Network:
                 rsu = self.rsuList[mes.indexRsu[-1]]
                 rsu.working(mes, currentTime, self)
             else:
-                self.gnb.process(mes, currentTime, self)
+                self.gnb.working(mes, currentTime, self)
 
     # Hàm chạy của mạng
     def run(self):

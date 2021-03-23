@@ -6,9 +6,15 @@ class Object:
 
     def __init__(self):
         self.waitList = []
-        self.preProcess = 0.0
+
+        #####
         self.preReceiveFromCar = 0.0
         self.preReceiveFromRsu = 0.0
+        self.meanDelay = 0.0
+        self.meanDelayProcess = 0.0
+        self.cntProcess = 0
+        self.cnt = 0
+        ####
 
     def collectMessages(self, currentTime):
         """Collect the messages in waitList which have the current time
@@ -30,43 +36,32 @@ class Object:
                 res.append(mes)
         return res
 
-    def simulateTranferTime(self, preReceive, meanTranfer, message):
-        """Simulate the transfer time from here to another object
+    def simulateTranferTime(self, preReceive, meanTranfer, message, numOfPacket=1):
+        """Simulate the tranfer time from here to another object
 
         Args:
             preReceive ([float]): [description]
             meanTranfer ([float]): [description]
             message ([Message]): [description]
+            numOfPacket ([int]): số lượng Packet truyền
         """
         # Add currentTime to list sendTime of message
         message.sendTime.append(message.currentTime)
 
-        # Calculate transfer time and receive time
-        tranferTime = getNext(1.0 / meanTranfer)
-
+        #  calculate tranfer time and receive time
+        tranferTime = getNext(1.0 / meanTranfer) * message.packetSize * numOfPacket
         selectedTime = max(preReceive, message.currentTime)
-
         receiveTime = tranferTime + selectedTime
 
         # Set receive time to list receiveTime of message and change current time
         message.receiveTime.append(receiveTime)
         message.currentTime = receiveTime
 
-    def simulateProcessTime(self, processPerSecond, message):
-        """Simulate the process time
-
-        Args:
-            processPerSecond ([float]): [description]
-            message ([Message]): [description]
+    def simulateSuccessTransmission(self, message):
         """
-        # calculate process time
-        selectedTime = max(message.currentTime, self.preProcess)
-        processTime = getNext(processPerSecond)
-        processedTime = selectedTime + processTime
+        Successful transmission confirmation simulation
 
-        # Change currentTime of message and set is done
-        message.currentTime = processedTime
+        :param message:
+        :return:
+        """
         message.isDone = True
-
-        # Change preprocess time of this object
-        self.preProcess = processedTime

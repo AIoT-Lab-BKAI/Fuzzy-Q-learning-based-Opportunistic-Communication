@@ -53,12 +53,12 @@ def getAction(car, message, currentTime, network, optimizer=None):
         optimizer ([type], optional): [description]. Defaults to None.
 
     Returns:
-        action: [0:sendToCar, 1:sendToRsu, 2:sendToGnb or 3:process]
+        action: [0:sendToCar, 1:sendToRsu, 2:sendToGnb or 3:noChange]
         nextLocation: [The location where the message will be sent to]
     """
-    pCarToCar = 0.05
+    pCarToCar = 0.35
     pCarToRsu = 0.45
-    pCarToGnb = 0.45
+    pCarToGnb = 0.05
     rand = random.random()
     if rand < pCarToCar:
         nearCar = car.getNearCar(currentTime, network)
