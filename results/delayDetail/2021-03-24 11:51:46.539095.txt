@@ -1,0 +1,216 @@
+0	 0 	6.0 	 6.000822153981362 	 0.0008221539813622059 	  sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> gnb -> sensor_0 
+1	 0 	7.0 	 7.001662826882605 	 0.0016628268826046622 	  sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> gnb -> sensor_0 
+2	 0 	8.0 	 8.000848442090767 	 0.0008484420907670653 	  sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> gnb -> sensor_0 
+3	 0 	9.0 	 9.001557922749912 	 0.0015579227499120663 	  sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> gnb -> sensor_0 
+4	 0 	10.0 	 10.001709202266609 	 0.0017092022666087558 	  sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> gnb -> sensor_0 
+15	 0 	11.0 	 11.000345376266523 	 0.0003453762665230897 	  sensor_1 -> rsu_0 -> sensor_1 
+5	 0 	11.0 	 11.001764424827655 	 0.0017644248276553753 	  sensor_0 -> sensor_0 -> sensor_1 -> sensor_0 -> rsu_0 -> sensor_0 
+16	 0 	12.0 	 12.000600552719893 	 0.0006005527198933436 	  sensor_1 -> rsu_0 -> sensor_1 
+6	 0 	12.0 	 12.000798279727329 	 0.0007982797273289322 	  sensor_0 -> sensor_0 -> sensor_0 -> sensor_1 -> sensor_0 -> sensor_1 -> sensor_1 -> rsu_0 -> sensor_1 
+7	 0 	13.0 	 13.001049521124163 	 0.0010495211241625668 	  sensor_0 -> sensor_1 -> sensor_0 -> rsu_0 -> sensor_0 
+17	 0 	13.0 	 13.001055272727468 	 0.0010552727274681928 	  sensor_1 -> sensor_1 -> rsu_0 -> sensor_1 
+18	 0 	14.0 	 14.00239654083854 	 0.0023965408385393516 	  sensor_1 -> sensor_1 -> sensor_0 -> sensor_1 -> sensor_0 -> rsu_0 -> sensor_0 
+8	 0 	14.0 	 14.002430968924642 	 0.0024309689246422295 	  sensor_0 -> sensor_1 -> sensor_0 -> sensor_1 -> sensor_1 -> sensor_1 -> sensor_1 -> rsu_0 -> sensor_1 
+9	 0 	15.0 	 15.000400525415284 	 0.00040052541528368124 	  sensor_0 -> rsu_0 -> sensor_0 
+19	 0 	15.0 	 15.000416426416704 	 0.00041642641670414093 	  sensor_1 -> sensor_1 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> rsu_0 -> sensor_0 
+25	 0 	16.0 	 16.002692349901924 	 0.0026923499019240182 	  sensor_2 -> sensor_2 -> sensor_2 -> sensor_1 -> gnb -> sensor_1 
+20	 0 	16.0 	 16.00156269440218 	 0.0015626944021782663 	  sensor_1 -> rsu_0 -> sensor_1 
+10	 0 	16.0 	 16.001659496030843 	 0.001659496030843144 	  sensor_0 -> sensor_1 -> rsu_0 -> sensor_1 
+11	 0 	17.0 	 17.000861884651975 	 0.000861884651975231 	  sensor_0 -> sensor_0 -> rsu_0 -> sensor_0 
+21	 0 	17.0 	 17.00122843885062 	 0.001228438850620961 	  sensor_1 -> rsu_0 -> sensor_1 
+26	 0 	17.0 	 17.001291538288854 	 0.0012915382888536442 	  sensor_2 -> sensor_2 -> sensor_1 -> rsu_0 -> sensor_1 
+12	 0 	18.0 	 18.002777326210055 	 0.0027773262100545537 	  sensor_0 -> sensor_0 -> gnb -> sensor_0 
+22	 0 	18.0 	 18.000279554729683 	 0.00027955472968344 	  sensor_1 -> rsu_0 -> sensor_1 
+27	 0 	18.0 	 18.000616666386822 	 0.0006166663868221178 	  sensor_2 -> sensor_2 -> sensor_2 -> sensor_2 -> sensor_1 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_1 -> sensor_0 -> rsu_0 -> sensor_0 
+28	 0 	19.0 	 19.000321166554915 	 0.00032116655491520874 	  sensor_2 -> sensor_2 -> sensor_2 -> sensor_2 -> gnb -> sensor_2 
+23	 0 	19.0 	 19.000876819381254 	 0.000876819381254279 	  sensor_1 -> rsu_0 -> sensor_1 
+13	 0 	19.0 	 19.000921835301806 	 0.0009218353018063397 	  sensor_0 -> sensor_1 -> rsu_0 -> sensor_1 
+24	 0 	20.0 	 20.000918147075204 	 0.00091814707520399 	  sensor_1 -> sensor_1 -> rsu_0 -> sensor_1 
+14	 0 	20.0 	 20.00245721153563 	 0.0024572115356313873 	  sensor_0 -> sensor_1 -> sensor_0 -> sensor_1 -> sensor_2 -> rsu_0 -> sensor_2 
+29	 0 	20.0 	 20.002654934103347 	 0.002654934103347273 	  sensor_2 -> sensor_2 -> sensor_2 -> sensor_2 -> sensor_1 -> sensor_1 -> sensor_1 -> sensor_2 -> sensor_1 -> rsu_0 -> sensor_1 
+30	 0 	21.0 	 21.000380729347146 	 0.0003807293471460582 	  sensor_0 -> rsu_0 -> sensor_0 
+40	 0 	21.0 	 21.001300486122922 	 0.0013004861229219955 	  sensor_1 -> gnb -> sensor_1 
+50	 0 	21.0 	 21.002198625840787 	 0.002198625840787116 	  sensor_2 -> sensor_2 -> rsu_0 -> sensor_2 
+60	 0 	21.0 	 21.002581274360903 	 0.002581274360903052 	  sensor_3 -> sensor_2 -> rsu_0 -> sensor_2 
+51	 0 	22.0 	 22.000935075703115 	 0.0009350757031150181 	  sensor_2 -> rsu_0 -> sensor_2 
+41	 0 	22.0 	 22.001159076942386 	 0.0011590769423861502 	  sensor_1 -> rsu_0 -> sensor_1 
+31	 0 	22.0 	 22.001529894759766 	 0.0015298947597663926 	  sensor_0 -> sensor_0 -> sensor_0 -> sensor_1 -> rsu_0 -> sensor_1 
+61	 0 	22.0 	 22.001621081065018 	 0.0016210810650179042 	  sensor_3 -> sensor_3 -> sensor_2 -> sensor_1 -> sensor_2 -> sensor_1 -> rsu_0 -> sensor_1 
+32	 0 	23.0 	 23.00168597907942 	 0.001685979079418587 	  sensor_0 -> rsu_0 -> sensor_0 
+42	 1 	23.0 	 23.005429287245732 	 0.005429287245732439 	  sensor_1 -> sensor_1 -> rsu_0 
+52	 2 	23.0 	 23.005499073664563 	 0.005499073664562815 	  sensor_2 -> sensor_2 -> rsu_0 
+62	 3 	23.0 	 23.005798999669977 	 0.005798999669977434 	  sensor_3 -> sensor_3 -> sensor_3 -> sensor_3 -> sensor_3 -> sensor_2 -> sensor_3 -> rsu_0 
+33	 3 	24.0 	 24.000166064585898 	 0.0001660645858976295 	  sensor_0 -> gnb -> sensor_0 
+43	 3 	24.0 	 24.001069821146913 	 0.0010698211469133412 	  sensor_1 -> sensor_2 -> gnb -> sensor_2 
+53	 3 	24.0 	 24.002067834576714 	 0.0020678345767137785 	  sensor_2 -> rsu_0 -> sensor_2 
+63	 3 	24.0 	 24.003101289177874 	 0.0031012891778736673 	  sensor_3 -> sensor_2 -> rsu_0 -> sensor_2 
+64	 3 	25.0 	 25.000386964084587 	 0.00038696408458704923 	  sensor_3 -> sensor_2 -> sensor_1 -> sensor_2 -> gnb -> sensor_2 
+44	 3 	25.0 	 25.003694810958223 	 0.0036948109582226607 	  sensor_1 -> sensor_2 -> rsu_0 -> sensor_2 
+34	 3 	25.0 	 25.003845019943387 	 0.0038450199433874843 	  sensor_0 -> rsu_0 -> sensor_0 
+54	 4 	25.0 	 25.00603154721905 	 0.006031547219048861 	  sensor_2 -> sensor_3 -> sensor_2 -> rsu_0 
+35	 4 	26.0 	 26.001263446545053 	 0.0012634465450531707 	  sensor_0 -> sensor_0 -> sensor_0 -> rsu_0 -> sensor_0 
+65	 4 	26.0 	 26.001463868939464 	 0.0014638689394637083 	  sensor_3 -> rsu_0 -> sensor_3 
+55	 4 	26.0 	 26.002152900032886 	 0.0021529000328861514 	  sensor_2 -> sensor_1 -> rsu_0 -> sensor_1 
+45	 4 	26.0 	 26.00256051976377 	 0.0025605197637688093 	  sensor_1 -> sensor_1 -> sensor_0 -> sensor_1 -> sensor_1 -> rsu_0 -> sensor_1 
+70	 4 	26.0 	 26.003044052118845 	 0.0030440521188452863 	  sensor_4 -> sensor_3 -> sensor_3 -> sensor_3 -> sensor_2 -> rsu_0 -> sensor_2 
+36	 4 	27.0 	 27.001331817077418 	 0.0013318170774176963 	  sensor_0 -> gnb -> sensor_0 
+46	 4 	27.0 	 27.000481170181757 	 0.00048117018175730664 	  sensor_1 -> sensor_1 -> rsu_0 -> sensor_1 
+56	 4 	27.0 	 27.00097935811932 	 0.0009793581193200396 	  sensor_2 -> sensor_2 -> gnb -> sensor_2 
+66	 4 	27.0 	 27.001012099895 	 0.0010120998950000626 	  sensor_3 -> sensor_3 -> sensor_2 -> rsu_0 -> sensor_2 
+71	 4 	27.0 	 27.00101390337417 	 0.0010139033741687342 	  sensor_4 -> sensor_3 -> sensor_3 -> sensor_3 -> sensor_3 -> sensor_3 -> rsu_0 -> sensor_3 
+47	 4 	28.0 	 28.00156637184844 	 0.0015663718484404399 	  sensor_1 -> sensor_1 -> sensor_1 -> sensor_1 -> sensor_1 -> sensor_1 -> gnb -> sensor_1 
+67	 4 	28.0 	 28.00155330811052 	 0.00155330811051968 	  sensor_3 -> gnb -> sensor_3 
+57	 4 	28.0 	 28.000968809873196 	 0.0009688098731963635 	  sensor_2 -> rsu_0 -> sensor_2 
+72	 4 	28.0 	 28.001493163514567 	 0.0014931635145671862 	  sensor_4 -> sensor_3 -> sensor_2 -> rsu_0 -> sensor_2 
+37	 4 	28.0 	 28.00179229863136 	 0.001792298631361433 	  sensor_0 -> sensor_1 -> sensor_1 -> sensor_0 -> sensor_1 -> sensor_1 -> sensor_2 -> sensor_2 -> sensor_3 -> sensor_2 -> sensor_2 -> sensor_2 -> sensor_2 -> sensor_2 -> rsu_0 -> sensor_2 
+68	 4 	29.0 	 29.003084976749154 	 0.003084976749153867 	  sensor_3 -> rsu_0 -> sensor_3 
+58	 5 	29.0 	 29.004153328110995 	 0.004153328110994892 	  sensor_2 -> sensor_2 -> sensor_3 -> rsu_0 
+38	 6 	29.0 	 29.004566428262187 	 0.004566428262187117 	  sensor_0 -> sensor_1 -> rsu_0 
+73	 7 	29.0 	 29.005073139866045 	 0.005073139866045295 	  sensor_4 -> sensor_4 -> sensor_4 -> sensor_4 -> sensor_4 -> sensor_3 -> rsu_0 
+48	 8 	29.0 	 29.005430514239606 	 0.005430514239606055 	  sensor_1 -> sensor_2 -> sensor_3 -> sensor_3 -> rsu_0 
+49	 8 	30.0 	 30.00082544622509 	 0.0008254462250896211 	  sensor_1 -> gnb -> sensor_1 
+39	 8 	30.0 	 30.00208817305655 	 0.0020881730565491807 	  sensor_0 -> rsu_0 -> sensor_0 
+69	 8 	30.0 	 30.003235508987775 	 0.0032355089877746934 	  sensor_3 -> sensor_2 -> sensor_2 -> rsu_0 -> sensor_2 
+74	 9 	30.0 	 30.004761164673116 	 0.004761164673116269 	  sensor_4 -> sensor_4 -> sensor_4 -> sensor_3 -> rsu_0 -> sensor_3 
+59	 10 	30.0 	 30.005802026484677 	 0.005802026484676759 	  sensor_2 -> sensor_2 -> sensor_1 -> sensor_2 -> sensor_3 -> sensor_3 -> sensor_3 -> sensor_2 -> sensor_2 -> sensor_2 -> sensor_1 -> sensor_2 -> rsu_0 
+95	 10 	31.0 	 31.000058083414793 	 5.8083414792520216e-05 	  sensor_2 -> sensor_2 -> rsu_0 -> sensor_2 
+105	 10 	31.0 	 31.000269535343804 	 0.00026953534380425026 	  sensor_3 -> sensor_2 -> gnb -> sensor_2 
+115	 10 	31.0 	 31.00044436429784 	 0.0004443642978415596 	  sensor_4 -> sensor_5 -> sensor_4 -> sensor_3 -> gnb -> sensor_3 
+125	 10 	31.0 	 31.000986044884407 	 0.0009860448844065672 	  sensor_5 -> sensor_5 -> rsu_0 -> sensor_5 
+85	 10 	31.0 	 31.00277417642606 	 0.0027741764260582613 	  sensor_1 -> sensor_2 -> sensor_2 -> sensor_2 -> sensor_2 -> rsu_0 -> sensor_2 
+75	 10 	31.0 	 31.003016897937762 	 0.003016897937762053 	  sensor_0 -> rsu_1 -> sensor_0 
+76	 10 	32.0 	 32.001194011621344 	 0.0011940116213438046 	  sensor_0 -> sensor_1 -> sensor_0 -> rsu_1 -> sensor_0 
+96	 10 	32.0 	 32.00130053049773 	 0.0013005304977298238 	  sensor_2 -> rsu_0 -> sensor_2 
+86	 10 	32.0 	 32.00214481463027 	 0.0021448146302702753 	  sensor_1 -> sensor_1 -> rsu_0 -> sensor_1 
+116	 10 	32.0 	 32.002439511707045 	 0.002439511707045483 	  sensor_4 -> rsu_0 -> sensor_4 
+106	 10 	32.0 	 32.00333160743192 	 0.003331607431917405 	  sensor_3 -> sensor_4 -> sensor_4 -> sensor_3 -> sensor_2 -> sensor_1 -> rsu_0 -> sensor_1 
+126	 11 	32.0 	 32.00422498286161 	 0.004224982861607884 	  sensor_5 -> sensor_4 -> sensor_4 -> sensor_5 -> sensor_4 -> sensor_3 -> rsu_0 
+117	 11 	33.0 	 33.00058976122957 	 0.0005897612295697741 	  sensor_4 -> gnb -> sensor_4 
+77	 11 	33.0 	 33.00162236726429 	 0.0016223672642894371 	  sensor_0 -> sensor_1 -> sensor_2 -> sensor_3 -> sensor_4 -> sensor_3 -> sensor_2 -> sensor_3 -> sensor_2 -> sensor_1 -> gnb -> sensor_1 
+87	 11 	33.0 	 33.00251721809587 	 0.0025172180958676904 	  sensor_1 -> sensor_1 -> sensor_1 -> sensor_0 -> sensor_1 -> sensor_0 -> rsu_1 -> sensor_0 
+97	 11 	33.0 	 33.00297058553123 	 0.0029705855312300855 	  sensor_2 -> rsu_0 -> sensor_2 
+107	 11 	33.0 	 33.00353481753603 	 0.0035348175360283562 	  sensor_3 -> rsu_0 -> sensor_3 
+127	 11 	33.0 	 33.00393717839631 	 0.003937178396313357 	  sensor_5 -> rsu_0 -> sensor_5 
+78	 11 	34.0 	 34.00015085762798 	 0.00015085762797895086 	  sensor_0 -> gnb -> sensor_0 
+88	 11 	34.0 	 34.000339681590134 	 0.0003396815901339778 	  sensor_1 -> sensor_1 -> rsu_0 -> sensor_1 
+108	 11 	34.0 	 34.002976296469036 	 0.002976296469036299 	  sensor_3 -> rsu_0 -> sensor_3 
+98	 11 	34.0 	 34.00331574801442 	 0.0033157480144225815 	  sensor_2 -> sensor_2 -> sensor_2 -> rsu_0 -> sensor_2 
+118	 11 	34.0 	 34.003653343352305 	 0.0036533433523047165 	  sensor_4 -> sensor_3 -> rsu_0 -> sensor_3 
+128	 12 	34.0 	 34.00520452356539 	 0.005204523565389252 	  sensor_5 -> sensor_4 -> sensor_4 -> sensor_3 -> rsu_0 
+79	 12 	35.0 	 35.00015446460818 	 0.0001544646081796941 	  sensor_0 -> sensor_0 -> sensor_1 -> sensor_2 -> gnb -> sensor_2 
+109	 12 	35.0 	 35.000512744393525 	 0.0005127443935251108 	  sensor_3 -> sensor_2 -> sensor_2 -> sensor_2 -> rsu_0 -> sensor_2 
+119	 12 	35.0 	 35.00073509133136 	 0.000735091331357296 	  sensor_4 -> rsu_0 -> sensor_4 
+89	 12 	35.0 	 35.00078511433904 	 0.0007851143390382731 	  sensor_1 -> sensor_0 -> rsu_1 -> sensor_0 
+99	 12 	35.0 	 35.00115787038681 	 0.0011578703868124762 	  sensor_2 -> sensor_2 -> sensor_2 -> sensor_2 -> sensor_1 -> sensor_0 -> sensor_1 -> rsu_0 -> sensor_1 
+129	 12 	35.0 	 35.002478120953555 	 0.0024781209535547077 	  sensor_5 -> sensor_4 -> sensor_3 -> sensor_3 -> sensor_4 -> sensor_5 -> sensor_5 -> rsu_0 -> sensor_5 
+80	 12 	36.0 	 36.00025174660671 	 0.0002517466067075702 	  sensor_0 -> sensor_0 -> sensor_0 -> rsu_1 -> sensor_0 
+90	 12 	36.0 	 36.0017257286481 	 0.001725728648096947 	  sensor_1 -> rsu_0 -> sensor_1 
+130	 12 	36.0 	 36.002999943346296 	 0.0029999433462961633 	  sensor_5 -> rsu_0 -> sensor_5 
+120	 12 	36.0 	 36.00381770569551 	 0.0038177056955106536 	  sensor_4 -> rsu_0 -> sensor_4 
+110	 12 	36.0 	 36.003859834142 	 0.0038598341419984195 	  sensor_3 -> sensor_4 -> sensor_4 -> sensor_4 -> rsu_0 -> sensor_4 
+100	 13 	36.0 	 36.00407200091773 	 0.004072000917730634 	  sensor_2 -> sensor_2 -> sensor_3 -> sensor_4 -> sensor_4 -> sensor_4 -> rsu_0 -> sensor_4 
+135	 14 	36.0 	 36.004901627495684 	 0.004901627495684124 	  sensor_6 -> sensor_5 -> sensor_5 -> sensor_4 -> sensor_4 -> sensor_4 -> sensor_5 -> sensor_4 -> rsu_0 -> sensor_4 
+101	 14 	37.0 	 37.000720553641784 	 0.0007205536417842495 	  sensor_2 -> sensor_2 -> rsu_0 -> sensor_2 
+136	 14 	37.0 	 37.00086201550924 	 0.0008620155092415871 	  sensor_6 -> sensor_6 -> sensor_5 -> gnb -> sensor_5 
+131	 14 	37.0 	 37.00162319178545 	 0.0016231917854483413 	  sensor_5 -> sensor_5 -> sensor_4 -> rsu_0 -> sensor_4 
+81	 14 	37.0 	 37.00196933849569 	 0.00196933849569092 	  sensor_0 -> sensor_0 -> rsu_1 -> sensor_0 
+121	 14 	37.0 	 37.00205349938492 	 0.0020534993849210537 	  sensor_4 -> sensor_4 -> sensor_5 -> sensor_4 -> rsu_0 -> sensor_4 
+91	 15 	37.0 	 37.00420603320202 	 0.004206033202017068 	  sensor_1 -> sensor_0 -> sensor_1 -> rsu_0 -> sensor_1 
+111	 16 	37.0 	 37.00649160893037 	 0.006491608930367931 	  sensor_3 -> sensor_2 -> sensor_3 -> rsu_0 
+92	 16 	38.0 	 38.00127037920485 	 0.0012703792048469609 	  sensor_1 -> gnb -> sensor_1 
+122	 16 	38.0 	 38.00106659960013 	 0.0010665996001293365 	  sensor_4 -> gnb -> sensor_4 
+82	 16 	38.0 	 38.00129369207053 	 0.0012936920705328703 	  sensor_0 -> sensor_1 -> gnb -> sensor_1 
+112	 16 	38.0 	 38.00135427233915 	 0.0013542723391495315 	  sensor_3 -> rsu_0 -> sensor_3 
+132	 16 	38.0 	 38.00372479333026 	 0.0037247933302566594 	  sensor_5 -> rsu_0 -> sensor_5 
+137	 17 	38.0 	 38.00420514221887 	 0.004205142218872027 	  sensor_6 -> sensor_6 -> sensor_6 -> sensor_6 -> sensor_6 -> sensor_5 -> sensor_4 -> sensor_4 -> sensor_4 -> sensor_4 -> rsu_0 
+102	 18 	38.0 	 38.00561414808846 	 0.0056141480884619455 	  sensor_2 -> sensor_1 -> sensor_1 -> sensor_1 -> rsu_0 
+93	 18 	39.0 	 39.00155532485779 	 0.0015553248577901968 	  sensor_1 -> rsu_0 -> sensor_1 
+83	 18 	39.0 	 39.00185426405931 	 0.001854264059311106 	  sensor_0 -> rsu_1 -> sensor_0 
+103	 18 	39.0 	 39.002158534726895 	 0.0021585347268953115 	  sensor_2 -> rsu_0 -> sensor_2 
+113	 19 	39.0 	 39.00401830814298 	 0.0040183081429816525 	  sensor_3 -> rsu_0 
+133	 20 	39.0 	 39.00506066935957 	 0.0050606693595725005 	  sensor_5 -> rsu_0 
+138	 21 	39.0 	 39.0072184316773 	 0.007218431677301851 	  sensor_6 -> sensor_5 -> sensor_4 -> rsu_0 
+123	 22 	39.0 	 39.01012854419324 	 0.010128544193243272 	  sensor_4 -> sensor_3 -> sensor_3 -> sensor_4 -> sensor_3 -> rsu_0 
+94	 22 	40.0 	 40.00058772065981 	 0.0005877206598086104 	  sensor_1 -> sensor_0 -> rsu_1 -> sensor_0 
+114	 22 	40.0 	 40.001009324890234 	 0.0010093248902336427 	  sensor_3 -> sensor_3 -> rsu_0 -> sensor_3 
+104	 22 	40.0 	 40.001093157594674 	 0.00109315759467421 	  sensor_2 -> sensor_2 -> sensor_2 -> sensor_1 -> sensor_0 -> sensor_0 -> rsu_1 -> sensor_0 
+124	 22 	40.0 	 40.00184209039533 	 0.001842090395328455 	  sensor_4 -> rsu_0 -> sensor_4 
+134	 23 	40.0 	 40.00422479608755 	 0.004224796087548555 	  sensor_5 -> sensor_5 -> sensor_5 -> rsu_0 
+139	 24 	40.0 	 40.00563689323741 	 0.005636893237408458 	  sensor_6 -> sensor_6 -> sensor_5 -> sensor_5 -> rsu_0 
+84	 25 	40.0 	 40.00606214778173 	 0.006062147781733529 	  sensor_0 -> sensor_1 -> sensor_1 -> sensor_2 -> sensor_3 -> sensor_3 -> rsu_0 
+200	 25 	41.0 	 41.00066774877725 	 0.0006677487772535073 	  sensor_6 -> sensor_7 -> gnb -> sensor_7 
+210	 25 	41.0 	 41.00252843597659 	 0.0025284359765933573 	  sensor_7 -> sensor_6 -> sensor_6 -> gnb -> sensor_6 
+170	 25 	41.0 	 41.002763470621616 	 0.002763470621616193 	  sensor_3 -> sensor_3 -> sensor_2 -> sensor_3 -> gnb -> sensor_3 
+160	 25 	41.0 	 41.003540812518054 	 0.0035408125180538264 	  sensor_2 -> sensor_2 -> sensor_2 -> sensor_2 -> rsu_1 -> sensor_2 
+140	 25 	41.0 	 41.00362738625614 	 0.0036273862561415626 	  sensor_0 -> sensor_0 -> sensor_0 -> rsu_1 -> sensor_0 
+150	 26 	41.0 	 41.004011365007685 	 0.004011365007684731 	  sensor_1 -> rsu_1 -> sensor_1 
+180	 27 	41.0 	 41.0066690718656 	 0.00666907186560195 	  sensor_4 -> rsu_0 
+190	 28 	41.0 	 41.00703624585749 	 0.007036245857491963 	  sensor_5 -> rsu_0 
+191	 28 	42.0 	 42.001948267623135 	 0.001948267623134825 	  sensor_5 -> sensor_4 -> sensor_4 -> sensor_4 -> sensor_4 -> sensor_4 -> sensor_4 -> gnb -> sensor_4 
+141	 28 	42.0 	 42.00042686689472 	 0.0004268668947204901 	  sensor_0 -> sensor_0 -> sensor_1 -> sensor_2 -> sensor_2 -> sensor_1 -> sensor_1 -> sensor_1 -> gnb -> sensor_1 
+171	 28 	42.0 	 42.00035323851842 	 0.0003532385184215059 	  sensor_3 -> rsu_0 -> sensor_3 
+211	 28 	42.0 	 42.000837887537074 	 0.0008378875370738115 	  sensor_7 -> sensor_6 -> rsu_0 -> sensor_6 
+161	 28 	42.0 	 42.00104891206456 	 0.0010489120645615913 	  sensor_2 -> rsu_1 -> sensor_2 
+181	 28 	42.0 	 42.00133111420247 	 0.0013311142024718947 	  sensor_4 -> sensor_3 -> rsu_0 -> sensor_3 
+201	 28 	42.0 	 42.001651029588146 	 0.0016510295881460024 	  sensor_6 -> sensor_5 -> rsu_0 -> sensor_5 
+151	 28 	42.0 	 42.00234866573223 	 0.002348665732228028 	  sensor_1 -> sensor_1 -> sensor_0 -> sensor_1 -> sensor_2 -> sensor_3 -> rsu_0 -> sensor_3 
+182	 28 	43.0 	 43.00150021285754 	 0.0015002128575432039 	  sensor_4 -> sensor_4 -> sensor_5 -> gnb -> sensor_5 
+172	 28 	43.0 	 43.00065425818743 	 0.0006542581874313669 	  sensor_3 -> rsu_0 -> sensor_3 
+212	 28 	43.0 	 43.000809359200886 	 0.000809359200886206 	  sensor_7 -> rsu_0 -> sensor_7 
+202	 28 	43.0 	 43.00111225608903 	 0.0011122560890299837 	  sensor_6 -> rsu_0 -> sensor_6 
+192	 28 	43.0 	 43.001289895995 	 0.0012898959950007338 	  sensor_5 -> sensor_6 -> sensor_5 -> sensor_4 -> rsu_0 -> sensor_4 
+142	 28 	43.0 	 43.00258423892162 	 0.0025842389216208517 	  sensor_0 -> rsu_1 -> sensor_0 
+162	 28 	43.0 	 43.00282262149437 	 0.0028226214943671835 	  sensor_2 -> rsu_1 -> sensor_2 
+152	 28 	43.0 	 43.00299833559521 	 0.0029983355952083457 	  sensor_1 -> sensor_2 -> sensor_3 -> sensor_2 -> sensor_2 -> sensor_3 -> rsu_0 -> sensor_3 
+163	 28 	44.0 	 44.0024711470146 	 0.002471147014603048 	  sensor_2 -> gnb -> sensor_2 
+193	 28 	44.0 	 44.001340739324505 	 0.001340739324504625 	  sensor_5 -> sensor_5 -> gnb -> sensor_5 
+203	 28 	44.0 	 44.001921903983494 	 0.001921903983493678 	  sensor_6 -> gnb -> sensor_6 
+143	 28 	44.0 	 44.002590527929975 	 0.0025905279299749395 	  sensor_0 -> rsu_1 -> sensor_0 
+183	 28 	44.0 	 44.003314769050625 	 0.0033147690506254435 	  sensor_4 -> sensor_4 -> sensor_5 -> rsu_0 -> sensor_5 
+153	 28 	44.0 	 44.003553901463675 	 0.003553901463675402 	  sensor_1 -> sensor_1 -> sensor_0 -> sensor_0 -> rsu_1 -> sensor_0 
+173	 28 	44.0 	 44.003697497800744 	 0.0036974978007435766 	  sensor_3 -> sensor_2 -> sensor_2 -> sensor_2 -> sensor_2 -> sensor_2 -> sensor_1 -> sensor_2 -> sensor_3 -> rsu_0 -> sensor_3 
+213	 28 	44.0 	 44.00376721000196 	 0.0037672100019605637 	  sensor_7 -> sensor_6 -> sensor_5 -> rsu_0 -> sensor_5 
+194	 28 	45.0 	 45.00026574774359 	 0.0002657477435903388 	  sensor_5 -> sensor_6 -> sensor_6 -> sensor_6 -> gnb -> sensor_6 
+144	 28 	45.0 	 45.0008229534842 	 0.0008229534842030262 	  sensor_0 -> rsu_1 -> sensor_0 
+204	 28 	45.0 	 45.00201718213478 	 0.00201718213477875 	  sensor_6 -> rsu_0 -> sensor_6 
+164	 28 	45.0 	 45.00256118156245 	 0.0025611815624486667 	  sensor_2 -> rsu_1 -> sensor_2 
+174	 28 	45.0 	 45.002753041467386 	 0.002753041467386197 	  sensor_3 -> sensor_4 -> sensor_4 -> rsu_0 -> sensor_4 
+154	 28 	45.0 	 45.003053420053206 	 0.0030534200532059685 	  sensor_1 -> sensor_2 -> sensor_3 -> rsu_0 -> sensor_3 
+214	 28 	45.0 	 45.00356594624553 	 0.0035659462455299717 	  sensor_7 -> rsu_0 -> sensor_7 
+184	 29 	45.0 	 45.00422449943289 	 0.00422449943288683 	  sensor_4 -> sensor_3 -> sensor_2 -> sensor_2 -> rsu_1 -> sensor_2 
+145	 29 	46.0 	 46.00024592621799 	 0.00024592621799257586 	  sensor_0 -> rsu_1 -> sensor_0 
+195	 29 	46.0 	 46.0005530730264 	 0.0005530730264027284 	  sensor_5 -> rsu_0 -> sensor_5 
+215	 29 	46.0 	 46.00168583430321 	 0.0016858343032097878 	  sensor_7 -> sensor_7 -> sensor_6 -> sensor_6 -> gnb -> sensor_6 
+205	 29 	46.0 	 46.003304363583304 	 0.003304363583303882 	  sensor_6 -> sensor_7 -> sensor_6 -> gnb -> sensor_6 
+155	 29 	46.0 	 46.00224330198649 	 0.0022433019864891435 	  sensor_1 -> rsu_1 -> sensor_1 
+175	 29 	46.0 	 46.00227265179595 	 0.002272651795948377 	  sensor_3 -> sensor_3 -> sensor_2 -> sensor_3 -> rsu_0 -> sensor_3 
+220	 29 	46.0 	 46.002379647563615 	 0.0023796475636146397 	  sensor_8 -> sensor_8 -> sensor_8 -> sensor_7 -> sensor_7 -> sensor_7 -> rsu_0 -> sensor_7 
+165	 29 	46.0 	 46.00246591825669 	 0.0024659182566892923 	  sensor_2 -> sensor_1 -> rsu_1 -> sensor_1 
+185	 30 	46.0 	 46.01021958642826 	 0.010219586428263483 	  sensor_4 -> sensor_4 -> sensor_3 -> sensor_3 -> sensor_4 -> rsu_0 
+146	 30 	47.0 	 47.00054004801472 	 0.0005400480147201847 	  sensor_0 -> rsu_1 -> sensor_0 
+206	 30 	47.0 	 47.00119296656835 	 0.001192966568346776 	  sensor_6 -> rsu_0 -> sensor_6 
+156	 30 	47.0 	 47.00158057593787 	 0.0015805759378721973 	  sensor_1 -> rsu_1 -> sensor_1 
+196	 30 	47.0 	 47.00160735463868 	 0.001607354638679226 	  sensor_5 -> rsu_0 -> sensor_5 
+166	 30 	47.0 	 47.00216455199917 	 0.002164551999172204 	  sensor_2 -> sensor_1 -> rsu_1 -> sensor_1 
+176	 30 	47.0 	 47.003016171666 	 0.003016171665997547 	  sensor_3 -> sensor_2 -> rsu_1 -> sensor_2 
+216	 30 	47.0 	 47.003481943520065 	 0.00348194352006459 	  sensor_7 -> rsu_0 -> sensor_7 
+221	 31 	47.0 	 47.00417002346316 	 0.004170023463160533 	  sensor_8 -> sensor_8 -> sensor_8 -> sensor_7 -> sensor_7 -> rsu_0 -> sensor_7 
+186	 32 	47.0 	 47.004282392856936 	 0.004282392856936212 	  sensor_4 -> sensor_5 -> sensor_5 -> rsu_0 -> sensor_5 
+177	 32 	48.0 	 48.000620920532114 	 0.0006209205321141553 	  sensor_3 -> gnb -> sensor_3 
+187	 32 	48.0 	 48.00204503138727 	 0.0020450313872686365 	  sensor_4 -> sensor_4 -> rsu_0 -> sensor_4 
+167	 32 	48.0 	 48.00204902412647 	 0.0020490241264710107 	  sensor_2 -> sensor_2 -> rsu_1 -> sensor_2 
+157	 32 	48.0 	 48.00215733760512 	 0.0021573376051193804 	  sensor_1 -> sensor_0 -> rsu_1 -> sensor_0 
+197	 32 	48.0 	 48.002659992613346 	 0.0026599926133457075 	  sensor_5 -> rsu_0 -> sensor_5 
+147	 32 	48.0 	 48.003367252400736 	 0.003367252400735765 	  sensor_0 -> sensor_0 -> sensor_1 -> sensor_1 -> rsu_1 -> sensor_1 
+217	 33 	48.0 	 48.005090818459315 	 0.0050908184593154715 	  sensor_7 -> rsu_0 
+222	 34 	48.0 	 48.00533356351511 	 0.005333563515108608 	  sensor_8 -> sensor_8 -> sensor_7 -> sensor_7 -> sensor_6 -> rsu_0 
+207	 35 	48.0 	 48.00560306562239 	 0.005603065622388215 	  sensor_6 -> sensor_7 -> sensor_6 -> sensor_7 -> sensor_7 -> sensor_7 -> sensor_6 -> sensor_6 -> sensor_6 -> sensor_5 -> sensor_5 -> rsu_0 
+168	 35 	49.0 	 49.00048922591922 	 0.0004892259192175175 	  sensor_2 -> sensor_2 -> rsu_1 -> sensor_2 
+198	 35 	49.0 	 49.000693893126694 	 0.0006938931266944337 	  sensor_5 -> sensor_5 -> sensor_5 -> rsu_0 -> sensor_5 
+148	 35 	49.0 	 49.00086612768457 	 0.000866127684567175 	  sensor_0 -> gnb -> sensor_0 
+188	 35 	49.0 	 49.00114790138569 	 0.0011479013856927622 	  sensor_4 -> sensor_5 -> sensor_6 -> sensor_5 -> gnb -> sensor_5 
+218	 35 	49.0 	 49.001002345561965 	 0.001002345561964546 	  sensor_7 -> rsu_0 -> sensor_7 
+158	 35 	49.0 	 49.00121562806136 	 0.0012156280613595527 	  sensor_1 -> sensor_0 -> sensor_1 -> sensor_2 -> sensor_2 -> rsu_1 -> sensor_2 
+208	 35 	49.0 	 49.00184082016748 	 0.0018408201674802172 	  sensor_6 -> sensor_6 -> rsu_0 -> sensor_6 
+223	 35 	49.0 	 49.00285283842785 	 0.0028528384278487806 	  sensor_8 -> sensor_8 -> sensor_8 -> sensor_8 -> sensor_8 -> sensor_7 -> rsu_0 -> sensor_7 
+178	 35 	49.0 	 49.00385332146879 	 0.003853321468788806 	  sensor_3 -> sensor_4 -> sensor_3 -> sensor_3 -> rsu_0 -> sensor_3 

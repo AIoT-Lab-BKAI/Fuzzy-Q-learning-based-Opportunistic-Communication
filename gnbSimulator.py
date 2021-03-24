@@ -43,9 +43,11 @@ class GnbSimulator(Object):
         if message.currentTime > currentTime + Config.cycleTime:
             self.waitList.append(message)
         else:
-            startCar = network.carList[message.indexCar[0]]
-            if startCar.getPosition(currentTime) > Config.roadLength:
+            # TODO:
+            finalCar = network.carList[message.indexCar[-1]]
+            if finalCar.getPosition(currentTime) > Config.roadLength or \
+                    message.currentTime - message.sendTime[0] >= Config.deltaTime:
                 message.isDropt = True
                 network.output.append(message)
             else:
-                self.sendToCar(startCar, message, currentTime, network, numOfPacket=1)
+                self.sendToCar(finalCar, message, currentTime, network, numOfPacket=1)

@@ -24,12 +24,14 @@ class Network:
                 currentTime, self.listTimeMessages))
 
         for car in self.carList:
-            print(car.id, car.numMessage, car.currentNumMessage, car.preTransferNumMessage)
+            print(car.id, car.numMessage, car.currentNumMessage, car.transferredNumMessage, car.receivedNumMessage)
 
         for rsu in self.rsuList:
             res.append(rsu.collectMessages(currentTime))
         res.append(self.gnb.collectMessages(currentTime))
+
         res = [i for sublist in res for i in sublist]
+        
         for mes in res:
             self.addToHeap(mes)
 
@@ -42,7 +44,7 @@ class Network:
         self.collectMessages(currentTime)
         while not self.q.empty():
             mes = self.q.get().item
-            currentLocation = mes.locations[-1]
+            currentLocation = mes.locations[-1][0]
             if currentLocation == 0:
                 car = self.carList[mes.indexCar[-1]]
                 car.working(

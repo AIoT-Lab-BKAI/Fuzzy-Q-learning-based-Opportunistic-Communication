@@ -11,10 +11,13 @@ class CarSimulator(Object):
         Object.__init__(self)
         self.id = id
         self.startTime = startTime
-        self.numMessage = 0  # Total num Message
 
-        self.preTransferNumMessage = 0
+        self.carMaxCapacity = Config.carMaxCapacity
+        self.numMessage = 0  # Total num Message
+        self.transferredNumMessage = 0
         self.currentNumMessage = 0
+        self.receivedNumMessage = 0
+
         self.preReceiveFromGnb = 0.0
 
     def collectMessages(self, currentTime, listTimeMessages):
@@ -48,8 +51,8 @@ class CarSimulator(Object):
             mes = Message(indexCar=self.id, time=sendTime)
             res.append(mes)
             self.numMessage += 1
-            self.currentNumMessage = self.numMessage - self.preTransferNumMessage
-            if (self.numMessage >= len(listTimeMessages)):
+            self.currentNumMessage += 1
+            if self.numMessage >= len(listTimeMessages):
                 return res
             curTime = listTimeMessages[self.numMessage]
 
@@ -64,6 +67,9 @@ class CarSimulator(Object):
             currentTime ([float]): [description]
             network ([Network]): [description]
         """
+        # Update received num message
+        car.receivedNumMessage += 1
+
         # Add index car to list indexCar of message
         message.indexCar.append(car.id)
 
@@ -145,6 +151,14 @@ class CarSimulator(Object):
         else:
             network.addToHeap(message)
 
+    def noChange(self, message, currentTime,network):
+        message.locations.append([0, self.id])
+        message.currentTime += 1
+        if message.currentTime > currentTime + Config.cycleTime:
+            self.waitList.append(message)
+        else:
+            network.addToHeap(message)
+
     def getPosition(self, currentTime):
         """Get the current position of the car
         """
@@ -166,33 +180,28 @@ class CarSimulator(Object):
         return func(self, currentTime, network)
 
     def working(self, message, currentTime, network, getAction=getAction):
-
-        transferNumMesseage = 0
-
         if message.isDone:
-            startCar = network.carList[message.indexCar[0]]
-            if startCar.getPosition(currentTime) > Config.roadLength or \
-                    self.distanceToCar(startCar, currentTime) > Config.carCoverRadius:
+            # TODO: Viết hàm check so với deltaTime
+            if message.currentTime - message.sendTime[0] >= Config.deltaTime:
                 message.isDropt = True
                 network.output.append(message)
-            elif startCar.id == self.id:
-                network.output.append(message)
             else:
-                self.sendToCar(startCar, message, currentTime, network, numOfPacket=1)
+                network.output.append(message)
             return
         else:
             action, nextLocation = getAction(self, message, currentTime, network)
             # 0: sendToCar, 1:sendToRsu, 2: sendToGnb, 3:noChange
+            if action != 3:
+                self.transferredNumMessage += 1
+                self.currentNumMessage = self.numMessage - self.transferredNumMessage + self.receivedNumMessage
+
             if action == 0:
-                transferNumMesseage = int(self.currentNumMessage / 2)
-                self.sendToCar(nextLocation, message, currentTime, network, numOfPacket=transferNumMesseage)
+                # numOfPacket: send and receive (2)
+                self.sendToCar(nextLocation, message, currentTime, network, numOfPacket=2)
             elif action == 1:
-                transferNumMesseage = self.currentNumMessage
-                self.sendToRsu(nextLocation, message, currentTime, network, numOfPacket=transferNumMesseage)
+                # numOfPacket: only send (receive simulate in RSU)
+                self.sendToRsu(nextLocation, message, currentTime, network, numOfPacket=1)
             elif action == 2:
-                transferNumMesseage = int(self.currentNumMessage / 3)
-                self.sendToGnb(nextLocation, message, currentTime, network, numOfPacket=transferNumMesseage)
-
-        self.preTransferNumMessage += transferNumMesseage
-        self.currentNumMessage = self.numMessage - self.preTransferNumMessage
-
+                self.sendToGnb(nextLocation, message, currentTime, network, numOfPacket=1)
+            else:
+                self.noChange(message, currentTime, network)

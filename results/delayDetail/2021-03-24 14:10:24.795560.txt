@@ -1,0 +1,205 @@
+0	 0 	6.0 	 8.000640222116573 	 2.000640222116573 	  sensor_0 -> sensor_0 -> sensor_0 -> gnb -> sensor_0 -> Success
+1	 0 	7.0 	 8.000831321505009 	 1.000831321505009 	  sensor_0 -> sensor_0 -> rsu_0 -> sensor_0 -> Success
+4	 0 	10.0 	 10.000760238352955 	 0.0007602383529548007 	  sensor_0 -> gnb -> sensor_0 -> Success
+2	 0 	8.0 	 10.002410979762741 	 2.0024109797627414 	  sensor_0 -> sensor_0 -> sensor_0 -> rsu_0 -> sensor_0 -> Success
+5	 0 	11.0 	 11.000284418508201 	 0.00028441850820115633 	  sensor_0 -> sensor_1 -> sensor_0 -> rsu_0 -> sensor_0 -> Success
+7	 0 	12.0 	 12.000143616537043 	 0.00014361653704320076 	  sensor_0 -> rsu_0 -> sensor_0 -> Success
+3	 1 	9.0 	 13.000453662638972 	 4.0004536626389715 	  sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_1 -> sensor_1 -> sensor_0 -> sensor_1 -> sensor_0 -> gnb -> Failure
+8	 1 	12.0 	 13.001418881249055 	 1.0014188812490552 	  sensor_1 -> sensor_1 -> rsu_0 -> sensor_1 -> Success
+10	 1 	13.0 	 13.001567735288216 	 0.0015677352882157436 	  sensor_1 -> sensor_0 -> rsu_0 -> sensor_0 -> Success
+9	 1 	13.0 	 13.00565110755514 	 0.0056511075551402 	  sensor_0 -> sensor_1 -> rsu_0 -> sensor_1 -> Success
+6	 1 	11.0 	 13.006145379750114 	 2.006145379750114 	  sensor_1 -> sensor_1 -> sensor_1 -> sensor_0 -> sensor_1 -> rsu_0 -> sensor_1 -> Success
+12	 1 	14.0 	 14.001223374275666 	 0.0012233742756659893 	  sensor_1 -> sensor_0 -> rsu_0 -> sensor_0 -> Success
+14	 1 	15.0 	 15.00106119253767 	 0.001061192537669342 	  sensor_1 -> rsu_0 -> sensor_1 -> Success
+11	 1 	14.0 	 16.000338368095058 	 2.0003383680950577 	  sensor_0 -> sensor_0 -> sensor_0 -> rsu_0 -> sensor_0 -> Success
+16	 1 	16.0 	 16.002049332672456 	 0.0020493326724562166 	  sensor_1 -> rsu_0 -> sensor_1 -> Success
+17	 1 	16.0 	 16.003973248905396 	 0.003973248905396076 	  sensor_2 -> sensor_1 -> rsu_0 -> sensor_1 -> Success
+13	 1 	15.0 	 16.00531982568487 	 1.0053198256848717 	  sensor_0 -> sensor_1 -> sensor_1 -> sensor_0 -> rsu_0 -> sensor_0 -> Success
+18	 1 	17.0 	 17.002533619514082 	 0.0025336195140823747 	  sensor_0 -> sensor_1 -> rsu_0 -> sensor_1 -> Success
+15	 1 	16.0 	 17.00290418008591 	 1.0029041800859098 	  sensor_0 -> sensor_0 -> rsu_0 -> sensor_0 -> Success
+19	 1 	17.0 	 17.004128558161703 	 0.004128558161703211 	  sensor_1 -> sensor_0 -> rsu_0 -> sensor_0 -> Success
+22	 1 	18.0 	 18.001601055338746 	 0.0016010553387459936 	  sensor_1 -> rsu_0 -> sensor_1 -> Success
+20	 1 	17.0 	 19.000372412885604 	 2.0003724128856035 	  sensor_2 -> sensor_2 -> sensor_2 -> gnb -> sensor_2 -> Success
+24	 1 	19.0 	 19.001034118389708 	 0.0010341183897075723 	  sensor_0 -> sensor_1 -> sensor_2 -> rsu_0 -> sensor_2 -> Success
+21	 1 	18.0 	 19.001523126422317 	 1.0015231264223168 	  sensor_0 -> sensor_0 -> sensor_1 -> rsu_0 -> sensor_1 -> Success
+26	 1 	19.0 	 19.003204993341424 	 0.0032049933414235454 	  sensor_2 -> sensor_1 -> sensor_0 -> sensor_1 -> rsu_0 -> sensor_1 -> Success
+23	 1 	18.0 	 19.00349787356035 	 1.0034978735603488 	  sensor_2 -> sensor_1 -> sensor_0 -> sensor_0 -> rsu_0 -> sensor_0 -> Success
+29	 1 	20.0 	 20.001847338392512 	 0.0018473383925119435 	  sensor_2 -> sensor_1 -> gnb -> sensor_1 -> Success
+27	 1 	20.0 	 20.003435154136568 	 0.0034351541365680305 	  sensor_0 -> rsu_0 -> sensor_0 -> Success
+25	 1 	19.0 	 20.004292449140287 	 1.0042924491402871 	  sensor_1 -> sensor_0 -> sensor_0 -> sensor_1 -> sensor_0 -> rsu_0 -> sensor_0 -> Success
+33	 1 	21.0 	 21.00421978776108 	 0.00421978776108034 	  sensor_3 -> sensor_2 -> rsu_0 -> sensor_2 -> Success
+28	 1 	20.0 	 22.001290187020153 	 2.001290187020153 	  sensor_1 -> sensor_1 -> sensor_2 -> sensor_2 -> sensor_3 -> rsu_0 -> sensor_3 -> Success
+31	 1 	21.0 	 22.00149071649507 	 1.00149071649507 	  sensor_1 -> sensor_1 -> rsu_0 -> sensor_1 -> Success
+30	 1 	21.0 	 22.00193361425323 	 1.001933614253229 	  sensor_0 -> sensor_0 -> rsu_0 -> sensor_0 -> Success
+35	 1 	22.0 	 22.00260565465707 	 0.002605654657070744 	  sensor_1 -> sensor_2 -> sensor_1 -> rsu_0 -> sensor_1 -> Success
+38	 1 	23.0 	 23.001559666965452 	 0.0015596669654520667 	  sensor_0 -> rsu_0 -> sensor_0 -> Success
+34	 1 	22.0 	 23.001817919737476 	 1.0018179197374764 	  sensor_0 -> sensor_0 -> sensor_1 -> sensor_0 -> rsu_0 -> sensor_0 -> Success
+37	 1 	22.0 	 23.00277131283376 	 1.0027713128337616 	  sensor_3 -> sensor_2 -> sensor_1 -> sensor_1 -> rsu_0 -> sensor_1 -> Success
+40	 1 	23.0 	 24.000959808766783 	 1.0009598087667833 	  sensor_2 -> sensor_2 -> rsu_0 -> sensor_2 -> Success
+41	 1 	23.0 	 24.001035302010006 	 1.0010353020100062 	  sensor_3 -> sensor_3 -> rsu_0 -> sensor_3 -> Success
+45	 1 	24.0 	 24.002996070201668 	 0.002996070201668033 	  sensor_3 -> rsu_0 -> sensor_3 -> Success
+32	 2 	21.0 	 24.00724265838535 	 3.0072426583853513 	  sensor_2 -> sensor_3 -> sensor_2 -> sensor_2 -> sensor_2 -> sensor_3 -> sensor_3 -> rsu_0 -> Failure
+43	 2 	24.0 	 25.001005025741833 	 1.0010050257418328 	  sensor_1 -> sensor_1 -> rsu_0 -> sensor_1 -> Success
+48	 2 	25.0 	 25.001350703325805 	 0.0013507033258051138 	  sensor_2 -> sensor_1 -> rsu_0 -> sensor_1 -> Success
+44	 2 	24.0 	 25.003078112718573 	 1.0030781127185726 	  sensor_2 -> sensor_1 -> sensor_2 -> sensor_2 -> sensor_3 -> rsu_0 -> sensor_3 -> Success
+50	 2 	26.0 	 26.001521191110776 	 0.0015211911107755327 	  sensor_0 -> gnb -> sensor_0 -> Success
+46	 2 	25.0 	 26.00051461368023 	 1.000514613680231 	  sensor_0 -> sensor_0 -> rsu_0 -> sensor_0 -> Success
+53	 2 	26.0 	 26.00228349071507 	 0.0022834907150688366 	  sensor_3 -> sensor_4 -> sensor_3 -> gnb -> sensor_3 -> Success
+52	 2 	26.0 	 26.001911334548993 	 0.001911334548992727 	  sensor_2 -> rsu_0 -> sensor_2 -> Success
+54	 2 	26.0 	 26.002369780127 	 0.0023697801270010643 	  sensor_4 -> rsu_0 -> sensor_4 -> Success
+47	 2 	25.0 	 27.0008000646839 	 2.000800064683901 	  sensor_1 -> sensor_1 -> sensor_1 -> sensor_0 -> rsu_1 -> sensor_0 -> Success
+57	 2 	27.0 	 27.001295388207463 	 0.0012953882074633327 	  sensor_2 -> sensor_3 -> sensor_2 -> rsu_0 -> sensor_2 -> Success
+51	 2 	26.0 	 27.001672448855437 	 1.0016724488554374 	  sensor_1 -> sensor_0 -> sensor_0 -> rsu_1 -> sensor_0 -> Success
+36	 3 	22.0 	 27.00301752296952 	 5.003017522969522 	  sensor_2 -> sensor_2 -> sensor_1 -> sensor_1 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> rsu_1 -> Failure
+49	 4 	25.0 	 28.00002959192363 	 3.0000295919236315 	  sensor_3 -> sensor_3 -> sensor_3 -> sensor_3 -> gnb -> Failure
+60	 4 	28.0 	 28.000745996878933 	 0.0007459968789333971 	  sensor_0 -> rsu_1 -> sensor_0 -> Success
+62	 4 	28.0 	 28.000761914494348 	 0.0007619144943475931 	  sensor_2 -> rsu_0 -> sensor_2 -> Success
+39	 5 	23.0 	 28.00080551884887 	 5.000805518848871 	  sensor_1 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> rsu_1 -> Failure
+64	 5 	28.0 	 28.00131193738466 	 0.0013119373846599558 	  sensor_4 -> sensor_3 -> sensor_2 -> rsu_0 -> sensor_2 -> Success
+58	 5 	27.0 	 28.001404942493636 	 1.001404942493636 	  sensor_3 -> sensor_2 -> sensor_3 -> sensor_3 -> sensor_2 -> sensor_3 -> sensor_2 -> rsu_0 -> sensor_2 -> Success
+67	 5 	29.0 	 29.002924152838744 	 0.002924152838744476 	  sensor_2 -> gnb -> sensor_2 -> Success
+63	 5 	28.0 	 29.00079417768372 	 1.0007941776837193 	  sensor_3 -> sensor_3 -> rsu_0 -> sensor_3 -> Success
+65	 5 	29.0 	 29.001046699198426 	 0.0010466991984259266 	  sensor_0 -> rsu_1 -> sensor_0 -> Success
+56	 5 	27.0 	 29.001588130982555 	 2.0015881309825545 	  sensor_1 -> sensor_2 -> sensor_1 -> sensor_0 -> sensor_0 -> sensor_0 -> rsu_1 -> sensor_0 -> Success
+68	 5 	29.0 	 29.001892902420064 	 0.0018929024200637912 	  sensor_3 -> rsu_0 -> sensor_3 -> Success
+69	 5 	29.0 	 29.00306516198636 	 0.0030651619863597546 	  sensor_4 -> rsu_0 -> sensor_4 -> Success
+59	 5 	27.0 	 29.00417887363154 	 2.0041788736315382 	  sensor_4 -> sensor_3 -> sensor_3 -> sensor_3 -> rsu_0 -> sensor_3 -> Success
+42	 6 	24.0 	 29.00488485697718 	 5.004884856977181 	  sensor_0 -> sensor_1 -> sensor_1 -> sensor_2 -> sensor_2 -> sensor_2 -> sensor_2 -> sensor_3 -> sensor_3 -> sensor_4 -> rsu_0 -> Failure
+61	 6 	28.0 	 29.00488718607544 	 1.0048871860754396 	  sensor_1 -> sensor_2 -> sensor_2 -> sensor_3 -> sensor_4 -> rsu_0 -> sensor_4 -> Success
+74	 6 	30.0 	 30.00139434677076 	 0.001394346770759114 	  sensor_4 -> gnb -> sensor_4 -> Success
+71	 6 	30.0 	 31.0007423408142 	 1.0007423408141989 	  sensor_1 -> sensor_1 -> rsu_0 -> sensor_1 -> Success
+55	 7 	27.0 	 31.001835843582224 	 4.001835843582224 	  sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> rsu_1 -> Failure
+79	 7 	31.0 	 31.002201348411205 	 0.0022013484112051174 	  sensor_4 -> rsu_0 -> sensor_4 -> Success
+70	 7 	30.0 	 31.004184577946106 	 1.0041845779461056 	  sensor_0 -> sensor_0 -> rsu_1 -> sensor_0 -> Success
+77	 7 	31.0 	 31.004228029142595 	 0.0042280291425953465 	  sensor_2 -> sensor_1 -> rsu_1 -> sensor_1 -> Success
+83	 7 	32.0 	 32.00114717297337 	 0.0011471729733685265 	  sensor_2 -> sensor_1 -> sensor_2 -> sensor_1 -> sensor_0 -> gnb -> sensor_0 -> Success
+75	 7 	31.0 	 32.00042304180361 	 1.0004230418036073 	  sensor_0 -> sensor_0 -> rsu_1 -> sensor_0 -> Success
+78	 7 	31.0 	 32.000839920289735 	 1.0008399202897351 	  sensor_3 -> sensor_3 -> rsu_0 -> sensor_3 -> Success
+86	 7 	32.0 	 32.00108490795193 	 0.0010849079519275051 	  sensor_5 -> sensor_4 -> sensor_5 -> sensor_4 -> sensor_5 -> gnb -> sensor_5 -> Success
+76	 7 	31.0 	 32.00191952676701 	 1.0019195267670113 	  sensor_1 -> sensor_2 -> sensor_3 -> sensor_4 -> sensor_4 -> sensor_5 -> gnb -> sensor_5 -> Success
+66	 8 	29.0 	 32.00106097346037 	 3.001060973460369 	  sensor_1 -> sensor_0 -> sensor_0 -> sensor_1 -> sensor_0 -> sensor_1 -> sensor_1 -> sensor_1 -> rsu_1 -> Failure
+84	 8 	32.0 	 32.00118071676212 	 0.001180716762121392 	  sensor_3 -> rsu_0 -> sensor_3 -> Success
+85	 8 	32.0 	 32.00172044540273 	 0.0017204454027321958 	  sensor_4 -> rsu_0 -> sensor_4 -> Success
+73	 8 	30.0 	 32.00242973364198 	 2.002429733641982 	  sensor_3 -> sensor_2 -> sensor_2 -> sensor_2 -> rsu_0 -> sensor_2 -> Success
+72	 8 	30.0 	 32.0047438180007 	 2.004743818000698 	  sensor_2 -> sensor_3 -> sensor_3 -> sensor_3 -> rsu_0 -> sensor_3 -> Success
+88	 8 	33.0 	 33.000635676880925 	 0.0006356768809254731 	  sensor_1 -> rsu_1 -> sensor_1 -> Success
+81	 8 	32.0 	 33.00228020770962 	 1.0022802077096173 	  sensor_0 -> sensor_1 -> sensor_0 -> sensor_0 -> sensor_1 -> rsu_1 -> sensor_1 -> Success
+89	 8 	33.0 	 34.00163939998119 	 1.0016393999811868 	  sensor_2 -> sensor_2 -> rsu_0 -> sensor_2 -> Success
+96	 8 	34.0 	 34.00223060604126 	 0.002230606041258909 	  sensor_3 -> sensor_2 -> rsu_0 -> sensor_2 -> Success
+97	 8 	34.0 	 34.00242444216865 	 0.002424442168653229 	  sensor_4 -> rsu_0 -> sensor_4 -> Success
+82	 8 	32.0 	 34.00364377288468 	 2.003643772884679 	  sensor_1 -> sensor_1 -> sensor_1 -> rsu_1 -> sensor_1 -> Success
+93	 8 	34.0 	 34.00555570111028 	 0.00555570111028203 	  sensor_0 -> rsu_1 -> sensor_0 -> Success
+99	 8 	35.0 	 35.000064397183294 	 6.439718329431798e-05 	  sensor_0 -> rsu_1 -> sensor_0 -> Success
+100	 8 	35.0 	 35.00181768356045 	 0.0018176835604535313 	  sensor_1 -> gnb -> sensor_1 -> Success
+101	 8 	35.0 	 35.00055099098439 	 0.0005509909843866012 	  sensor_2 -> sensor_3 -> gnb -> sensor_3 -> Success
+90	 8 	33.0 	 35.0030287269911 	 2.003028726991097 	  sensor_3 -> sensor_3 -> sensor_4 -> sensor_4 -> rsu_0 -> sensor_4 -> Success
+104	 8 	35.0 	 35.00305228972632 	 0.003052289726319657 	  sensor_5 -> sensor_4 -> rsu_0 -> sensor_4 -> Success
+98	 8 	34.0 	 35.00391153472456 	 1.0039115347245584 	  sensor_5 -> sensor_4 -> sensor_4 -> rsu_0 -> sensor_4 -> Success
+108	 8 	36.0 	 36.00119025594002 	 0.001190255940016982 	  sensor_3 -> gnb -> sensor_3 -> Success
+111	 8 	36.0 	 36.00061075122436 	 0.0006107512243573865 	  sensor_6 -> gnb -> sensor_6 -> Success
+103	 8 	35.0 	 36.00063257006498 	 1.0006325700649796 	  sensor_4 -> sensor_4 -> sensor_5 -> sensor_6 -> gnb -> sensor_6 -> Success
+106	 8 	36.0 	 36.0009025132498 	 0.0009025132497981758 	  sensor_1 -> rsu_1 -> sensor_1 -> Success
+107	 8 	36.0 	 36.00137373130469 	 0.0013737313046888744 	  sensor_2 -> sensor_1 -> rsu_1 -> sensor_1 -> Success
+95	 8 	34.0 	 36.00212703305837 	 2.002127033058372 	  sensor_2 -> sensor_2 -> sensor_1 -> sensor_1 -> sensor_0 -> rsu_1 -> sensor_0 -> Success
+94	 8 	34.0 	 36.002464253823554 	 2.002464253823554 	  sensor_1 -> sensor_0 -> sensor_0 -> sensor_1 -> sensor_1 -> rsu_1 -> sensor_1 -> Success
+109	 8 	36.0 	 36.002723446337136 	 0.0027234463371357265 	  sensor_4 -> rsu_0 -> sensor_4 -> Success
+92	 9 	33.0 	 36.00333493433005 	 3.0033349343300486 	  sensor_5 -> sensor_4 -> sensor_5 -> sensor_5 -> sensor_5 -> sensor_5 -> rsu_0 -> Failure
+80	 10 	31.0 	 36.003814674645916 	 5.003814674645916 	  sensor_5 -> sensor_4 -> sensor_3 -> sensor_4 -> sensor_4 -> sensor_4 -> sensor_4 -> sensor_3 -> sensor_4 -> sensor_4 -> sensor_4 -> rsu_0 -> Failure
+116	 10 	37.0 	 37.001250110935786 	 0.0012501109357856421 	  sensor_4 -> gnb -> sensor_4 -> Success
+91	 11 	33.0 	 37.00085207785927 	 4.000852077859271 	  sensor_4 -> sensor_3 -> sensor_3 -> sensor_3 -> sensor_3 -> sensor_3 -> rsu_0 -> Failure
+110	 11 	36.0 	 37.001569445684964 	 1.0015694456849644 	  sensor_5 -> sensor_5 -> rsu_0 -> sensor_5 -> Success
+117	 11 	37.0 	 37.0016287521879 	 0.0016287521878979305 	  sensor_5 -> rsu_0 -> sensor_5 -> Success
+114	 11 	37.0 	 37.00177910275104 	 0.0017791027510369872 	  sensor_2 -> rsu_1 -> sensor_2 -> Success
+87	 12 	33.0 	 37.00178957378057 	 4.00178957378057 	  sensor_0 -> sensor_0 -> sensor_1 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> rsu_1 -> Failure
+113	 12 	37.0 	 37.00241114086999 	 0.00241114086998806 	  sensor_1 -> sensor_0 -> sensor_1 -> rsu_1 -> sensor_1 -> Success
+120	 12 	38.0 	 38.000198014943614 	 0.00019801494361360028 	  sensor_1 -> gnb -> sensor_1 -> Success
+102	 13 	35.0 	 38.000818933255644 	 3.000818933255644 	  sensor_3 -> sensor_3 -> sensor_3 -> sensor_3 -> sensor_4 -> sensor_3 -> gnb -> Failure
+118	 13 	37.0 	 38.00158629419895 	 1.001586294198951 	  sensor_6 -> sensor_6 -> rsu_0 -> sensor_6 -> Success
+115	 13 	37.0 	 38.00164669846838 	 1.0016466984683774 	  sensor_3 -> sensor_3 -> rsu_0 -> sensor_3 -> Success
+125	 13 	38.0 	 38.00339970400162 	 0.0033997040016231495 	  sensor_6 -> sensor_5 -> rsu_0 -> sensor_5 -> Success
+124	 13 	38.0 	 38.003668745278915 	 0.003668745278915253 	  sensor_5 -> sensor_6 -> sensor_5 -> rsu_0 -> sensor_5 -> Success
+122	 13 	38.0 	 38.00421872497529 	 0.004218724975288524 	  sensor_3 -> rsu_0 -> sensor_3 -> Success
+112	 13 	37.0 	 39.000345834141214 	 2.000345834141214 	  sensor_0 -> sensor_0 -> sensor_0 -> rsu_1 -> sensor_0 -> Success
+123	 13 	38.0 	 39.00193728152575 	 1.0019372815257483 	  sensor_4 -> sensor_4 -> rsu_0 -> sensor_4 -> Success
+130	 13 	39.0 	 39.002421779126905 	 0.0024217791269052213 	  sensor_4 -> rsu_0 -> sensor_4 -> Success
+131	 13 	39.0 	 39.00364659012127 	 0.0036465901212707763 	  sensor_5 -> sensor_4 -> rsu_0 -> sensor_4 -> Success
+121	 13 	38.0 	 39.00406665405994 	 1.0040666540599403 	  sensor_2 -> sensor_2 -> sensor_3 -> rsu_0 -> sensor_3 -> Success
+127	 13 	39.0 	 39.004184486910894 	 0.004184486910894236 	  sensor_1 -> rsu_1 -> sensor_1 -> Success
+128	 13 	39.0 	 39.004683449122 	 0.004683449121998251 	  sensor_2 -> rsu_1 -> sensor_2 -> Success
+105	 14 	36.0 	 39.005312835267354 	 3.005312835267354 	  sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> sensor_1 -> rsu_1 -> Failure
+126	 14 	39.0 	 40.002264722273665 	 1.0022647222736651 	  sensor_0 -> sensor_0 -> sensor_1 -> gnb -> sensor_1 -> Success
+136	 14 	40.0 	 40.001065354443135 	 0.001065354443134936 	  sensor_3 -> rsu_0 -> sensor_3 -> Success
+137	 14 	40.0 	 40.001123453431006 	 0.0011234534310062827 	  sensor_4 -> rsu_0 -> sensor_4 -> Success
+134	 14 	40.0 	 40.00125059687787 	 0.001250596877866883 	  sensor_1 -> sensor_2 -> sensor_3 -> sensor_4 -> gnb -> sensor_4 -> Success
+129	 14 	39.0 	 40.00130014979205 	 1.0013001497920513 	  sensor_3 -> sensor_4 -> sensor_3 -> sensor_3 -> sensor_4 -> rsu_0 -> sensor_4 -> Success
+132	 14 	39.0 	 40.00160919979415 	 1.001609199794153 	  sensor_6 -> sensor_6 -> sensor_5 -> sensor_4 -> gnb -> sensor_4 -> Success
+119	 14 	38.0 	 40.00142527192605 	 2.0014252719260526 	  sensor_0 -> sensor_0 -> sensor_0 -> rsu_1 -> sensor_0 -> Success
+133	 14 	40.0 	 40.00237121258385 	 0.0023712125838528664 	  sensor_0 -> rsu_1 -> sensor_0 -> Success
+142	 14 	41.0 	 41.00039183951588 	 0.00039183951587773436 	  sensor_2 -> rsu_1 -> sensor_2 -> Success
+141	 14 	41.0 	 41.001895896878445 	 0.0018958968784446029 	  sensor_1 -> sensor_2 -> rsu_1 -> sensor_2 -> Success
+140	 14 	41.0 	 41.00343713665088 	 0.0034371366508807455 	  sensor_0 -> sensor_1 -> sensor_2 -> sensor_3 -> sensor_2 -> rsu_1 -> sensor_2 -> Success
+138	 14 	40.0 	 41.00369826715907 	 1.0036982671590735 	  sensor_5 -> sensor_5 -> rsu_0 -> sensor_5 -> Success
+144	 14 	41.0 	 41.004289015739445 	 0.00428901573944529 	  sensor_4 -> rsu_0 -> sensor_4 -> Success
+147	 14 	41.0 	 41.00453285843003 	 0.0045328584300321495 	  sensor_7 -> rsu_0 -> sensor_7 -> Success
+143	 14 	41.0 	 41.00454740273662 	 0.004547402736619688 	  sensor_3 -> rsu_0 -> sensor_3 -> Success
+139	 14 	40.0 	 41.00595307326739 	 1.005953073267392 	  sensor_6 -> sensor_5 -> sensor_5 -> rsu_0 -> sensor_5 -> Success
+152	 14 	42.0 	 42.00054175762948 	 0.0005417576294775017 	  sensor_4 -> gnb -> sensor_4 -> Success
+153	 14 	42.0 	 42.00147489465144 	 0.0014748946514373529 	  sensor_5 -> rsu_0 -> sensor_5 -> Success
+146	 14 	41.0 	 42.00193828104232 	 1.001938281042321 	  sensor_6 -> sensor_6 -> rsu_0 -> sensor_6 -> Success
+155	 14 	42.0 	 42.00276495730201 	 0.0027649573020127605 	  sensor_7 -> rsu_0 -> sensor_7 -> Success
+145	 14 	41.0 	 42.00282139660034 	 1.0028213966003392 	  sensor_5 -> sensor_6 -> sensor_6 -> sensor_5 -> rsu_0 -> sensor_5 -> Success
+135	 14 	40.0 	 42.00458521080534 	 2.004585210805338 	  sensor_2 -> sensor_2 -> sensor_2 -> rsu_1 -> sensor_2 -> Success
+149	 14 	42.0 	 42.00590592376711 	 0.0059059237671093 	  sensor_1 -> rsu_1 -> sensor_1 -> Success
+150	 14 	42.0 	 42.00967931752044 	 0.009679317520436825 	  sensor_2 -> rsu_1 -> sensor_2 -> Success
+161	 14 	43.0 	 43.000913226327874 	 0.0009132263278743835 	  sensor_5 -> rsu_0 -> sensor_5 -> Success
+148	 14 	42.0 	 43.00130400551293 	 1.001304005512928 	  sensor_0 -> sensor_0 -> rsu_1 -> sensor_0 -> Success
+156	 14 	43.0 	 43.00166151783976 	 0.0016615178397572095 	  sensor_0 -> rsu_1 -> sensor_0 -> Success
+158	 14 	43.0 	 43.00292359502788 	 0.0029235950278803102 	  sensor_2 -> rsu_1 -> sensor_2 -> Success
+159	 14 	43.0 	 43.0054979478696 	 0.005497947869599784 	  sensor_3 -> rsu_1 -> sensor_3 -> Success
+154	 14 	42.0 	 43.00805313410673 	 1.0080531341067314 	  sensor_6 -> sensor_6 -> sensor_5 -> sensor_4 -> sensor_3 -> rsu_1 -> sensor_3 -> Success
+162	 14 	43.0 	 44.00185631931064 	 1.0018563193106402 	  sensor_6 -> sensor_6 -> gnb -> sensor_6 -> Success
+170	 14 	44.0 	 44.00225832069144 	 0.002258320691439053 	  sensor_6 -> gnb -> sensor_6 -> Success
+166	 14 	44.0 	 44.00120955700021 	 0.0012095570002088607 	  sensor_2 -> sensor_1 -> rsu_1 -> sensor_1 -> Success
+151	 14 	42.0 	 44.00282549223261 	 2.00282549223261 	  sensor_3 -> sensor_3 -> sensor_3 -> sensor_2 -> rsu_1 -> sensor_2 -> Success
+171	 14 	44.0 	 44.00298556712775 	 0.002985567127751665 	  sensor_7 -> rsu_0 -> sensor_7 -> Success
+163	 14 	43.0 	 44.00350967295128 	 1.0035096729512816 	  sensor_7 -> sensor_6 -> sensor_6 -> rsu_0 -> sensor_6 -> Success
+160	 14 	43.0 	 44.00499142185619 	 1.0049914218561895 	  sensor_4 -> sensor_5 -> sensor_5 -> rsu_0 -> sensor_5 -> Success
+165	 14 	44.0 	 45.00042631176625 	 1.0004263117662475 	  sensor_1 -> sensor_1 -> rsu_1 -> sensor_1 -> Success
+167	 14 	44.0 	 45.0011931240953 	 1.0011931240953018 	  sensor_3 -> sensor_3 -> rsu_1 -> sensor_3 -> Success
+168	 14 	44.0 	 45.00473265159257 	 1.004732651592569 	  sensor_4 -> sensor_4 -> rsu_0 -> sensor_4 -> Success
+179	 14 	45.0 	 45.00493804073054 	 0.0049380407305434915 	  sensor_7 -> rsu_0 -> sensor_7 -> Success
+157	 15 	43.0 	 46.00003888560281 	 3.0000388856028124 	  sensor_1 -> sensor_1 -> sensor_1 -> sensor_1 -> rsu_1 -> Failure
+181	 15 	46.0 	 46.00145848008557 	 0.0014584800855672597 	  sensor_1 -> gnb -> sensor_1 -> Success
+172	 15 	45.0 	 46.00076028610827 	 1.0007602861082674 	  sensor_0 -> sensor_1 -> sensor_1 -> rsu_1 -> sensor_1 -> Success
+176	 15 	45.0 	 46.0010474457464 	 1.0010474457464014 	  sensor_4 -> sensor_4 -> rsu_0 -> sensor_4 -> Success
+182	 15 	46.0 	 46.001056400620556 	 0.0010564006205555643 	  sensor_2 -> rsu_1 -> sensor_2 -> Success
+186	 15 	46.0 	 46.00136485773116 	 0.0013648577311613508 	  sensor_6 -> rsu_0 -> sensor_6 -> Success
+185	 15 	46.0 	 46.001932101646666 	 0.00193210164666624 	  sensor_5 -> sensor_4 -> rsu_1 -> sensor_4 -> Success
+183	 15 	46.0 	 46.00225208096184 	 0.0022520809618384874 	  sensor_3 -> sensor_4 -> sensor_5 -> sensor_6 -> rsu_0 -> sensor_6 -> Success
+188	 15 	46.0 	 46.002365406535304 	 0.0023654065353042597 	  sensor_8 -> rsu_0 -> sensor_8 -> Success
+173	 15 	45.0 	 47.00047819075039 	 2.0004781907503926 	  sensor_1 -> sensor_1 -> sensor_1 -> sensor_2 -> gnb -> sensor_2 -> Success
+180	 15 	46.0 	 47.00445093122991 	 1.0044509312299112 	  sensor_0 -> sensor_1 -> sensor_1 -> sensor_0 -> gnb -> sensor_0 -> Success
+164	 16 	44.0 	 47.00162613245049 	 3.0016261324504896 	  sensor_0 -> sensor_0 -> sensor_0 -> sensor_0 -> rsu_1 -> Failure
+195	 16 	47.0 	 47.0028592994738 	 0.002859299473797705 	  sensor_6 -> rsu_0 -> sensor_6 -> Success
+189	 16 	47.0 	 47.003224042098054 	 0.0032240420980542694 	  sensor_0 -> rsu_1 -> sensor_0 -> Success
+177	 16 	45.0 	 47.00323876184881 	 2.003238761848813 	  sensor_5 -> sensor_5 -> sensor_6 -> sensor_6 -> rsu_0 -> sensor_6 -> Success
+191	 16 	47.0 	 47.00400334672598 	 0.00400334672598035 	  sensor_2 -> rsu_1 -> sensor_2 -> Success
+192	 16 	47.0 	 47.005561518009344 	 0.005561518009344013 	  sensor_3 -> rsu_1 -> sensor_3 -> Success
+193	 16 	47.0 	 47.00582078618555 	 0.0058207861855521514 	  sensor_4 -> rsu_1 -> sensor_4 -> Success
+169	 17 	44.0 	 47.00588505378343 	 3.0058850537834303 	  sensor_5 -> sensor_4 -> sensor_4 -> sensor_4 -> sensor_4 -> rsu_1 -> Failure
+175	 17 	45.0 	 47.00631217813054 	 2.0063121781305426 	  sensor_3 -> sensor_3 -> sensor_2 -> sensor_2 -> rsu_1 -> sensor_2 -> Success
+194	 17 	47.0 	 47.00697115119866 	 0.00697115119866254 	  sensor_5 -> sensor_4 -> sensor_3 -> sensor_2 -> sensor_3 -> sensor_2 -> rsu_1 -> sensor_2 -> Success
+203	 17 	48.0 	 48.002334547483805 	 0.0023345474838052382 	  sensor_5 -> rsu_0 -> sensor_5 -> Success
+174	 18 	45.0 	 48.0033134481728 	 3.003313448172797 	  sensor_2 -> sensor_2 -> sensor_2 -> sensor_2 -> rsu_1 -> Failure
+178	 19 	45.0 	 48.00452300098095 	 3.004523000980953 	  sensor_6 -> sensor_6 -> sensor_6 -> sensor_6 -> sensor_7 -> rsu_0 -> Failure
+199	 19 	48.0 	 48.00462051377752 	 0.004620513777517488 	  sensor_1 -> rsu_1 -> sensor_1 -> Success
+205	 19 	48.0 	 48.00477089769413 	 0.004770897694129417 	  sensor_7 -> rsu_0 -> sensor_7 -> Success
+200	 19 	48.0 	 48.00585436800426 	 0.0058543680042575375 	  sensor_2 -> rsu_1 -> sensor_2 -> Success
+202	 19 	48.0 	 48.00644016385285 	 0.006440163852850844 	  sensor_4 -> rsu_1 -> sensor_4 -> Success
+187	 19 	46.0 	 48.00689775606965 	 2.006897756069648 	  sensor_7 -> sensor_7 -> sensor_7 -> sensor_6 -> sensor_7 -> rsu_0 -> sensor_7 -> Success
+190	 19 	47.0 	 48.00710954369831 	 1.0071095436983128 	  sensor_1 -> sensor_1 -> sensor_2 -> sensor_1 -> rsu_1 -> sensor_1 -> Success
+197	 19 	47.0 	 49.000171624034124 	 2.000171624034124 	  sensor_8 -> sensor_8 -> sensor_8 -> rsu_0 -> sensor_8 -> Success
+211	 19 	49.0 	 49.00053739271921 	 0.0005373927192096062 	  sensor_4 -> gnb -> sensor_4 -> Success
+215	 19 	49.0 	 49.00206258871682 	 0.00206258871681797 	  sensor_8 -> gnb -> sensor_8 -> Success
+212	 19 	49.0 	 49.00167827822911 	 0.0016782782291073772 	  sensor_5 -> rsu_0 -> sensor_5 -> Success
+213	 19 	49.0 	 49.00310827703635 	 0.0031082770363468626 	  sensor_6 -> rsu_0 -> sensor_6 -> Success

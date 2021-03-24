@@ -27,17 +27,9 @@ class Message:
             else:
                 self.type += "gnb" + " -> "
 
-        # Loại bỏ dấu "_" ở cuối
-        self.type = self.type[:-3]
-
-
-### Test
-# test = Message(indexCar=1, time=2)
-# test.locations.append([1, 0])
-# test.locations.append([2])
-# test.locations.append([2])
-# print(test.setType())
-# print(test.type)
-#
-# test2 = Message(indexCar=3, time=4)
-# print(test2.indexCar)
+        # Loại bỏ dấu "-> " ở cuối
+        # self.type = self.type[:-3]
+        if self.isDropt == True:
+            self.type += "Failure"
+        else:
+            self.type += "Success"

@@ -15,6 +15,11 @@ class Config:
     yList = [1, 1, 1, 1, 1, 1]
     zList = [10, 10, 10, 10, 10, 10]
 
+    # rsuNumbers = 2
+    # xList = [125, 1125]
+    # yList = [1, 1]
+    # zList = [10, 10]
+
     rsuCoverRadius = 151
 
     rsuRsuMeanTranfer = 0.00001
@@ -28,8 +33,8 @@ class Config:
     # Dung lượng tối đa của sensor trên car
     carMaxCapacity = 20
 
-    # Tỷ lệ số gói tin truyền lên Gnb
-    carGnbTranssmissionRate = 1 / 5
+    # # Tỷ lệ số gói tin truyền lên Gnb
+    # carGnbTranssmissionRate = 1 / 5
 
     carCarMeanTranfer = 0.00001
     carRsuMeanTranfer = 0.0009765625
@@ -44,13 +49,13 @@ class Config:
     packetSize = 1
 
     # simulator Time
-    simTime = 20
+    simTime = 50
 
     # Khe thời gian
     cycleTime = 1.0
 
     # deltaTime: thời gian ngưỡng
-    deltaTime = 10
+    deltaTime = 3
 
     # Độ dài của đường (hiện tại đang mô phỏng là đường thẳng)
     roadLength = 1500
