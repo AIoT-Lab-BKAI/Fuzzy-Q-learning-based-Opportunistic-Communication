@@ -1,3 +1,4 @@
+import math
 import random
 from config import Config
 
@@ -9,6 +10,9 @@ def getNearCar(car, currentTime, network):
         if car_.id == car.id:
             continue
         if car_.startTime > currentTime:
+            continue
+        # TODO: update current Num message compare with car Max Capacity
+        if car_.currentNumMessage >= car_.carMaxCapacity:
             continue
         distance = car.distanceToCar(car_, currentTime)
         if distance > Config.carCoverRadius:
@@ -42,6 +46,21 @@ def getNearRsu(car, currentTime, network):
         return None
 
 
+def getPosition(car, currentTime):
+    return Config.carSpeed * (currentTime - car.startTime)
+
+
+def distanceToCar(car1, car2, currentTime):
+    return abs(car1.getPosition(currentTime) - car2.getPosition(currentTime))
+
+
+def distanceToRsu(car, rsu, currentTime):
+    position = car.getPosition(currentTime)
+    return math.sqrt(
+        pow(position - rsu.xcord, 2) + pow(rsu.ycord, 2) + pow(rsu.zcord, 2)
+    )
+
+
 def getAction(car, message, currentTime, network, optimizer=None):
     """Get action of this car for the message
 
@@ -58,22 +77,24 @@ def getAction(car, message, currentTime, network, optimizer=None):
     """
     pCarToCar = 0.3
     pCarToRsu = 0.3
-    pCarToGnb = 0.05
+    pCarToGnb = 0.1
     rand = random.random()
     if rand < pCarToCar:
         nearCar = car.getNearCar(currentTime, network)
         if nearCar:
             return (0, nearCar)
         else:
+            if car.currentNumMessage == car.carMaxCapacity:
+                return (2, network.gnb)
             return (3, None)
-            # return (2, network.gnb)
     elif rand < pCarToCar + pCarToRsu:
         nearRsu = car.getNearRsu(currentTime, network)
         if nearRsu:
             return (1, nearRsu)
         else:
+            if car.currentNumMessage == car.carMaxCapacity:
+                return (2, network.gnb)
             return (3, None)
-            # return (2, network.gnb)
     elif rand < pCarToCar + pCarToRsu + pCarToGnb:
         return (2, network.gnb)
     else:

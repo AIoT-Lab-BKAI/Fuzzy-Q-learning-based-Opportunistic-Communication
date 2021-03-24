@@ -1,8 +1,6 @@
-import math
 from object import Object
-from message import Message
 from config import Config
-from rsuSimulator_method import getNearCar, getNearRsu
+from rsuSimulator_method import distanceToCar
 
 
 class RsuSimulator(Object):
@@ -46,32 +44,20 @@ class RsuSimulator(Object):
         else:
             network.addToHeap(message)
 
-    def distanceToCar(self, car, currentTime):
-        positionCar = car.getPosition(currentTime)
-        return math.sqrt(
-            pow(positionCar - self.xcord, 2) + pow(self.ycord, 2) + pow(self.zcord, 2)
-        )
-
-    def distanceToRsu(self, rsu):
-        return math.sqrt(
-            pow(self.xcord - rsu.xcord, 2) + \
-            pow(self.ycord - rsu.ycord, 2) + \
-            pow(self.zcord - rsu.zcord, 2))
-
-    def getNearCar(self, currentTime, network, func=getNearCar):
-        func(self, currentTime, network)
-
-    def getNearRsu(self, func=getNearRsu):
-        func(self)
+    def distanceToCar(self, car, currentTime, func=distanceToCar):
+        return func(self, car, currentTime)
 
     def working(self, message, currentTime, network):
+
+        # Always message.isDone
         self.simulateSuccessTransmission(
             message=message,
         )
 
-        # TODO:
+        # TODO: Check deltaTime and rsuCoverRadius
         finalCar = network.carList[message.indexCar[-1]]
-        if message.currentTime - message.sendTime[0] >= Config.deltaTime:
+        if message.currentTime - message.sendTime[0] >= Config.deltaTime or \
+                self.distanceToCar(finalCar, currentTime) > Config.rsuCoverRadius:
             message.isDropt = True
             network.output.append(message)
         else:

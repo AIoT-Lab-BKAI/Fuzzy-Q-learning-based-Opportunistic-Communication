@@ -2,23 +2,24 @@ import math
 from object import Object
 from message import Message
 from config import Config
-from carSimulator_method import getAction, getNearCar, getNearRsu
+from carSimulator_method import *
 
 
 class CarSimulator(Object):
 
-    def __init__(self, id, startTime):
+    def __init__(self, id, startTime, carMaxCapacity=Config.carMaxCapacity):
         Object.__init__(self)
         self.id = id
         self.startTime = startTime
-
-        self.carMaxCapacity = Config.carMaxCapacity
+        self.carMaxCapacity = carMaxCapacity
         self.numMessage = 0  # Total num Message
         self.transferredNumMessage = 0
         self.currentNumMessage = 0
         self.receivedNumMessage = 0
 
-        self.preReceiveFromGnb = 0.0
+        self.cntSendToCar = 0
+        self.cntSendToRsu = 0
+        self.cntSendToGnb = 0
 
     def collectMessages(self, currentTime, listTimeMessages):
         """Collect the messages in waitList which have the current time
@@ -40,7 +41,8 @@ class CarSimulator(Object):
         res = Object.collectMessages(self, currentTime)
 
         # Generate message
-        if self.numMessage >= len(listTimeMessages):
+        # TODO: Không cho phép sinh quá carMaxCapacity
+        if self.numMessage >= len(listTimeMessages) or self.currentNumMessage >= self.carMaxCapacity:
             return res
         curTime = listTimeMessages[self.numMessage]
 
@@ -52,7 +54,8 @@ class CarSimulator(Object):
             res.append(mes)
             self.numMessage += 1
             self.currentNumMessage += 1
-            if self.numMessage >= len(listTimeMessages):
+            # TODO: Không cho phép sinh quá carMaxCapacity
+            if self.numMessage >= len(listTimeMessages) or self.currentNumMessage >= self.carMaxCapacity:
                 return res
             curTime = listTimeMessages[self.numMessage]
 
@@ -69,6 +72,7 @@ class CarSimulator(Object):
         """
         # Update received num message
         car.receivedNumMessage += 1
+        car.currentNumMessage += 1
 
         # Add index car to list indexCar of message
         message.indexCar.append(car.id)
@@ -151,27 +155,24 @@ class CarSimulator(Object):
         else:
             network.addToHeap(message)
 
-    def noChange(self, message, currentTime,network):
+    def noChange(self, message, currentTime, network, delayPacketTime=Config.delayPacketTime):
         message.locations.append([0, self.id])
-        message.currentTime += 1
+
+        message.currentTime += delayPacketTime
+
         if message.currentTime > currentTime + Config.cycleTime:
             self.waitList.append(message)
         else:
             network.addToHeap(message)
 
-    def getPosition(self, currentTime):
-        """Get the current position of the car
-        """
-        return Config.carSpeed * (currentTime - self.startTime)
+    def getPosition(self, currentTime, func=getPosition):
+        return func(self, currentTime)
 
-    def distanceToCar(self, car, currentTime):
-        return abs(self.getPosition(currentTime) - car.getPosition(currentTime))
+    def distanceToCar(self, car, currentTime, func=distanceToCar):
+        return func(self, car, currentTime)
 
-    def distanceToRsu(self, rsu, currentTime):
-        position = self.getPosition(currentTime)
-        return math.sqrt(
-            pow(position - rsu.xcord, 2) + pow(rsu.ycord, 2) + pow(rsu.zcord, 2)
-        )
+    def distanceToRsu(self, rsu, currentTime, func=distanceToRsu):
+        return func(self, rsu, currentTime)
 
     def getNearCar(self, currentTime, network, func=getNearCar):
         return func(self, currentTime, network)
@@ -197,11 +198,14 @@ class CarSimulator(Object):
 
             if action == 0:
                 # numOfPacket: send and receive (2)
+                self.cntSendToCar += 1
                 self.sendToCar(nextLocation, message, currentTime, network, numOfPacket=2)
             elif action == 1:
                 # numOfPacket: only send (receive simulate in RSU)
+                self.cntSendToRsu += 1
                 self.sendToRsu(nextLocation, message, currentTime, network, numOfPacket=1)
             elif action == 2:
+                self.cntSendToGnb += 1
                 self.sendToGnb(nextLocation, message, currentTime, network, numOfPacket=1)
             else:
                 self.noChange(message, currentTime, network)

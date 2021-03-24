@@ -27,9 +27,7 @@ class Message:
             else:
                 self.type += "gnb" + " -> "
 
-        # Loại bỏ dấu "-> " ở cuối
-        # self.type = self.type[:-3]
-        if self.isDropt == True:
+        if self.isDropt:
             self.type += "Failure"
         else:
             self.type += "Success"

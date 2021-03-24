@@ -8,6 +8,7 @@ from config import Config
 def main():
     gnb = GnbSimulator()
 
+    print("-" * 50)
     rsuList = getRsuList()
     print("RSU length: ", len(rsuList))
 
@@ -16,6 +17,7 @@ def main():
 
     listTimeMessages = prepareTimeMessages()
     print("Message length: ", len(listTimeMessages))
+    print("-" * 50)
 
     network = Network(
         gnb=gnb,

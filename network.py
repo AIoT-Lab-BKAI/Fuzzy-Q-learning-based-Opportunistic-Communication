@@ -13,9 +13,9 @@ class Network:
         self.q = PriorityQueue()
         self.output = []
         self.meanDelay = 0.0
+
+        self.countDone = 0
         self.countDropt = 0
-        self.totalOutsize = 0
-        self.maxDelay = 0
 
     def collectMessages(self, currentTime):
         res = []
@@ -23,15 +23,15 @@ class Network:
             res.append(car.collectMessages(
                 currentTime, self.listTimeMessages))
 
-        for car in self.carList:
-            print(car.id, car.numMessage, car.currentNumMessage, car.transferredNumMessage, car.receivedNumMessage)
+        # for car in self.carList:
+        #     print(car.id, car.numMessage, car.currentNumMessage, car.transferredNumMessage, car.receivedNumMessage)
 
         for rsu in self.rsuList:
             res.append(rsu.collectMessages(currentTime))
         res.append(self.gnb.collectMessages(currentTime))
 
         res = [i for sublist in res for i in sublist]
-        
+
         for mes in res:
             self.addToHeap(mes)
 

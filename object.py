@@ -6,15 +6,10 @@ class Object:
 
     def __init__(self):
         self.waitList = []
-
-        #####
         self.preReceiveFromCar = 0.0
         self.preReceiveFromRsu = 0.0
+        self.preReceiveFromGnb = 0.0
         self.meanDelay = 0.0
-        self.meanDelayProcess = 0.0
-        self.cntProcess = 0
-        self.cnt = 0
-        ####
 
     def collectMessages(self, currentTime):
         """Collect the messages in waitList which have the current time
