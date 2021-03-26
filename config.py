@@ -10,10 +10,14 @@ class Config:
     gnbCarMeanTranfer = 0.0009765625
 
     # rsu config
-    rsuNumbers = 6
-    xList = [125, 375, 625, 875, 1125, 1375]
-    yList = [1, 1, 1, 1, 1, 1]
-    zList = [10, 10, 10, 10, 10, 10]
+    # rsuNumbers = 6
+    # xList = [125, 375, 625, 875, 1125, 1375]
+    # yList = [1, 1, 1, 1, 1, 1]
+    # zList = [10, 10, 10, 10, 10, 10]
+    rsuNumbers = 3
+    xList = [125, 875, 1375]
+    yList = [1, 1, 1]
+    zList = [10, 10, 10]
 
     # rsuNumbers = 2
     # xList = [125, 1125]
