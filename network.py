@@ -40,7 +40,32 @@ class Network:
             priority=(message.currentTime, message.stt),
             item=message))
 
+    def setNeighborCar(self, car, currentTime):
+        # Set neighbor Car
+        car.neighborCars = []
+        for car_ in self.carList:
+            if car_.id == car.id:
+                continue
+            distence = car.distanceToCar(car_, currentTime)
+            if distence < Config.carCoverRadius:
+                car.neighborCars.append(car_)
+
+        # Set neighbor RSU
+        # TODO: có thể chuyển về lấy RANDOM RSU - NOT
+        minDistance = Config.rsuCoverRadius
+        neighborRsu = None
+        for rsu in self.rsuList:
+            distance = car.distanceToRsu
+            if distance < minDistance:
+                minDistance = distance
+                neighborRsu = rsu
+        car.neighborRsu = neighborRsu
+
     def working(self, currentTime):
+        #  Set neighbor list of this car
+        for car in self.carList:
+            self.setNeighborCar(car, currentTime)
+
         self.collectMessages(currentTime)
         while not self.q.empty():
             mes = self.q.get().item

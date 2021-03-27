@@ -39,6 +39,12 @@ class Config:
     carRsuMeanTranfer = 0.0009765625
     carGnbMeanTranfer = 0.0004768371582
 
+    nActionsCar = 4
+    nStatesCar = None  # TODO
+    policyParamatersCar = {"epsilon": 0.1}
+    disCountingFactorCar = 0.9
+    learningRateCar = 0.001
+
     # other
     # Chiến lược xuất hiện xe và gói tin
     carAppearStrategy = "resources/car_deu5.inp"

@@ -7,7 +7,7 @@ from carSimulator_method import *
 
 class CarSimulator(Object):
 
-    def __init__(self, id, startTime, carMaxCapacity=Config.carMaxCapacity):
+    def __init__(self, id, startTime, carMaxCapacity=Config.carMaxCapacity, optimizer=None):
         Object.__init__(self)
         self.id = id
         self.startTime = startTime
@@ -20,6 +20,10 @@ class CarSimulator(Object):
         self.cntSendToCar = 0
         self.cntSendToRsu = 0
         self.cntSendToGnb = 0
+
+        self.optimizer = optimizer
+        self.neighborCars = []
+        self.neighborRsu = None
 
     def collectMessages(self, currentTime, listTimeMessages):
         """Collect the messages in waitList which have the current time
@@ -160,7 +164,10 @@ class CarSimulator(Object):
 
         message.currentTime += delayPacketTime
 
-        if message.currentTime > currentTime + Config.cycleTime:
+        if message.currentTime - message.sendTime[0] >= Config.deltaTime:
+            message.isDropt = True
+            network.output.append(message)
+        elif message.currentTime > currentTime + Config.cycleTime:
             self.waitList.append(message)
         else:
             network.addToHeap(message)
@@ -181,31 +188,23 @@ class CarSimulator(Object):
         return func(self, currentTime, network)
 
     def working(self, message, currentTime, network, getAction=getAction):
-        if message.isDone:
-            # TODO: Viết hàm check so với deltaTime
-            if message.currentTime - message.sendTime[0] >= Config.deltaTime:
-                message.isDropt = True
-                network.output.append(message)
-            else:
-                network.output.append(message)
-            return
-        else:
-            action, nextLocation = getAction(self, message, currentTime, network)
-            # 0: sendToCar, 1:sendToRsu, 2: sendToGnb, 3:noChange
-            if action != 3:
-                self.transferredNumMessage += 1
-                self.currentNumMessage = self.numMessage - self.transferredNumMessage + self.receivedNumMessage
+        action, nextLocation = getAction(self, message, currentTime, network)
+        # 0: sendToCar, 1:sendToRsu, 2: sendToGnb, 3:noChange
 
-            if action == 0:
-                # numOfPacket: send and receive (2)
-                self.cntSendToCar += 1
-                self.sendToCar(nextLocation, message, currentTime, network, numOfPacket=2)
-            elif action == 1:
-                # numOfPacket: only send (receive simulate in RSU)
-                self.cntSendToRsu += 1
-                self.sendToRsu(nextLocation, message, currentTime, network, numOfPacket=1)
-            elif action == 2:
-                self.cntSendToGnb += 1
-                self.sendToGnb(nextLocation, message, currentTime, network, numOfPacket=1)
-            else:
-                self.noChange(message, currentTime, network)
+        if action != 3:
+            self.transferredNumMessage += 1
+            self.currentNumMessage = self.numMessage - self.transferredNumMessage + self.receivedNumMessage
+
+        if action == 0:
+            # numOfPacket: send and receive (2)
+            self.cntSendToCar += 1
+            self.sendToCar(nextLocation, message, currentTime, network, numOfPacket=2)
+        elif action == 1:
+            # numOfPacket: only send (receive simulate in RSU)
+            self.cntSendToRsu += 1
+            self.sendToRsu(nextLocation, message, currentTime, network, numOfPacket=1)
+        elif action == 2:
+            self.cntSendToGnb += 1
+            self.sendToGnb(nextLocation, message, currentTime, network, numOfPacket=1)
+        else:
+            self.noChange(message, currentTime, network)
