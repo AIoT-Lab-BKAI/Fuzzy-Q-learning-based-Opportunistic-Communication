@@ -189,12 +189,21 @@ class CarSimulator(Object):
 
     def working(self, message, currentTime, network, getAction=getAction):
         if message.isDone:
+            # Kiểm tra các gói tin được trả về từ RSU và Gnb (đã hoàn thành)
             # TODO: Viết hàm check so với deltaTime
             if message.currentTime - message.sendTime[0] >= Config.deltaTime:
                 message.isDropt = True
                 network.output.append(message)
+
+                self.optimizer.calculateReward(message)
+                self.optimizer.newState = self.optimizer.getState(message)
+                self.optimizer.updateQTable()
             else:
                 network.output.append(message)
+                self.optimizer.calculateReward(message)
+                self.optimizer.newState = self.optimizer.getState(message)
+                self.optimizer.updateQTable()
+
             return
         else:
             action, nextLocation = getAction(self, message, currentTime, network)
@@ -207,6 +216,12 @@ class CarSimulator(Object):
                 # numOfPacket: send and receive (2)
                 self.cntSendToCar += 1
                 self.sendToCar(nextLocation, message, currentTime, network, numOfPacket=2)
+
+                self.optimizer.calculateReward(message, nextLocation)
+                self.optimizer.newState = self.optimizer.getState(message)
+                self.optimizer.updateQTable()
+
+
             elif action == 1:
                 # numOfPacket: only send (receive simulate in RSU)
                 self.cntSendToRsu += 1
@@ -216,3 +231,8 @@ class CarSimulator(Object):
                 self.sendToGnb(nextLocation, message, currentTime, network, numOfPacket=1)
             else:
                 self.noChange(message, currentTime, network)
+
+                self.optimizer.calculateReward(message)
+                self.optimizer.newState = self.optimizer.getState(message)
+                self.optimizer.updateQTable()
+            return

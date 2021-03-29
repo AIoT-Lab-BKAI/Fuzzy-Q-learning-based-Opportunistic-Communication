@@ -3,6 +3,7 @@ from carSimulator import CarSimulator
 from rsuSimulator import RsuSimulator
 from gnbSimulator import GnbSimulator
 from config import Config
+from optimizers.q_learning import CarQLearning
 
 
 def main():
@@ -58,7 +59,9 @@ def carAppear():
         timeStartCar = currentTime + tmp
         if timeStartCar > Config.simTime:
             return res
-        car = CarSimulator(index, timeStartCar)
+        car = CarSimulator(id=index, startTime=timeStartCar)
+        optimizer = CarQLearning(car=car)
+        car.optimizer = optimizer
         res.append(car)
         index += 1
         currentTime = timeStartCar

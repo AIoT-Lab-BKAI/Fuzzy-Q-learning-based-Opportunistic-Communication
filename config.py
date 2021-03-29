@@ -32,7 +32,7 @@ class Config:
     # car and sensor config
     carSpeed = 12
     # Dung lượng tối đa của sensor trên car
-    carMaxCapacity = 1000
+    carMaxCapacity = 100
 
     carCoverRadius = 70
     carCarMeanTranfer = 0.00001
@@ -40,7 +40,7 @@ class Config:
     carGnbMeanTranfer = 0.0004768371582
 
     nActionsCar = 4
-    nStatesCar = None  # TODO
+    nStatesCar = 10000  # TODO
     policyParamatersCar = {"epsilon": 0.1}
     disCountingFactorCar = 0.9
     learningRateCar = 0.001

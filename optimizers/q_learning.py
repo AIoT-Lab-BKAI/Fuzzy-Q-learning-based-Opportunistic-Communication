@@ -15,9 +15,12 @@ class CarQLearning(Optimizer):
         self.numState = -1
 
         self.currentState = None
-        self.currentIntState = None
+        self.newState = None
+
         self.policyAction = None
         self.doAction = None
+
+        self.reward = None
 
         self.policy = policy_func(nActions=self.nActions, parameters=policy_parameters).getPolicy()
 
@@ -36,8 +39,8 @@ class CarQLearning(Optimizer):
         """
         return func(self, state)
 
-    def calculateReward(self, message, func=calculateReward):
-        func(self, message)
+    def calculateReward(self, message, carReceived=None, func=calculateReward):
+        func(self, message, carReceived)
 
-    # def updateQTable(self, message, func=updateQTable):
-    #     func(self, message)
+    def updateQTable(self, func=updateQTable):
+        func(self)
