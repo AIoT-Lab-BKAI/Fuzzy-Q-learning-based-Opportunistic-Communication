@@ -188,23 +188,31 @@ class CarSimulator(Object):
         return func(self, currentTime, network)
 
     def working(self, message, currentTime, network, getAction=getAction):
-        action, nextLocation = getAction(self, message, currentTime, network)
-        # 0: sendToCar, 1:sendToRsu, 2: sendToGnb, 3:noChange
-
-        if action != 3:
-            self.transferredNumMessage += 1
-            self.currentNumMessage = self.numMessage - self.transferredNumMessage + self.receivedNumMessage
-
-        if action == 0:
-            # numOfPacket: send and receive (2)
-            self.cntSendToCar += 1
-            self.sendToCar(nextLocation, message, currentTime, network, numOfPacket=2)
-        elif action == 1:
-            # numOfPacket: only send (receive simulate in RSU)
-            self.cntSendToRsu += 1
-            self.sendToRsu(nextLocation, message, currentTime, network, numOfPacket=1)
-        elif action == 2:
-            self.cntSendToGnb += 1
-            self.sendToGnb(nextLocation, message, currentTime, network, numOfPacket=1)
+        if message.isDone:
+            # TODO: Viết hàm check so với deltaTime
+            if message.currentTime - message.sendTime[0] >= Config.deltaTime:
+                message.isDropt = True
+                network.output.append(message)
+            else:
+                network.output.append(message)
+            return
         else:
-            self.noChange(message, currentTime, network)
+            action, nextLocation = getAction(self, message, currentTime, network)
+            # 0: sendToCar, 1:sendToRsu, 2: sendToGnb, 3:noChange
+            if action != 3:
+                self.transferredNumMessage += 1
+                self.currentNumMessage = self.numMessage - self.transferredNumMessage + self.receivedNumMessage
+
+            if action == 0:
+                # numOfPacket: send and receive (2)
+                self.cntSendToCar += 1
+                self.sendToCar(nextLocation, message, currentTime, network, numOfPacket=2)
+            elif action == 1:
+                # numOfPacket: only send (receive simulate in RSU)
+                self.cntSendToRsu += 1
+                self.sendToRsu(nextLocation, message, currentTime, network, numOfPacket=1)
+            elif action == 2:
+                self.cntSendToGnb += 1
+                self.sendToGnb(nextLocation, message, currentTime, network, numOfPacket=1)
+            else:
+                self.noChange(message, currentTime, network)

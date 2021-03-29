@@ -55,7 +55,7 @@ class Network:
         minDistance = Config.rsuCoverRadius
         neighborRsu = None
         for rsu in self.rsuList:
-            distance = car.distanceToRsu
+            distance = car.distanceToRsu(rsu, currentTime)
             if distance < minDistance:
                 minDistance = distance
                 neighborRsu = rsu

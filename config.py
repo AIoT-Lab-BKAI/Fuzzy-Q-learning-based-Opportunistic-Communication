@@ -32,7 +32,7 @@ class Config:
     # car and sensor config
     carSpeed = 12
     # Dung lượng tối đa của sensor trên car
-    carMaxCapacity = 6
+    carMaxCapacity = 1000
 
     carCoverRadius = 70
     carCarMeanTranfer = 0.00001
