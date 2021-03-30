@@ -1,3 +1,0 @@
-
-Current time: 5.0
-0	 0 	5.5 	 5.50100551088221 	 0.0010055108822095704 	  sensor_0 -> sensor_1 -> sensor_2 -> sensor_1 -> gnb -> sensor_1 -> Success
