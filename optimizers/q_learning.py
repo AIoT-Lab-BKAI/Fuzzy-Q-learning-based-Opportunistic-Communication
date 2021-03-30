@@ -10,22 +10,14 @@ class CarQLearning(Optimizer):
         self.nStates = Config.nStatesCar
         self.nActions = Config.nActionsCar
         self.QTable = np.zeros((self.nStates, self.nActions))
-
         self.dictState = dict()
         self.numState = -1
-
         self.currentState = None
         self.newState = None
-
         self.policyAction = None
         self.doAction = None
-
         self.reward = None
-
         self.policy = policy_func(nActions=self.nActions, parameters=policy_parameters).getPolicy()
-
-    # def initializationQTable(self):
-    #     self.QTable = np.zeros((self.nStates, self.nActions))
 
     def getState(self, message, func=getState):
         return func(self.car, message)
@@ -44,3 +36,8 @@ class CarQLearning(Optimizer):
 
     def updateQTable(self, func=updateQTable):
         func(self)
+
+    def update(self, message, carReceived=None):
+        self.calculateReward(message=message, carReceived=carReceived)
+        self.newState = self.getState(message)
+        self.updateQTable()

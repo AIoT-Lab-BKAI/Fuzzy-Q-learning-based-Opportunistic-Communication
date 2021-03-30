@@ -77,3 +77,8 @@
 2021-03-30 02:03:23.805222 	 resources/packet_deu05.inp 	 resources/car_deu5.inp 	         3 	 21753 	 1043 	 20710 	         24697 	 13597 	 7383
 2021-03-30 14:22:14.089576 	 resources/packet_deu05.inp 	 resources/car_deu5.inp 	         3 	 21747 	 1023 	 20724 	         24772 	 13513 	 7452
 2021-03-30 14:23:49.349104 	 resources/packet_deu05.inp 	 resources/car_deu5.inp 	         3 	 21751 	 1025 	 20726 	         24078 	 13469 	 7519
+2021-03-30 14:54:21.869006 	 resources/packet_deu05.inp 	 resources/car_deu5.inp 	         3 	 21760 	 999 	 20761 	         24546 	 13559 	 7471
+2021-03-30 14:54:39.664476 	 resources/packet_deu05.inp 	 resources/car_deu5.inp 	         3 	 21763 	 1100 	 20663 	         25023 	 13562 	 7384
+2021-03-30 14:54:56.346632 	 resources/packet_deu05.inp 	 resources/car_deu5.inp 	         3 	 21755 	 1055 	 20700 	         26058 	 13796 	 7146
+2021-03-30 14:55:14.356025 	 resources/packet_deu05.inp 	 resources/car_deu5.inp 	         3 	 21766 	 1004 	 20762 	         24404 	 13687 	 7330
+2021-03-30 14:55:38.209144 	 resources/packet_deu05.inp 	 resources/car_deu5.inp 	         3 	 21774 	 1049 	 20725 	         24610 	 13519 	 7459

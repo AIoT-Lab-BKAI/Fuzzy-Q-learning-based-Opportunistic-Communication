@@ -94,20 +94,8 @@ def calculateReward(carQLearning, message, carReceived):
     # noChange
     else:
         reward = 0
-
     carQLearning.reward = reward
 
-
-# def updateQTable(qTable, state, newState, action, reward, learning_rate=Config.learningRateCar,
-#                  gamma=Config.disCountingFactorCar):
-#     """
-#     Update Q(s,a):= Q(s,a) + lr [R(s,a) + gamma * max Q(s',a') - Q(s,a)]
-#     :param carQLearning:
-#     :return:
-#     """
-#     qTable[state][action] = qTable[state][action] + learning_rate * (
-#             reward + gamma * np.max(qTable[newState] - qTable[state][action]))
-#     return qTable
 
 def updateQTable(carQLearning, learning_rate=Config.learningRateCar, gamma=Config.disCountingFactorCar):
     """
@@ -123,3 +111,5 @@ def updateQTable(carQLearning, learning_rate=Config.learningRateCar, gamma=Confi
                                                               carQLearning.reward + gamma * np.max(
                                                           carQLearning.QTable[newStateInt]) -
                                                               carQLearning.QTable[currentStateInt][actionInt])
+
+
