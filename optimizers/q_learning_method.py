@@ -12,7 +12,7 @@ def getBehaviorPolicy(nActions, parameters):
     return policy
 
 
-def getNeighborCar(car):
+def getNeighborCar(car, message):
     """
     Lựa chọn xe có dung lượng hiện tại nhỏ nhất.
     :param car:
@@ -26,6 +26,9 @@ def getNeighborCar(car):
     for car_ in car.neighborCars:
         # TODO: update if currentNumMessage is Max -> continue
         # TODO: update current ID car is not Message send car
+        # print(message.indexRsu)
+        if car_.id in message.indexCar:
+            continue
         tmp.append((car_.currentNumMessage, car_))
     tmp.sort(key=sortFunc)
     if not tmp:
@@ -42,17 +45,28 @@ def getState(car, message):
     res = [message.packetSize]
     # Time of message
     messageDelayTime = message.currentTime - message.sendTime[0]
-    res.append(int(messageDelayTime))
+
+    if messageDelayTime >= Config.deltaTime:
+        res.append(Config.deltaTime + 1)
+    else:
+        res.append(int(messageDelayTime))
 
     # Infor of this car
-    res.append(car.currentNumMessage)
+    res.append(int(car.currentNumMessage / 2))
 
     # Infor of it's neighbor car
-    neighborCarInfo = getNeighborCar(car)
-    res.append(neighborCarInfo[0])
+    neighborCarInfo = getNeighborCar(car, message)
+
+    if (car.currentNumMessage > neighborCarInfo[0]):
+        res.append(1)
+    else:
+        res.append(0)
+    # res.append(int(neighborCarInfo[0] / 2))
 
     # Infor of it's neghbor Rsu
     neighborRsuInfo = getNeighborRsu(car)
+
+    # print(res)
     # only one rsu
     return (tuple(res), neighborCarInfo[-1], neighborRsuInfo)
 
@@ -73,27 +87,27 @@ def calculateReward(carQLearning, message, carReceived):
 
     if (message.currentTime - message.sendTime[
         0] >= Config.deltaTime) or carQLearning.doAction != carQLearning.policyAction:
-        reward = - Config.packetSize
+        reward = - carQLearning.car.carMaxCapacity
+        # print("Fail reward", reward)
 
     # sendToCar
     elif carQLearning.policyAction == 0 and carReceived is not None:
-        reward = (carQLearning.car.currentNumMessage - carReceived.currentNumMessage) / (
+        reward = int((carQLearning.car.currentNumMessage - carReceived.currentNumMessage) / 1) / (
                 1 + message.currentTime - message.sendTime[0])
+        # print("Car reward", reward)
 
     # sendToRsu
     elif carQLearning.policyAction == 1:
-        # (C* - m x C_r + alpha) / (1 + t)
-        reward = (int(4 / 4 * carQLearning.car.carMaxCapacity) - carQLearning.car.currentNumMessage) / (
+        # (C* - C_r) / (1 + t)
+        reward = (carQLearning.car.carMaxCapacity - carQLearning.car.currentNumMessage) / (
                 1 + message.currentTime - message.sendTime[0])
-
     # sendToGnb
     elif carQLearning.policyAction == 2:
         reward = - (int(9 / 10 * carQLearning.car.carMaxCapacity) - carQLearning.car.currentNumMessage) / (
                 1 + message.currentTime - message.sendTime[0])
-
     # noChange
     else:
-        reward = 0
+        reward = - 1 / (1 + message.currentTime - message.sendTime[0])
     carQLearning.reward = reward
 
 
@@ -111,5 +125,3 @@ def updateQTable(carQLearning, learning_rate=Config.learningRateCar, gamma=Confi
                                                               carQLearning.reward + gamma * np.max(
                                                           carQLearning.QTable[newStateInt]) -
                                                               carQLearning.QTable[currentStateInt][actionInt])
-
-

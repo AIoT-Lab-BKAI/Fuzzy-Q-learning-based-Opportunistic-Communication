@@ -45,5 +45,6 @@ class GnbSimulator(Object):
                 message.currentTime - message.sendTime[0] >= Config.deltaTime:
             message.isDropt = True
             network.output.append(message)
+            finalCar.optimizer.update(message)
         else:
             self.sendToCar(finalCar, message, currentTime, network, numOfPacket=1)

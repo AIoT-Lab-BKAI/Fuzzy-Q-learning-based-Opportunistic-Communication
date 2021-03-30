@@ -10,14 +10,14 @@ class Config:
     gnbCarMeanTranfer = 0.0009765625
 
     # rsu config
-    # rsuNumbers = 6
-    # xList = [125, 375, 625, 875, 1125, 1375]
-    # yList = [1, 1, 1, 1, 1, 1]
-    # zList = [10, 10, 10, 10, 10, 10]
-    rsuNumbers = 3
-    xList = [125, 875, 1375]
-    yList = [1, 1, 1]
-    zList = [10, 10, 10]
+    rsuNumbers = 6
+    xList = [125, 375, 625, 875, 1125, 1375]
+    yList = [1, 1, 1, 1, 1, 1]
+    zList = [10, 10, 10, 10, 10, 10]
+    # rsuNumbers = 3
+    # xList = [125, 875, 1375]
+    # yList = [1, 1, 1]
+    # zList = [10, 10, 10]
 
     # rsuNumbers = 2
     # xList = [125, 1125]
@@ -32,7 +32,7 @@ class Config:
     # car and sensor config
     carSpeed = 12
     # Dung lượng tối đa của sensor trên car
-    carMaxCapacity = 100
+    carMaxCapacity = 20
 
     carCoverRadius = 70
     carCarMeanTranfer = 0.00001

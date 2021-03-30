@@ -230,9 +230,14 @@ class CarSimulator(Object):
                 # numOfPacket: only send (receive simulate in RSU)
                 self.cntSendToRsu += 1
                 self.sendToRsu(nextLocation, message, currentTime, network, numOfPacket=1)
+                self.optimizer.update(message)
             elif action == 2:
                 self.cntSendToGnb += 1
+                # print("Send GNB")
+                # print(self.cntSendToGnb)
                 self.sendToGnb(nextLocation, message, currentTime, network, numOfPacket=1)
+
+                self.optimizer.update(message)
             else:
                 self.noChange(message, currentTime, network)
 
