@@ -17,7 +17,8 @@ class CarQLearning(Optimizer):
         self.policyAction = None
         self.doAction = None
         self.reward = None
-        self.policy = policy_func(nActions=self.nActions, parameters=policy_parameters).getPolicy()
+        self.parameters = policy_parameters
+        self.policy = policy_func(nActions=self.nActions, parameters=self.parameters).getPolicy()
 
     def getState(self, message, func=getState):
         return func(self.car, message)

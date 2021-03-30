@@ -103,8 +103,9 @@ def calculateReward(carQLearning, message, carReceived):
                 1 + message.currentTime - message.sendTime[0])
     # sendToGnb
     elif carQLearning.policyAction == 2:
-        reward = - (int(9 / 10 * carQLearning.car.carMaxCapacity) - carQLearning.car.currentNumMessage) / (
+        reward = - (int(8 / 10 * carQLearning.car.carMaxCapacity) - carQLearning.car.currentNumMessage) / (
                 1 + message.currentTime - message.sendTime[0])
+
     # noChange
     else:
         reward = - 1 / (1 + message.currentTime - message.sendTime[0])
@@ -125,3 +126,8 @@ def updateQTable(carQLearning, learning_rate=Config.learningRateCar, gamma=Confi
                                                               carQLearning.reward + gamma * np.max(
                                                           carQLearning.QTable[newStateInt]) -
                                                               carQLearning.QTable[currentStateInt][actionInt])
+
+
+    # np.savetxt("foo.csv", carQLearning.QTable, delimiter=",")
+
+    # print(carQLearning.QTable)

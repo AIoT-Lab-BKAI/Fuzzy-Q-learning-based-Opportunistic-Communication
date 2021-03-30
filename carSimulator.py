@@ -194,20 +194,10 @@ class CarSimulator(Object):
             if message.currentTime - message.sendTime[0] >= Config.deltaTime:
                 message.isDropt = True
                 network.output.append(message)
-
-                # self.optimizer.calculateReward(message)
-                # self.optimizer.newState = self.optimizer.getState(message)
-                # self.optimizer.updateQTable()
                 self.optimizer.update(message)
             else:
                 network.output.append(message)
-                # self.optimizer.calculateReward(message)
-                # self.optimizer.newState = self.optimizer.getState(message)
-                # self.optimizer.updateQTable()
-
                 self.optimizer.update(message)
-
-            return
         else:
             action, nextLocation = getAction(self, message, currentTime, network)
             # 0: sendToCar, 1:sendToRsu, 2: sendToGnb, 3:noChange
@@ -219,13 +209,7 @@ class CarSimulator(Object):
                 # numOfPacket: send and receive (2)
                 self.cntSendToCar += 1
                 self.sendToCar(nextLocation, message, currentTime, network, numOfPacket=2)
-
-                # self.optimizer.calculateReward(message, nextLocation)
-                # self.optimizer.newState = self.optimizer.getState(message)
-                # self.optimizer.updateQTable()
-
                 self.optimizer.update(message, nextLocation)
-
             elif action == 1:
                 # numOfPacket: only send (receive simulate in RSU)
                 self.cntSendToRsu += 1
@@ -233,16 +217,8 @@ class CarSimulator(Object):
                 self.optimizer.update(message)
             elif action == 2:
                 self.cntSendToGnb += 1
-                # print("Send GNB")
-                # print(self.cntSendToGnb)
                 self.sendToGnb(nextLocation, message, currentTime, network, numOfPacket=1)
-
                 self.optimizer.update(message)
             else:
                 self.noChange(message, currentTime, network)
-
-                # self.optimizer.calculateReward(message)
-                # self.optimizer.newState = self.optimizer.getState(message)
-                # self.optimizer.updateQTable()
                 self.optimizer.update(message)
-            return

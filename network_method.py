@@ -22,11 +22,25 @@ def dumpOutputPerCycle(network, currentTime, showCarInfor=True):
         f.write(
             f"{mes.stt}\t {network.countDropt} \t{mes.sendTime[0]} \t {mes.currentTime} \t {delay} \t  {mes.type}\n")
 
+
+
     if showCarInfor:
         for car in network.carList:
             f.write(
                 f"{car.id} \t {car.numMessage} \t {car.currentNumMessage} \t {car.transferredNumMessage} \t "
                 f"{car.receivedNumMessage} \t {car.cntSendToCar} \t {car.cntSendToRsu} \t{car.cntSendToGnb}\n")
+
+    network.countSendGnb = 0
+    network.countSendRsu = 0
+    for car in network.carList:
+        network.countSendGnb += car.cntSendToGnb
+        network.countSendRsu += car.cntSendToRsu
+
+    print("Total: ", network.countDone + network.countDropt)
+    print("Done: ", network.countDone)
+    print("Dropt: ", network.countDropt)
+    print("Send Gnb: ", network.countSendGnb)
+    print("Send Rsu: ", network.countSendRsu)
 
     network.output = []
 

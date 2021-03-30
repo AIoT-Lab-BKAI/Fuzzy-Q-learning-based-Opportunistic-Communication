@@ -10,14 +10,14 @@ class Config:
     gnbCarMeanTranfer = 0.0009765625
 
     # rsu config
-    rsuNumbers = 6
-    xList = [125, 375, 625, 875, 1125, 1375]
-    yList = [1, 1, 1, 1, 1, 1]
-    zList = [10, 10, 10, 10, 10, 10]
-    # rsuNumbers = 3
-    # xList = [125, 875, 1375]
-    # yList = [1, 1, 1]
-    # zList = [10, 10, 10]
+    # rsuNumbers = 6
+    # xList = [125, 375, 625, 875, 1125, 1375]
+    # yList = [1, 1, 1, 1, 1, 1]
+    # zList = [10, 10, 10, 10, 10, 10]
+    rsuNumbers = 3
+    xList = [125, 875, 1375]
+    yList = [1, 1, 1]
+    zList = [10, 10, 10]
 
     # rsuNumbers = 2
     # xList = [125, 1125]
@@ -40,7 +40,7 @@ class Config:
     carGnbMeanTranfer = 0.0004768371582
 
     nActionsCar = 4
-    nStatesCar = 10000  # TODO
+    nStatesCar = 1000  # TODO
     policyParamatersCar = {"epsilon": 0.1}
     disCountingFactorCar = 0.9
     learningRateCar = 0.001
@@ -55,7 +55,7 @@ class Config:
     # kích thước của 1 gói tin
     packetSize = 1
     # simulator Time
-    simTime = 500
+    simTime = 1500
     # Khe thời gian
     cycleTime = 1.0
     # deltaTime: thời gian ngưỡng

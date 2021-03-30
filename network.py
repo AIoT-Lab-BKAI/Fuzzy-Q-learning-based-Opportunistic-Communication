@@ -16,6 +16,8 @@ class Network:
 
         self.countDone = 0
         self.countDropt = 0
+        self.countSendGnb = 0
+        self.countSendRsu = 0
 
     def collectMessages(self, currentTime):
         res = []
@@ -44,7 +46,8 @@ class Network:
         # Set neighbor Car
         car.neighborCars = []
         for car_ in self.carList:
-            if car_.id == car.id:
+            if car_.getPosition(currentTime) > Config.roadLength \
+                    or car_.startTime > currentTime or car_.id == car.id:
                 continue
             distence = car.distanceToCar(car_, currentTime)
             if distence < Config.carCoverRadius:
@@ -72,6 +75,8 @@ class Network:
             currentLocation = mes.locations[-1][0]
             if currentLocation == 0:
                 car = self.carList[mes.indexCar[-1]]
+                if car.getPosition(currentTime) > Config.roadLength / 2:
+                    car.optimizer.parameters = {"epsilon": 0.001}
                 car.working(
                     message=mes,
                     currentTime=currentTime,
