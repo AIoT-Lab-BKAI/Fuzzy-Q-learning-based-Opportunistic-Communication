@@ -61,7 +61,7 @@ class Config:
     # kích thước của 1 gói tin
     packetSize = 1
     # simulator Time
-    simTime = 500
+    simTime = 1500
     # Khe thời gian
     cycleTime = 0.5
     # deltaTime: thời gian ngưỡng
