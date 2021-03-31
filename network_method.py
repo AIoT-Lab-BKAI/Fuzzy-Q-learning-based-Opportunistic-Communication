@@ -36,11 +36,11 @@ def dumpOutputPerCycle(network, currentTime, showCarInfor=True):
         network.countSendGnb += car.cntSendToGnb
         network.countSendRsu += car.cntSendToRsu
 
-    print("Total: ", network.countDone + network.countDropt)
-    print("Done: ", network.countDone)
-    print("Dropt: ", network.countDropt)
-    print("Send Gnb: ", network.countSendGnb)
-    print("Send Rsu: ", network.countSendRsu)
+    # print("Total: ", network.countDone + network.countDropt)
+    # print("Done: ", network.countDone)
+    # print("Dropt: ", network.countDropt)
+    # print("Send Gnb: ", network.countSendGnb)
+    # print("Send Rsu: ", network.countSendRsu)
 
     network.output = []
 

@@ -14,15 +14,21 @@ class Config:
     # xList = [125, 375, 625, 875, 1125, 1375]
     # yList = [1, 1, 1, 1, 1, 1]
     # zList = [10, 10, 10, 10, 10, 10]
-    rsuNumbers = 3
-    xList = [125, 875, 1375]
-    yList = [1, 1, 1]
-    zList = [10, 10, 10]
+
+    # rsuNumbers = 3
+    # xList = [125, 875, 1375]
+    # yList = [1, 1, 1]
+    # zList = [10, 10, 10]
 
     # rsuNumbers = 2
     # xList = [125, 1125]
     # yList = [1, 1]
     # zList = [10, 10]
+
+    rsuNumbers = 1
+    xList = [625]
+    yList = [1]
+    zList = [10]
 
     rsuCoverRadius = 151
     rsuRsuMeanTranfer = 0.00001
@@ -49,19 +55,19 @@ class Config:
     # Chiến lược xuất hiện xe và gói tin
     carAppearStrategy = "resources/car_deu5.inp"
     # carAppearStrategy = "resources/car_deu20.inp"
-    carPacketStrategy = "resources/packet_deu05.inp"
+    carPacketStrategy = "resources/packet_deu02.inp"
     # carPacketStrategy = "resources/poisson_70.inp"
 
     # kích thước của 1 gói tin
     packetSize = 1
     # simulator Time
-    simTime = 1500
+    simTime = 500
     # Khe thời gian
-    cycleTime = 1.0
+    cycleTime = 0.5
     # deltaTime: thời gian ngưỡng
     deltaTime = 3
     # Thời gian trễ gói tin (nếu không truyền)
-    delayPacketTime = 1
+    delayPacketTime = 0.5
     # Độ dài của đường (hiện tại đang mô phỏng là đường thẳng)
     roadLength = 1500
 
