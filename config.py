@@ -26,7 +26,7 @@ class Config:
     # zList = [10, 10]
 
     rsuNumbers = 1
-    xList = [625]
+    xList = [750]
     yList = [1]
     zList = [10]
 

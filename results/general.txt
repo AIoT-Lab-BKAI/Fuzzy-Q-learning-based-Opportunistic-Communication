@@ -199,3 +199,6 @@
 2021-03-31 14:20:02.367791 	 resources/packet_deu02.inp 	 resources/car_deu5.inp 	         2 	 54237 	 665 	 53572 	         114710 	 42588 	 11072
 2021-03-31 14:21:12.943644 	 resources/packet_deu02.inp 	 resources/car_deu5.inp 	         1 	 54269 	 1159 	 53110 	         98303 	 24400 	 28711
 2021-03-31 14:23:27.593934 	 resources/packet_deu02.inp 	 resources/car_deu5.inp 	         1 	 22737 	 18782 	 3955 	         1867 	 3970 	 16888
+2021-03-31 15:22:49.257050 	 resources/packet_deu02.inp 	 resources/car_deu5.inp 	         1 	 75125 	 62900 	 12225 	         6258 	 13101 	 56338
+2021-03-31 15:32:09.525010 	 resources/packet_deu02.inp 	 resources/car_deu5.inp 	         1 	 75139 	 63248 	 11891 	         6133 	 12999 	 56450
+2021-03-31 15:36:33.030161 	 resources/packet_deu02.inp 	 resources/car_deu5.inp 	         1 	 179018 	 3468 	 175550 	         303845 	 72858 	 102694

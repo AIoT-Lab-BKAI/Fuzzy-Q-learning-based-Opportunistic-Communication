@@ -14,6 +14,7 @@ def dumpOutputPerCycle(network, currentTime, showCarInfor=True):
 
         if mes.isDropt:
             network.countDropt += 1
+            print(mes.stt)
         else:
             network.countDone += 1
             network.meanDelay += delay
