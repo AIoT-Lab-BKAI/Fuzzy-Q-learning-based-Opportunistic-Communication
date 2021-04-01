@@ -15,13 +15,23 @@ class Config:
     # yList = [1, 1, 1, 1, 1, 1]
     # zList = [10, 10, 10, 10, 10, 10]
 
+    # rsuNumbers = 5
+    # xList = [250, 500, 750, 1000, 1250]
+    # yList = [1, 1, 1, 1, 1]
+    # zList = [10, 10, 10, 10, 10]
+
+    # rsuNumbers = 4
+    # xList = [300, 600, 900, 1200]
+    # yList = [1, 1, 1, 1]
+    # zList = [10, 10, 10, 10]
+
     # rsuNumbers = 3
-    # xList = [125, 875, 1375]
+    # xList = [375, 750, 1125]
     # yList = [1, 1, 1]
     # zList = [10, 10, 10]
 
     # rsuNumbers = 2
-    # xList = [125, 1125]
+    # xList = [375, 1125]
     # yList = [1, 1]
     # zList = [10, 10]
 

@@ -63,7 +63,7 @@ def distanceToRsu(car, rsu, currentTime):
     )
 
 
-def getAction2(car, message, currentTime, network, optimizer=None):
+def getAction(car, message, currentTime, network, optimizer=None):
     """Get action of this car for the message
     Args:
         car ([CarSimulator]): [description]
@@ -75,9 +75,9 @@ def getAction2(car, message, currentTime, network, optimizer=None):
         action: [0:sendToCar, 1:sendToRsu, 2:sendToGnb or 3:noChange]
         nextLocation: [The location where the message will be sent to]
     """
-    pCarToCar = 0.05
-    pCarToRsu = 0.8
-    pCarToGnb = 0.05
+    pCarToCar = 0.4
+    pCarToRsu = 0.4
+    pCarToGnb = 0.1
     rand = random.random()
     if rand < pCarToCar:
         nearCar = car.getNearCar(currentTime, network)
@@ -100,7 +100,7 @@ def getAction2(car, message, currentTime, network, optimizer=None):
     else:
         return (3, None)
 
-def getAction(car, message, currentTime, network, optimizer=None):
+def getAction2(car, message, currentTime, network, optimizer=None):
     """
     Get action of this car for the message
     :param car:
