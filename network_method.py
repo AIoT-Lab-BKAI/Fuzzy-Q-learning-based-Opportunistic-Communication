@@ -1,7 +1,7 @@
 from config import Config
 
 
-def dumpOutputPerCycle(network, currentTime, showCarInfor=True):
+def dumpOutputPerCycle(network, currentTime, showCarInfor=False):
     if not network.output:
         return
 

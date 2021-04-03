@@ -63,7 +63,7 @@ def distanceToRsu(car, rsu, currentTime):
     )
 
 
-def getAction(car, message, currentTime, network, optimizer=None):
+def getAction2(car, message, currentTime, network, optimizer=None):
     """Get action of this car for the message
     Args:
         car ([CarSimulator]): [description]
@@ -100,7 +100,8 @@ def getAction(car, message, currentTime, network, optimizer=None):
     else:
         return (3, None)
 
-def getAction2(car, message, currentTime, network, optimizer=None):
+
+def getAction(car, message, currentTime, network, optimizer=None):
     """
     Get action of this car for the message
     :param car:

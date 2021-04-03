@@ -204,3 +204,13 @@
 2021-03-31 15:36:33.030161 	 resources/packet_deu02.inp 	 resources/car_deu5.inp 	         1 	 179018 	 3468 	 175550 	         303845 	 72858 	 102694
 2021-03-31 15:42:55.591136 	 resources/packet_deu02.inp 	 resources/car_deu5.inp 	         1 	 179067 	 3504 	 175563 	         304065 	 72488 	 103077
 2021-03-31 23:30:38.330400 	 resources/packet_deu02.inp 	 resources/car_deu5.inp 	         1 	 63865 	 32281 	 31584 	         72634 	 3994 	 54058
+2021-04-03 17:44:42.285556 	 resources/packet_random_02_005.inp 	 resources/car_random_5_05.inp 	         3 	 178747 	 958 	 177789 	         141940 	 151686 	 26110
+2021-04-03 17:48:12.182389 	 resources/packet_random_02_005.inp 	 resources/car_random_5_05.inp 	         3 	 61585 	 588 	 60997 	         51726 	 47293 	 13704
+2021-04-03 17:59:15.957858 	 resources/packet_random_02_005.inp 	 resources/car_random_5_05.inp 	         3 	 54076 	 273 	 53803 	         43986 	 46494 	 7312
+2021-04-03 18:00:08.628095 	 resources/packet_random_02_005.inp 	 resources/car_random_5_05.inp 	         3 	 54066 	 245 	 53821 	         44387 	 46558 	 7267
+2021-04-03 18:00:46.036526 	 resources/packet_random_02_005.inp 	 resources/car_random_5_05.inp 	         3 	 54086 	 246 	 53840 	         43692 	 46582 	 7263
+2021-04-03 18:01:12.611732 	 resources/packet_random_02_005.inp 	 resources/car_random_5_05.inp 	         3 	 54072 	 278 	 53794 	         43918 	 46556 	 7240
+2021-04-03 18:01:53.097902 	 resources/packet_random_02_005.inp 	 resources/car_random_5_05.inp 	         3 	 54082 	 245 	 53837 	         45607 	 49735 	 4105
+2021-04-03 18:02:51.783658 	 resources/packet_random_02_005.inp 	 resources/car_random_5_05.inp 	         3 	 54105 	 228 	 53877 	         43278 	 48983 	 4896
+2021-04-03 18:03:32.448408 	 resources/packet_random_02_005.inp 	 resources/car_random_5_05.inp 	         3 	 54334 	 0 	 54334 	         3625 	 32249 	 22085
+2021-04-03 18:56:56.568200 	 resources/packet_random_02_005.inp 	 resources/car_random_5_05.inp 	         3 	 54092 	 263 	 53829 	         45638 	 49550 	 4286
