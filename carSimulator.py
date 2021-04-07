@@ -3,6 +3,7 @@ from object import Object
 from message import Message
 from config import Config
 from carSimulator_method import *
+from fuzzy_inference.fuzzy_inference import FuzzyInference
 
 
 class CarSimulator(Object):
@@ -24,6 +25,8 @@ class CarSimulator(Object):
         self.optimizer = optimizer
         self.neighborCars = []
         self.neighborRsu = None
+
+        self.fuzzyInference = FuzzyInference(self.carMaxCapacity, Config.deltaTime)
 
     def collectMessages(self, currentTime, listTimeMessages):
         """Collect the messages in waitList which have the current time

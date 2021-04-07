@@ -25,15 +25,15 @@ class Config:
     # yList = [1, 1, 1, 1]
     # zList = [10, 10, 10, 10]
 
-    rsuNumbers = 3
-    xList = [375, 750, 1125]
-    yList = [1, 1, 1]
-    zList = [10, 10, 10]
+    # rsuNumbers = 3
+    # xList = [375, 750, 1125]
+    # yList = [1, 1, 1]
+    # zList = [10, 10, 10]
 
-    # rsuNumbers = 2
-    # xList = [375, 1125]
-    # yList = [1, 1]
-    # zList = [10, 10]
+    rsuNumbers = 2
+    xList = [375, 1125]
+    yList = [1, 1]
+    zList = [10, 10]
 
     # rsuNumbers = 1
     # xList = [750]
@@ -57,7 +57,7 @@ class Config:
 
     nActionsCar = 4
     nStatesCar = 1000  # TODO
-    policyParamatersCar = {"epsilon": 0.001}
+    policyParamatersCar = {"epsilon": 0.0001}
     disCountingFactorCar = 0.9
     learningRateCar = 0.001
 

@@ -81,13 +81,49 @@ def mappingStateToInt(carQLearning, state):
     return carQLearning.dictState[state]
 
 
+def calculateReward2(carQLearning, message, carReceived):
+    reward = 0
+    # 0: sendToCar, 1:sendToRsu, 2: sendToGnb, 3:noChange
+
+    if (message.currentTime - message.sendTime[
+        0] >= Config.deltaTime) or carQLearning.doAction != carQLearning.policyAction:
+        reward = - 1000
+
+    # sendToCar
+    elif carQLearning.policyAction == 0 and carReceived is not None:
+        reward = int((carQLearning.car.currentNumMessage - carReceived.currentNumMessage) / 1) / (
+                1 + message.currentTime - message.sendTime[0])
+
+    # sendToRsu
+    elif carQLearning.policyAction == 1:
+        # (C* - C_r) / (1 + t)
+        deltaTime = message.currentTime - message.sendTime[0]
+        theta = carQLearning.car.fuzzyInference.inference(carQLearning.car.currentNumMessage, deltaTime)
+        theta = theta['Theta']
+        reward = (carQLearning.car.carMaxCapacity - int(theta * carQLearning.car.currentNumMessage)) / (
+                1 + message.currentTime - message.sendTime[0])
+    # sendToGnb
+    elif carQLearning.policyAction == 2:
+        deltaTime = message.currentTime - message.sendTime[0]
+        theta = carQLearning.car.fuzzyInference.inference(carQLearning.car.currentNumMessage, deltaTime)
+        theta = theta['Theta']
+        reward = - (int(theta * carQLearning.car.carMaxCapacity) - carQLearning.car.currentNumMessage) / (
+                1 + message.currentTime - message.sendTime[0])
+
+    # noChange
+    else:
+        reward = - 1 / (1 + message.currentTime - message.sendTime[0])
+    carQLearning.reward = reward
+
+
 def calculateReward(carQLearning, message, carReceived):
     reward = 0
     # 0: sendToCar, 1:sendToRsu, 2: sendToGnb, 3:noChange
 
     if (message.currentTime - message.sendTime[
         0] >= Config.deltaTime) or carQLearning.doAction != carQLearning.policyAction:
-        reward = - carQLearning.car.carMaxCapacity
+        # reward = - carQLearning.car.carMaxCapacity
+        reward = - 1000
         # print("Fail reward", reward)
 
     # sendToCar
@@ -99,7 +135,7 @@ def calculateReward(carQLearning, message, carReceived):
     # sendToRsu
     elif carQLearning.policyAction == 1:
         # (C* - C_r) / (1 + t)
-        reward = (carQLearning.car.carMaxCapacity - carQLearning.car.currentNumMessage) / (
+        reward = (carQLearning.car.carMaxCapacity - int(8 / 10 * carQLearning.car.currentNumMessage)) / (
                 1 + message.currentTime - message.sendTime[0])
     # sendToGnb
     elif carQLearning.policyAction == 2:
@@ -126,7 +162,6 @@ def updateQTable(carQLearning, learning_rate=Config.learningRateCar, gamma=Confi
                                                               carQLearning.reward + gamma * np.max(
                                                           carQLearning.QTable[newStateInt]) -
                                                               carQLearning.QTable[currentStateInt][actionInt])
-
 
     # np.savetxt("foo.csv", carQLearning.QTable, delimiter=",")
 
