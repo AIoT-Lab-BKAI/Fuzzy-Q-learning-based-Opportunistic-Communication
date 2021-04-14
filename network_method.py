@@ -22,8 +22,6 @@ def dumpOutputPerCycle(network, currentTime, showCarInfor=False):
         f.write(
             f"{mes.stt}\t {network.countDropt} \t{mes.sendTime[0]} \t {mes.currentTime} \t {delay} \t  {mes.type}\n")
 
-
-
     if showCarInfor:
         for car in network.carList:
             f.write(
@@ -35,12 +33,6 @@ def dumpOutputPerCycle(network, currentTime, showCarInfor=False):
     for car in network.carList:
         network.countSendGnb += car.cntSendToGnb
         network.countSendRsu += car.cntSendToRsu
-
-    # print("Total: ", network.countDone + network.countDropt)
-    # print("Done: ", network.countDone)
-    # print("Dropt: ", network.countDropt)
-    # print("Send Gnb: ", network.countSendGnb)
-    # print("Send Rsu: ", network.countSendRsu)
 
     network.output = []
 
@@ -54,7 +46,7 @@ def dumpOutputFinal(network):
         totalCountRsu += car.cntSendToRsu
         totalCountGnb += car.cntSendToGnb
     f.write(f"{Config.current_date_and_time_string} \t {Config.carPacketStrategy} \t {Config.carAppearStrategy} \t \
-        {Config.rsuNumbers} \t {network.countDropt + network.countDone} \t {network.countDropt} \t {network.countDone} \t \
+        {Config.rsuNumbers} \t {network.countDropt + network.countDone} \t{network.countPacketFail} \t {network.countDropt} \t {network.countDone} \t \
         {totalCountCar} \t {totalCountRsu} \t {totalCountGnb}\n")
     f.close()
     print("Done dumping final output!!!")

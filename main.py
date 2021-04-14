@@ -44,8 +44,23 @@ def getRsuList():
     return res
 
 
+def carCapacity():
+    try:
+        f = open(Config.carMaxCapacity, "r")
+    except:
+        print("File carCapacity not found")
+        exit()
+    res = []
+    for x in f:
+        tmp = int(x)
+        res.append(tmp)
+    return res
+
+
 # Generate Sensor on Car
 def carAppear():
+    carMaxCapacity = carCapacity()
+
     try:
         f = open(Config.carAppearStrategy, "r")
     except:
@@ -59,7 +74,7 @@ def carAppear():
         timeStartCar = currentTime + tmp
         if timeStartCar > Config.simTime:
             return res
-        car = CarSimulator(id=index, startTime=timeStartCar)
+        car = CarSimulator(id=index, startTime=timeStartCar, carMaxCapacity=carMaxCapacity[index])
         optimizer = CarQLearning(car=car)
         car.optimizer = optimizer
         res.append(car)

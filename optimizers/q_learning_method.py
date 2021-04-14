@@ -81,7 +81,7 @@ def mappingStateToInt(carQLearning, state):
     return carQLearning.dictState[state]
 
 
-def calculateReward2(carQLearning, message, carReceived):
+def calculateReward(carQLearning, message, carReceived):
     reward = 0
     # 0: sendToCar, 1:sendToRsu, 2: sendToGnb, 3:noChange
 
@@ -116,25 +116,21 @@ def calculateReward2(carQLearning, message, carReceived):
     carQLearning.reward = reward
 
 
-def calculateReward(carQLearning, message, carReceived):
+def calculateReward2(carQLearning, message, carReceived):
     reward = 0
     # 0: sendToCar, 1:sendToRsu, 2: sendToGnb, 3:noChange
 
     if (message.currentTime - message.sendTime[
         0] >= Config.deltaTime) or carQLearning.doAction != carQLearning.policyAction:
-        # reward = - carQLearning.car.carMaxCapacity
         reward = - 1000
-        # print("Fail reward", reward)
 
     # sendToCar
     elif carQLearning.policyAction == 0 and carReceived is not None:
         reward = int((carQLearning.car.currentNumMessage - carReceived.currentNumMessage) / 1) / (
                 1 + message.currentTime - message.sendTime[0])
-        # print("Car reward", reward)
 
     # sendToRsu
     elif carQLearning.policyAction == 1:
-        # (C* - C_r) / (1 + t)
         reward = (carQLearning.car.carMaxCapacity - int(8 / 10 * carQLearning.car.currentNumMessage)) / (
                 1 + message.currentTime - message.sendTime[0])
     # sendToGnb

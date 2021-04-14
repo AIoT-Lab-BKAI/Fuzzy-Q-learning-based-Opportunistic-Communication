@@ -18,12 +18,13 @@ class Network:
         self.countDropt = 0
         self.countSendGnb = 0
         self.countSendRsu = 0
+        self.countPacketFail = 0
 
     def collectMessages(self, currentTime):
         res = []
         for car in self.carList:
             res.append(car.collectMessages(
-                currentTime, self.listTimeMessages))
+                currentTime, self.listTimeMessages, self))
 
         # for car in self.carList:
         #     print(car.id, car.numMessage, car.currentNumMessage, car.transferredNumMessage, car.receivedNumMessage)

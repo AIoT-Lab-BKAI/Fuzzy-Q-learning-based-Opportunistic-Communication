@@ -1,4 +1,6 @@
 import math
+import numpy as np
+
 from object import Object
 from message import Message
 from config import Config
@@ -8,7 +10,7 @@ from fuzzy_inference.fuzzy_inference import FuzzyInference
 
 class CarSimulator(Object):
 
-    def __init__(self, id, startTime, carMaxCapacity=Config.carMaxCapacity, optimizer=None):
+    def __init__(self, id, startTime, carMaxCapacity, optimizer=None):
         Object.__init__(self)
         self.id = id
         self.startTime = startTime
@@ -28,7 +30,7 @@ class CarSimulator(Object):
 
         self.fuzzyInference = FuzzyInference(self.carMaxCapacity, Config.deltaTime)
 
-    def collectMessages(self, currentTime, listTimeMessages):
+    def collectMessages(self, currentTime, listTimeMessages, network):
         """Collect the messages in waitList which have the current time
         in [currentTime, currentTime + cycleTime] and generate time from
         list time prepared
@@ -50,6 +52,8 @@ class CarSimulator(Object):
         # Generate message
         # TODO: Không cho phép sinh quá carMaxCapacity
         if self.numMessage >= len(listTimeMessages) or self.currentNumMessage >= self.carMaxCapacity:
+            if self.currentNumMessage >= self.carMaxCapacity:
+                network.countPacketFail += 1
             return res
         curTime = listTimeMessages[self.numMessage]
 
@@ -63,6 +67,8 @@ class CarSimulator(Object):
             self.currentNumMessage += 1
             # TODO: Không cho phép sinh quá carMaxCapacity
             if self.numMessage >= len(listTimeMessages) or self.currentNumMessage >= self.carMaxCapacity:
+                if self.currentNumMessage >= self.carMaxCapacity:
+                    network.countPacketFail += 1
                 return res
             curTime = listTimeMessages[self.numMessage]
 

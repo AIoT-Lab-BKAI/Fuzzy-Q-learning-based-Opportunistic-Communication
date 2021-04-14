@@ -25,15 +25,15 @@ class Config:
     # yList = [1, 1, 1, 1]
     # zList = [10, 10, 10, 10]
 
-    # rsuNumbers = 3
-    # xList = [375, 750, 1125]
-    # yList = [1, 1, 1]
-    # zList = [10, 10, 10]
+    rsuNumbers = 3
+    xList = [375, 750, 1125]
+    yList = [1, 1, 1]
+    zList = [10, 10, 10]
 
-    rsuNumbers = 2
-    xList = [375, 1125]
-    yList = [1, 1]
-    zList = [10, 10]
+    # rsuNumbers = 2
+    # xList = [375, 1125]
+    # yList = [1, 1]
+    # zList = [10, 10]
 
     # rsuNumbers = 1
     # xList = [750]
@@ -48,7 +48,7 @@ class Config:
     # car and sensor config
     carSpeed = 12
     # Dung lượng tối đa của sensor trên car
-    carMaxCapacity = 20
+    carMaxCapacity = "resources/capacity10_30.inp"
 
     carCoverRadius = 70
     carCarMeanTranfer = 0.00001
@@ -57,7 +57,7 @@ class Config:
 
     nActionsCar = 4
     nStatesCar = 1000  # TODO
-    policyParamatersCar = {"epsilon": 0.0001}
+    policyParamatersCar = {"epsilon": 0.01}
     disCountingFactorCar = 0.9
     learningRateCar = 0.001
 
@@ -73,7 +73,7 @@ class Config:
     # kích thước của 1 gói tin
     packetSize = 1
     # simulator Time
-    simTime = 500
+    simTime = 1500
     # Khe thời gian
     cycleTime = 0.5
     # deltaTime: thời gian ngưỡng
