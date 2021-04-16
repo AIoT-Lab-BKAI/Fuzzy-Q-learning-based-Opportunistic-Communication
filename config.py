@@ -63,25 +63,23 @@ class Config:
 
     # other
     # Chiến lược xuất hiện xe và gói tin
-    # carAppearStrategy = "resources/car_deu5.inp"
-    # carAppearStrategy = "resources/car_deu20.inp"
-    carAppearStrategy = "resources/car_random_5_05.inp"
-    carPacketStrategy = "resources/packet_random_02_005.inp"
-    # carPacketStrategy = "resources/packet_deu02.inp"
+    carData = "resources/cityData/dataDay11.csv"
+    # carAppearStrategy = "resources/car_random_5_05.inp"
+    # carPacketStrategy = "resources/packet_random_02_005.inp"
+    carPacketStrategy = "resources/packet_deu1.inp"
     # carPacketStrategy = "resources/poisson_70.inp"
 
     # kích thước của 1 gói tin
     packetSize = 1
     # simulator Time
-    simTime = 1500
+    simStartTime = None
+    simTime = 50
     # Khe thời gian
-    cycleTime = 0.5
+    cycleTime = 1
     # deltaTime: thời gian ngưỡng
     deltaTime = 3
     # Thời gian trễ gói tin (nếu không truyền) => Sang lần xử lý tiếp theo
     delayPacketTime = cycleTime
-    # Độ dài của đường (hiện tại đang mô phỏng là đường thẳng)
-    roadLength = 1500
 
     dumpDelayDetail = "results/detail/" + current_date_and_time_string + ".txt"
     dumDelayGeneral = "results/general.txt"

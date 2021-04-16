@@ -45,7 +45,7 @@ def dumpOutputFinal(network):
         totalCountCar += car.cntSendToCar
         totalCountRsu += car.cntSendToRsu
         totalCountGnb += car.cntSendToGnb
-    f.write(f"{Config.current_date_and_time_string} \t {Config.carPacketStrategy} \t {Config.carAppearStrategy} \t \
+    f.write(f"{Config.current_date_and_time_string} \t {Config.carPacketStrategy} \t {Config.carData} \t \
         {Config.rsuNumbers} \t {network.countDropt + network.countDone} \t{network.countPacketFail} \t {network.countDropt} \t {network.countDone} \t \
         {totalCountCar} \t {totalCountRsu} \t {totalCountGnb}\n")
     f.close()

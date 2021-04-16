@@ -10,10 +10,15 @@ from fuzzy_inference.fuzzy_inference import FuzzyInference
 
 class CarSimulator(Object):
 
-    def __init__(self, id, startTime, carMaxCapacity, optimizer=None):
+    def __init__(self, carIDNetwork, carID, startTime, endTime, carMaxCapacity, timeLocation, optimizer=None):
         Object.__init__(self)
-        self.id = id
+        self.id = carIDNetwork
+        self.carID = carID
         self.startTime = startTime
+        self.endTime = endTime
+        self.timeLocation = timeLocation
+        self.currentLocation = timeLocation[startTime][0]
+
         self.carMaxCapacity = carMaxCapacity
         self.numMessage = 0  # Total num Message
         self.transferredNumMessage = 0
@@ -42,31 +47,32 @@ class CarSimulator(Object):
         Returns:
             [list(Messages)]: [description]
         """
-        # If car isn't in road, return
-        if self.getPosition(currentTime) > Config.roadLength:
+        # If car ins't in network
+        if (self.endTime - Config.simStartTime) / 60 < currentTime:
             return []
 
         # Collect from waitList
         res = Object.collectMessages(self, currentTime)
 
         # Generate message
-        # TODO: Không cho phép sinh quá carMaxCapacity
         if self.numMessage >= len(listTimeMessages) or self.currentNumMessage >= self.carMaxCapacity:
+            # Count packet generate fail
             if self.currentNumMessage >= self.carMaxCapacity:
                 network.countPacketFail += 1
             return res
         curTime = listTimeMessages[self.numMessage]
 
         while True:
-            sendTime = self.startTime + curTime
+            sendTime = (self.startTime - Config.simStartTime) / 60 + curTime
             if sendTime > currentTime + Config.cycleTime:
                 return res
             mes = Message(indexCar=self.id, time=sendTime)
             res.append(mes)
             self.numMessage += 1
             self.currentNumMessage += 1
-            # TODO: Không cho phép sinh quá carMaxCapacity
+
             if self.numMessage >= len(listTimeMessages) or self.currentNumMessage >= self.carMaxCapacity:
+                # Count packet generate fail
                 if self.currentNumMessage >= self.carMaxCapacity:
                     network.countPacketFail += 1
                 return res

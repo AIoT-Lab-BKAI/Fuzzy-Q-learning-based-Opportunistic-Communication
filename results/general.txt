@@ -35,3 +35,5 @@
 2021-04-07 19:16:24.574952 	 resources/packet_random_02_005.inp 	 resources/car_random_5_05.inp 	         3 	 178869 	111 	 837 	 178032 	         145671 	 159432 	 18608
 2021-04-07 19:29:56.696300 	 resources/packet_random_02_005.inp 	 resources/car_random_5_05.inp 	         3 	 178803 	160 	 831 	 177972 	         143852 	 159369 	 18616
 2021-04-07 19:47:20.485787 	 resources/packet_random_02_005.inp 	 resources/car_random_5_05.inp 	         3 	 178814 	154 	 811 	 178003 	         147562 	 159495 	 18523
+2021-04-16 13:26:51.427164 	 resources/packet_random_02_005.inp 	 resources/cityData/dataDay11.csv 	         3 	 239 	1 	 44 	 195 	         0 	 0 	 210
+2021-04-16 13:30:49.501049 	 resources/packet_deu1.inp 	 resources/cityData/dataDay11.csv 	         3 	 14570 	2839 	 8019 	 6551 	         4771 	 0 	 6891

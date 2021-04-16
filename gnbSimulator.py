@@ -41,8 +41,7 @@ class GnbSimulator(Object):
         )
 
         finalCar = network.carList[message.indexCar[-1]]
-        if finalCar.getPosition(currentTime) > Config.roadLength or \
-                message.currentTime - message.sendTime[0] >= Config.deltaTime:
+        if message.currentTime - message.sendTime[0] >= Config.deltaTime:
             message.isDropt = True
             network.output.append(message)
             finalCar.optimizer.update(message)

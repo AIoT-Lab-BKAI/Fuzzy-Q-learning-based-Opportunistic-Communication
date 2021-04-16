@@ -47,15 +47,15 @@ class Network:
         # Set neighbor Car
         car.neighborCars = []
         for car_ in self.carList:
-            if car_.getPosition(currentTime) > Config.roadLength \
-                    or car_.startTime > currentTime or car_.id == car.id:
+            # Check car not in network
+            if (car_.endTime - Config.simStartTime) / 60 < currentTime or \
+                    (car_.startTime - Config.simStartTime) / 60 > currentTime or car_.id == car.id:
                 continue
             distence = car.distanceToCar(car_, currentTime)
             if distence < Config.carCoverRadius:
                 car.neighborCars.append(car_)
 
         # Set neighbor RSU
-        # TODO: có thể chuyển về lấy RANDOM RSU - NOT
         minDistance = Config.rsuCoverRadius
         neighborRsu = None
         for rsu in self.rsuList:
@@ -76,8 +76,6 @@ class Network:
             currentLocation = mes.locations[-1][0]
             if currentLocation == 0:
                 car = self.carList[mes.indexCar[-1]]
-                if car.getPosition(currentTime) > Config.roadLength / 2:
-                    car.optimizer.parameters = {"epsilon": 0.001}
                 car.working(
                     message=mes,
                     currentTime=currentTime,
@@ -89,7 +87,7 @@ class Network:
             else:
                 self.gnb.working(mes, currentTime, self)
 
-    # Hàm chạy của mạng
+    # Network run
     def run(self):
         currentTime = 0
         while (currentTime < Config.simTime):
@@ -99,7 +97,7 @@ class Network:
             print("Current Time: ", currentTime)
         self.dumpOutputFinal()
 
-    # Lưu thông tin kết quả
+    # Save result
     def dumpOutputPerCycle(self, currentTime, func=dumpOutputPerCycle):
         func(self, currentTime)
 

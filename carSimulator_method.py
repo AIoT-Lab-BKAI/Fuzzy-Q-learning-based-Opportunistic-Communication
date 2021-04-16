@@ -1,18 +1,18 @@
 import math
 import random
+import numpy as np
 from config import Config
 
 
 def getNearCar(car, currentTime, network):
-    minDis = Config.roadLength
+    minDis = float('inf')
     listRes = []
     for car_ in network.carList:
+        # remove itself
         if car_.id == car.id:
             continue
-        if car_.startTime > currentTime:
+        if (car_.startTime - Config.simStartTime) / 60 > currentTime:
             continue
-        # TODO: update current Num message compare with car Max Capacity
-        # TODO: cần cập nhật trong trường hợp số lượng gói tin sinh ra trong cycleTime
         if car_.currentNumMessage >= car_.carMaxCapacity:
             continue
         distance = car.distanceToCar(car_, currentTime)
@@ -30,7 +30,7 @@ def getNearCar(car, currentTime, network):
 
 
 def getNearRsu(car, currentTime, network):
-    minDis = 10000000
+    minDis = float('inf')
     listRes = []
     for rsu in network.rsuList:
         distance = car.distanceToRsu(rsu, currentTime)
@@ -42,28 +42,41 @@ def getNearRsu(car, currentTime, network):
         elif distance == minDis:
             listRes.append(rsu)
     if listRes:
-        # Pick random 1 RSU from List
         return listRes[random.randint(0, len(listRes) - 1)]
     else:
         return None
 
 
 def getPosition(car, currentTime):
-    return Config.carSpeed * (currentTime - car.startTime)
+    """
+    car: Car object
+    curentTime: number [0; simTime]
+
+    return: posistion of this car
+    """
+
+    currentTimeCar = car.startTime + 60 * currentTime
+    if currentTimeCar in car.timeLocation:
+        car.currentLocation = car.timeLocation[currentTimeCar][0]
+        return car.currentLocation
+    return car.currentLocation
 
 
 def distanceToCar(car1, car2, currentTime):
-    return abs(car1.getPosition(currentTime) - car2.getPosition(currentTime))
+    car1Position = car1.getPosition(currentTime)
+    car2Position = car2.getPosition(currentTime)
+    dist = np.linalg.norm(np.array(car1Position) - np.array(car2Position))
+    return dist
 
 
 def distanceToRsu(car, rsu, currentTime):
-    position = car.getPosition(currentTime)
+    carPosition = car.getPosition(currentTime)
     return math.sqrt(
-        pow(position - rsu.xcord, 2) + pow(rsu.ycord, 2) + pow(rsu.zcord, 2)
+        pow(carPosition[0] - rsu.xcord, 2) + pow(carPosition[1] - rsu.ycord, 2) + pow(rsu.zcord, 2)
     )
 
 
-def getAction2(car, message, currentTime, network, optimizer=None):
+def getAction(car, message, currentTime, network, optimizer=None):
     """Get action of this car for the message
     Args:
         car ([CarSimulator]): [description]
@@ -101,7 +114,7 @@ def getAction2(car, message, currentTime, network, optimizer=None):
         return (3, None)
 
 
-def getAction(car, message, currentTime, network, optimizer=None):
+def getAction2(car, message, currentTime, network, optimizer=None):
     """
     Get action of this car for the message
     :param car:

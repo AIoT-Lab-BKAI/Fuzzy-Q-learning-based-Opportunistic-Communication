@@ -4,6 +4,7 @@ from rsuSimulator import RsuSimulator
 from gnbSimulator import GnbSimulator
 from config import Config
 from optimizers.q_learning import CarQLearning
+import pandas as pd
 
 
 def main():
@@ -58,28 +59,64 @@ def carCapacity():
 
 
 # Generate Sensor on Car
-def carAppear():
-    carMaxCapacity = carCapacity()
+# def carAppear():
+#     carMaxCapacity = carCapacity()
+#
+#     try:
+#         f = open(Config.carAppearStrategy, "r")
+#     except:
+#         print("File car not found")
+#         exit()
+#     res = []
+#     currentTime = 0
+#     index = 0
+#     for x in f:
+#         tmp = float(x)
+#         timeStartCar = currentTime + tmp
+#         if timeStartCar > Config.simTime:
+#             return res
+#         car = CarSimulator(id=index, startTime=timeStartCar, carMaxCapacity=carMaxCapacity[index])
+#         optimizer = CarQLearning(car=car)
+#         car.optimizer = optimizer
+#         res.append(car)
+#         index += 1
+#         currentTime = timeStartCar
+#     return res
 
+
+def carAppear():
+    global data
+    carMaxCapacity = carCapacity()
     try:
-        f = open(Config.carAppearStrategy, "r")
+        data = pd.read_csv(Config.carData)
     except:
-        print("File car not found")
+        print('Read data failed!')
         exit()
+
+    carTime = data.sort_values(['Time']).groupby('CarID').head(1)[['CarID', 'Time']]
+    carID = carTime['CarID'].values
+    Config.simStartTime = int(carTime[carTime['CarID'] == carID[0]]['Time'].values)
+
+    startTime = carTime.groupby('CarID')['Time'].apply(int).to_dict()
+    endTime = data.sort_values(['Time']).groupby('CarID').tail(1)[['CarID', 'Time']].groupby('CarID')['Time'].apply(
+        int).to_dict()
+
     res = []
-    currentTime = 0
-    index = 0
-    for x in f:
-        tmp = float(x)
-        timeStartCar = currentTime + tmp
-        if timeStartCar > Config.simTime:
-            return res
-        car = CarSimulator(id=index, startTime=timeStartCar, carMaxCapacity=carMaxCapacity[index])
+
+    carIDNetwork = 0
+    for id in carID:
+        if startTime[id] - Config.simStartTime > 60 * Config.simTime:
+            break
+        timeLocation = data[data['CarID'] == id].groupby('Time')[['Xcord', 'Ycord']].apply(
+            lambda g: list(map(tuple, g.values.tolist()))).to_dict()
+
+        car = CarSimulator(carIDNetwork=carIDNetwork, carID=id, startTime=startTime[id], endTime=endTime[id],
+                           carMaxCapacity=20, timeLocation=timeLocation)
         optimizer = CarQLearning(car=car)
         car.optimizer = optimizer
         res.append(car)
-        index += 1
-        currentTime = timeStartCar
+        carIDNetwork += 1
+
     return res
 
 
