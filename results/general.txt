@@ -26,3 +26,4 @@
 2021-04-20 21:03:31.408615 	 resources/packet_deu5.inp 	 resources/cityData/dataDay11.csv 	         224 	 2749 	0 	 0 	 2749 	         2287 	 1414 	 1345
 2021-04-20 21:06:08.541659 	 resources/packet_deu5.inp 	 resources/cityData/dataDay11.csv 	         224 	 2738 	0 	 5 	 2733 	         2227 	 1867 	 880
 2021-04-20 21:09:26.718694 	 resources/packet_deu5.inp 	 resources/cityData/dataDay11.csv 	         224 	 2737 	0 	 4 	 2733 	         2192 	 1862 	 885
+2021-04-20 21:57:57.934095 	 resources/packet_deu5.inp 	 resources/cityData/dataDay11.csv 	         224 	 2739 	0 	 4 	 2735 	         2261 	 1863 	 883
