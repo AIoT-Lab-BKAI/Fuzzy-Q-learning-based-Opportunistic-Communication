@@ -94,7 +94,17 @@ class Network:
             self.working(currentTime)
             self.dumpOutputPerCycle(currentTime)
             currentTime += Config.cycleTime
+            print("-" * 80)
             print("Current Time: ", currentTime)
+            print("Total package: ", self.countDone + self.countDropt)
+            print("Done package: ", self.countDone)
+            print("Delay package: ", self.countDropt)
+            totalCountCar, totalCountRsu, totalCountGnb = 0, 0, 0
+            for car in self.carList:
+                totalCountRsu += car.cntSendToRsu
+                totalCountGnb += car.cntSendToGnb
+            print("-> RSU: ", totalCountRsu)
+            print("-> Gnb: ", totalCountGnb)
         self.dumpOutputFinal()
 
     # Save result

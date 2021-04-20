@@ -1,0 +1,7 @@
+
+Current time: 1
+0	 0 	1.0 	 1.0003295517888788 	 0.00032955178887883463 	  sensor_0 -> rsu_23 -> sensor_0 -> Success
+
+Current time: 2
+1	 0 	2.0 	 2.0006093883724105 	 0.0006093883724105353 	  sensor_0 -> rsu_23 -> sensor_0 -> Success
+2	 0 	2.0 	 2.000967813038837 	 0.0009678130388368622 	  sensor_1 -> rsu_66 -> sensor_1 -> Success
