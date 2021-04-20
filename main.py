@@ -33,15 +33,25 @@ def main():
 
 # Generate RSU
 def getRsuList():
+    global rsuData
+    try:
+        rsuData = pd.read_csv(Config.rsuPath)
+    except:
+        print("RSU file not found")
+        exit()
     res = []
-    for i in range(Config.rsuNumbers):
+    rsu_x, rsu_y = rsuData['x'].values, rsuData['y'].values
+    index = 0
+    for x, y in zip(rsu_x, rsu_y):
         rsu = RsuSimulator(
-            id=i,
-            xcord=Config.xList[i],
-            ycord=Config.yList[i],
-            zcord=Config.zList[i],
+            id=index,
+            xcord=x,
+            ycord=y,
+            zcord=1
         )
         res.append(rsu)
+        index += 1
+    Config.rsuNumbers = len(res)
     return res
 
 
@@ -111,7 +121,7 @@ def carAppear():
             lambda g: list(map(tuple, g.values.tolist()))).to_dict()
 
         car = CarSimulator(carIDNetwork=carIDNetwork, carID=id, startTime=startTime[id], endTime=endTime[id],
-                           carMaxCapacity=20, timeLocation=timeLocation)
+                           carMaxCapacity=100, timeLocation=timeLocation)
         optimizer = CarQLearning(car=car)
         car.optimizer = optimizer
         res.append(car)

@@ -10,47 +10,23 @@ class Config:
     gnbCarMeanTranfer = 0.0009765625
 
     # rsu config
-    # rsuNumbers = 6
-    # xList = [125, 375, 625, 875, 1125, 1375]
-    # yList = [1, 1, 1, 1, 1, 1]
-    # zList = [10, 10, 10, 10, 10, 10]
+    rsuNumbers = None
+    # xList = [375, 750, 1125]
+    # yList = [1, 1, 1]
+    # zList = [10, 10, 10]
+    rsuPath = "resources/cityData/rsu.csv"
 
-    # rsuNumbers = 5
-    # xList = [250, 500, 750, 1000, 1250]
-    # yList = [1, 1, 1, 1, 1]
-    # zList = [10, 10, 10, 10, 10]
-
-    # rsuNumbers = 4
-    # xList = [300, 600, 900, 1200]
-    # yList = [1, 1, 1, 1]
-    # zList = [10, 10, 10, 10]
-
-    rsuNumbers = 3
-    xList = [375, 750, 1125]
-    yList = [1, 1, 1]
-    zList = [10, 10, 10]
-
-    # rsuNumbers = 2
-    # xList = [375, 1125]
-    # yList = [1, 1]
-    # zList = [10, 10]
-
-    # rsuNumbers = 1
-    # xList = [750]
-    # yList = [1]
-    # zList = [10]
-
-    rsuCoverRadius = 151
+    rsuCoverRadius = 1000
     rsuRsuMeanTranfer = 0.00001
     rsuCarMeanTranfer = 0.0004768371582
     rsuGnbMeanTranfer = 0.00004768371582
 
     # car and sensor config
-    carSpeed = 12
+    # carSpeed = 12
     # Dung lượng tối đa của sensor trên car
     carMaxCapacity = "resources/capacity10_30.inp"
 
-    carCoverRadius = 70
+    carCoverRadius = 150
     carCarMeanTranfer = 0.00001
     carRsuMeanTranfer = 0.0009765625
     carGnbMeanTranfer = 0.0004768371582
@@ -77,9 +53,9 @@ class Config:
     # Khe thời gian
     cycleTime = 1
     # deltaTime: thời gian ngưỡng
-    deltaTime = 3
+    deltaTime = 5
     # Thời gian trễ gói tin (nếu không truyền) => Sang lần xử lý tiếp theo
-    delayPacketTime = cycleTime
+    delayPacketTime = cycleTime / 5
 
     dumpDelayDetail = "results/detail/" + current_date_and_time_string + ".txt"
     dumDelayGeneral = "results/general.txt"

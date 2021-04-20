@@ -2,7 +2,7 @@ import math
 
 
 def distanceToCar(rsu, car, currentTime):
-    positionCar = car.getPosition(currentTime)
+    carPosition = car.getPosition(currentTime)
     return math.sqrt(
-        pow(positionCar - rsu.xcord, 2) + \
-        pow(rsu.ycord, 2) + pow(rsu.zcord, 2))
+        pow(carPosition[0] - rsu.xcord, 2) + pow(carPosition[1] - rsu.ycord, 2) + pow(rsu.zcord, 2)
+    )

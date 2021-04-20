@@ -81,7 +81,7 @@ def mappingStateToInt(carQLearning, state):
     return carQLearning.dictState[state]
 
 
-def calculateReward(carQLearning, message, carReceived):
+def calculateReward2(carQLearning, message, carReceived):
     reward = 0
     # 0: sendToCar, 1:sendToRsu, 2: sendToGnb, 3:noChange
 
@@ -116,7 +116,7 @@ def calculateReward(carQLearning, message, carReceived):
     carQLearning.reward = reward
 
 
-def calculateReward2(carQLearning, message, carReceived):
+def calculateReward(carQLearning, message, carReceived):
     reward = 0
     # 0: sendToCar, 1:sendToRsu, 2: sendToGnb, 3:noChange
 

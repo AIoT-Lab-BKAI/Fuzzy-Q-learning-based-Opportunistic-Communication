@@ -23,6 +23,7 @@ def getNearCar(car, currentTime, network):
             listRes = [car_]
         elif distance == minDis:
             listRes.append(car_)
+    # print(listRes)
     if listRes:
         return listRes[random.randint(0, len(listRes) - 1)]
     else:
@@ -66,6 +67,7 @@ def distanceToCar(car1, car2, currentTime):
     car1Position = car1.getPosition(currentTime)
     car2Position = car2.getPosition(currentTime)
     dist = np.linalg.norm(np.array(car1Position) - np.array(car2Position))
+    # print(dist)
     return dist
 
 
@@ -76,7 +78,7 @@ def distanceToRsu(car, rsu, currentTime):
     )
 
 
-def getAction(car, message, currentTime, network, optimizer=None):
+def getAction2(car, message, currentTime, network, optimizer=None):
     """Get action of this car for the message
     Args:
         car ([CarSimulator]): [description]
@@ -114,7 +116,7 @@ def getAction(car, message, currentTime, network, optimizer=None):
         return (3, None)
 
 
-def getAction2(car, message, currentTime, network, optimizer=None):
+def getAction(car, message, currentTime, network, optimizer=None):
     """
     Get action of this car for the message
     :param car:
