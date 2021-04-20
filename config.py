@@ -49,7 +49,7 @@ class Config:
     packetSize = 1
     # simulator Time
     simStartTime = None
-    simTime = 50
+    simTime = 800
     # Khe thời gian
     cycleTime = 1
     # deltaTime: thời gian ngưỡng
