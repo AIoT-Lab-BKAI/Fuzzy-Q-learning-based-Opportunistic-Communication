@@ -156,5 +156,4 @@ def getAction(car, message, currentTime, network, optimizer=None):
     else:
         res = (3, None)
 
-    car.optimizer.doAction = res[0]
     return res

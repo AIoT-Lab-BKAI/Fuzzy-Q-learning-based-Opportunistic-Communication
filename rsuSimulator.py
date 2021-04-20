@@ -54,12 +54,5 @@ class RsuSimulator(Object):
             message=message,
         )
 
-        # TODO: Check deltaTime and rsuCoverRadius
         finalCar = network.carList[message.indexCar[-1]]
-        if message.currentTime - message.sendTime[0] >= Config.deltaTime or \
-                self.distanceToCar(finalCar, currentTime) > Config.rsuCoverRadius:
-            message.isDropt = True
-            network.output.append(message)
-            finalCar.optimizer.update(message)
-        else:
-            self.sendToCar(finalCar, message, currentTime, network, numOfPacket=1)
+        self.sendToCar(finalCar, message, currentTime, network, numOfPacket=1)

@@ -11,9 +11,6 @@ class Config:
 
     # rsu config
     rsuNumbers = None
-    # xList = [375, 750, 1125]
-    # yList = [1, 1, 1]
-    # zList = [10, 10, 10]
     rsuPath = "resources/cityData/rsu.csv"
 
     rsuCoverRadius = 1000
@@ -22,8 +19,6 @@ class Config:
     rsuGnbMeanTranfer = 0.00004768371582
 
     # car and sensor config
-    # carSpeed = 12
-    # Dung lượng tối đa của sensor trên car
     carMaxCapacity = "resources/capacity10_30.inp"
 
     carCoverRadius = 150
@@ -38,24 +33,18 @@ class Config:
     learningRateCar = 0.001
 
     # other
-    # Chiến lược xuất hiện xe và gói tin
     carData = "resources/cityData/dataDay11.csv"
-    # carAppearStrategy = "resources/car_random_5_05.inp"
-    # carPacketStrategy = "resources/packet_random_02_005.inp"
-    carPacketStrategy = "resources/packet_deu1.inp"
-    # carPacketStrategy = "resources/poisson_70.inp"
+    carPacketStrategy = "resources/packet_deu5.inp"
 
-    # kích thước của 1 gói tin
     packetSize = 1
     # simulator Time
     simStartTime = None
     simTime = 800
-    # Khe thời gian
     cycleTime = 1
-    # deltaTime: thời gian ngưỡng
+    # deltaTime
     deltaTime = 5
     # Thời gian trễ gói tin (nếu không truyền) => Sang lần xử lý tiếp theo
-    delayPacketTime = cycleTime / 5
+    delayPacketTime = 1
 
     dumpDelayDetail = "results/detail/" + current_date_and_time_string + ".txt"
     dumDelayGeneral = "results/general.txt"

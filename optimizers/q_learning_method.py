@@ -81,42 +81,40 @@ def mappingStateToInt(carQLearning, state):
     return carQLearning.dictState[state]
 
 
-def calculateReward2(carQLearning, message, carReceived):
+def calculateReward(carQLearning, message, carReceived):
     reward = 0
     # 0: sendToCar, 1:sendToRsu, 2: sendToGnb, 3:noChange
+    deltaTime = message.currentTime - message.sendTime[0]
 
-    if (message.currentTime - message.sendTime[
-        0] >= Config.deltaTime) or carQLearning.doAction != carQLearning.policyAction:
+    if deltaTime >= Config.deltaTime:
         reward = - 1000
 
     # sendToCar
-    elif carQLearning.policyAction == 0 and carReceived is not None:
+    elif carQLearning.policyAction == 0:
         reward = int((carQLearning.car.currentNumMessage - carReceived.currentNumMessage) / 1) / (
-                1 + message.currentTime - message.sendTime[0])
+                1 + deltaTime)
 
     # sendToRsu
     elif carQLearning.policyAction == 1:
         # (C* - C_r) / (1 + t)
-        deltaTime = message.currentTime - message.sendTime[0]
         theta = carQLearning.car.fuzzyInference.inference(carQLearning.car.currentNumMessage, deltaTime)
         theta = theta['Theta']
         reward = (carQLearning.car.carMaxCapacity - int(theta * carQLearning.car.currentNumMessage)) / (
-                1 + message.currentTime - message.sendTime[0])
+                1 + deltaTime)
     # sendToGnb
     elif carQLearning.policyAction == 2:
-        deltaTime = message.currentTime - message.sendTime[0]
         theta = carQLearning.car.fuzzyInference.inference(carQLearning.car.currentNumMessage, deltaTime)
         theta = theta['Theta']
         reward = - (int(theta * carQLearning.car.carMaxCapacity) - carQLearning.car.currentNumMessage) / (
-                1 + message.currentTime - message.sendTime[0])
+                1 + deltaTime)
 
     # noChange
     else:
-        reward = - 1 / (1 + message.currentTime - message.sendTime[0])
+        reward = - 1 / (1 + deltaTime)
     carQLearning.reward = reward
 
 
-def calculateReward(carQLearning, message, carReceived):
+def calculateReward2(carQLearning, message, carReceived):
     reward = 0
     # 0: sendToCar, 1:sendToRsu, 2: sendToGnb, 3:noChange
 
@@ -160,5 +158,4 @@ def updateQTable(carQLearning, learning_rate=Config.learningRateCar, gamma=Confi
                                                               carQLearning.QTable[currentStateInt][actionInt])
 
     # np.savetxt("foo.csv", carQLearning.QTable, delimiter=",")
-
     # print(carQLearning.QTable)

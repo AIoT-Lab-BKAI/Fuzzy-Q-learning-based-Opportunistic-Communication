@@ -181,7 +181,8 @@ class CarSimulator(Object):
 
         if message.currentTime - message.sendTime[0] >= Config.deltaTime:
             message.isDropt = True
-            network.output.append(message)
+            network.addToHeap(message)
+            # network.output.append(message)
         elif message.currentTime > currentTime + Config.cycleTime:
             self.waitList.append(message)
         else:
@@ -203,16 +204,13 @@ class CarSimulator(Object):
         return func(self, currentTime, network)
 
     def working(self, message, currentTime, network, getAction=getAction):
-        if message.isDone:
-            # Kiểm tra các gói tin được trả về từ RSU và Gnb (đã hoàn thành)
-            # TODO: Viết hàm check so với deltaTime
+        if message.isDone or message.isDropt:
             if message.currentTime - message.sendTime[0] >= Config.deltaTime:
                 message.isDropt = True
                 network.output.append(message)
                 self.optimizer.update(message)
             else:
                 network.output.append(message)
-                self.optimizer.update(message)
         else:
             action, nextLocation = getAction(self, message, currentTime, network)
             # 0: sendToCar, 1:sendToRsu, 2: sendToGnb, 3:noChange
