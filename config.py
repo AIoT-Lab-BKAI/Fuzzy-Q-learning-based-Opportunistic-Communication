@@ -35,16 +35,17 @@ class Config:
     # other
     carData = "resources/cityData/dataDay11.csv"
     carPacketStrategy = "resources/packet_deu5.inp"
+    carQTablePath = "results/carQTableDay1.csv"
 
     packetSize = 1
     # simulator Time
     simStartTime = None
-    simTime = 500
+    simTime = 50
     cycleTime = 1
     # deltaTime
     deltaTime = 5
     # Thời gian trễ gói tin (nếu không truyền) => Sang lần xử lý tiếp theo
-    delayPacketTime = 1
+    delayPacketTime = 1/10
 
     dumpDelayDetail = "results/detail/" + current_date_and_time_string + ".txt"
     dumDelayGeneral = "results/general.txt"

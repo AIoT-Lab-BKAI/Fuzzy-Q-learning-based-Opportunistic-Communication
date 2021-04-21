@@ -99,6 +99,7 @@ class Network:
             print("Total package: ", self.countDone + self.countDropt)
             print("Done package: ", self.countDone)
             print("Delay package: ", self.countDropt)
+            print("Can't generate: ", self.countPacketFail)
             totalCountCar, totalCountRsu, totalCountGnb = 0, 0, 0
             for car in self.carList:
                 totalCountRsu += car.cntSendToRsu

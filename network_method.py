@@ -45,7 +45,7 @@ def dumpOutputFinal(network):
     carQTable = {}
     totalCountCar, totalCountRsu, totalCountGnb = 0, 0, 0
     for car in network.carList:
-        carQTable[car.carID] = np.array(car.optimizer.QTable).tolist()
+        carQTable[car.carID] = np.asarray(car.optimizer.QTable).tolist()
         totalCountCar += car.cntSendToCar
         totalCountRsu += car.cntSendToRsu
         totalCountGnb += car.cntSendToGnb

@@ -14,7 +14,7 @@ def getBehaviorPolicy(nActions, parameters):
 
 def getNeighborCar(car, message):
     """
-    Lựa chọn xe có dung lượng hiện tại nhỏ nhất.
+    Select near car has minimum capacity
     :param car:
     :return:
     """
@@ -82,17 +82,14 @@ def mappingStateToInt(carQLearning, state):
 
 
 def calculateReward(carQLearning, message, carReceived):
+    # TODO: cần thêm các thông tin về carDelayPackage + carCantGenerate
     reward = 0
     # 0: sendToCar, 1:sendToRsu, 2: sendToGnb, 3:noChange
     deltaTime = message.currentTime - message.sendTime[0]
 
-    if deltaTime >= Config.deltaTime:
-        reward = - 1000
-
     # sendToCar
-    elif carQLearning.policyAction == 0:
-        reward = int((carQLearning.car.currentNumMessage - carReceived.currentNumMessage) / 1) / (
-                1 + deltaTime)
+    if carQLearning.policyAction == 0:
+        reward = carQLearning.car.currentNumMessage / (1 + deltaTime)
 
     # sendToRsu
     elif carQLearning.policyAction == 1:
@@ -107,10 +104,13 @@ def calculateReward(carQLearning, message, carReceived):
         theta = theta['Theta']
         reward = - (int(theta * carQLearning.car.carMaxCapacity) - carQLearning.car.currentNumMessage) / (
                 1 + deltaTime)
-
     # noChange
     else:
         reward = - 1 / (1 + deltaTime)
+
+    if deltaTime >= Config.deltaTime:
+        reward = reward - 1000
+        # print(carQLearning.policyAction, reward)
     carQLearning.reward = reward
 
 
@@ -156,6 +156,3 @@ def updateQTable(carQLearning, learning_rate=Config.learningRateCar, gamma=Confi
                                                               carQLearning.reward + gamma * np.max(
                                                           carQLearning.QTable[newStateInt]) -
                                                               carQLearning.QTable[currentStateInt][actionInt])
-
-    # np.savetxt("foo.csv", carQLearning.QTable, delimiter=",")
-    # print(carQLearning.QTable)

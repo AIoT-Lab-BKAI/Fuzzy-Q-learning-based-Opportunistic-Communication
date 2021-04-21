@@ -5,6 +5,8 @@ from gnbSimulator import GnbSimulator
 from config import Config
 from optimizers.q_learning import CarQLearning
 import pandas as pd
+import numpy as np
+import ast
 
 
 def main():
@@ -69,39 +71,16 @@ def carCapacity():
 
 
 # Generate Sensor on Car
-# def carAppear():
-#     carMaxCapacity = carCapacity()
-#
-#     try:
-#         f = open(Config.carAppearStrategy, "r")
-#     except:
-#         print("File car not found")
-#         exit()
-#     res = []
-#     currentTime = 0
-#     index = 0
-#     for x in f:
-#         tmp = float(x)
-#         timeStartCar = currentTime + tmp
-#         if timeStartCar > Config.simTime:
-#             return res
-#         car = CarSimulator(id=index, startTime=timeStartCar, carMaxCapacity=carMaxCapacity[index])
-#         optimizer = CarQLearning(car=car)
-#         car.optimizer = optimizer
-#         res.append(car)
-#         index += 1
-#         currentTime = timeStartCar
-#     return res
-
-
 def carAppear():
-    global data
+    global data, carQTable
     carMaxCapacity = carCapacity()
     try:
         data = pd.read_csv(Config.carData)
+        carQTable = pd.read_csv(Config.carQTablePath)
     except:
         print('Read data failed!')
         exit()
+    carQTableDict = carQTable.set_index('CarID')['QTable'].to_dict()
 
     carTime = data.sort_values(['Time']).groupby('CarID').head(1)[['CarID', 'Time']]
     carID = carTime['CarID'].values
@@ -124,8 +103,17 @@ def carAppear():
                            carMaxCapacity=20, timeLocation=timeLocation)
         optimizer = CarQLearning(car=car)
         car.optimizer = optimizer
+
+        """
+        Read infor from QTable Dict
+        """
+        if id in carQTableDict:
+            qTable = np.array(ast.literal_eval(carQTableDict[id]))
+            car.optimizer.QTable = qTable
+
         res.append(car)
         carIDNetwork += 1
+        print(car.optimizer.QTable)
 
     return res
 

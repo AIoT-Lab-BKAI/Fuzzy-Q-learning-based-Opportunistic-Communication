@@ -66,7 +66,7 @@ class CarSimulator(Object):
             sendTime = (self.startTime - Config.simStartTime) / 60 + curTime
             if sendTime > currentTime + Config.cycleTime:
                 return res
-            mes = Message(indexCar=self.id, time=sendTime)
+            mes = Message(indexCar=self.id, time=sendTime, carID=self.carID)
             res.append(mes)
             self.numMessage += 1
             self.currentNumMessage += 1
@@ -106,7 +106,7 @@ class CarSimulator(Object):
 
         # Add current location to list locations of message
         # and change preReceiveFromCar of this car
-        message.locations.append([0, car.id])
+        message.locations.append([0, car.carID])
         car.preReceiveFromCar = message.currentTime
 
         # Check the currentTime of message
@@ -175,14 +175,13 @@ class CarSimulator(Object):
             network.addToHeap(message)
 
     def noChange(self, message, currentTime, network, delayPacketTime=Config.delayPacketTime):
-        message.locations.append([0, self.id])
+        message.locations.append([0, self.carID])
 
         message.currentTime += delayPacketTime
 
         if message.currentTime - message.sendTime[0] >= Config.deltaTime:
             message.isDropt = True
             network.addToHeap(message)
-            # network.output.append(message)
         elif message.currentTime > currentTime + Config.cycleTime:
             self.waitList.append(message)
         else:
@@ -208,7 +207,7 @@ class CarSimulator(Object):
             if message.currentTime - message.sendTime[0] >= Config.deltaTime:
                 message.isDropt = True
                 network.output.append(message)
-                self.optimizer.update(message)
+                # self.optimizer.update(message)
             else:
                 network.output.append(message)
         else:

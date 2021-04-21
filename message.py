@@ -4,7 +4,7 @@ from config import Config
 class Message:
     cnt = 0
 
-    def __init__(self, indexCar, time, packetSize=Config.packetSize):
+    def __init__(self, indexCar, time, packetSize=Config.packetSize, carID=None):
         self.stt = Message.cnt  # Stt của gói tin
         Message.cnt += 1
         self.packetSize = packetSize
@@ -12,7 +12,7 @@ class Message:
         self.indexRsu = []
         self.sendTime = [time]
         self.receiveTime = []
-        self.locations = [[0, indexCar]]  # locations 0: sensor, 1:rsu, 2:gnb
+        self.locations = [[0, carID]]  # locations 0: sensor, 1:rsu, 2:gnb
         self.currentTime = time
         self.isDone = False
         self.isDropt = False

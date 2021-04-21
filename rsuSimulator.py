@@ -35,7 +35,7 @@ class RsuSimulator(Object):
 
         # Add current location to list locations of message
         # and change preReceiveFromRsu of this car
-        message.locations.append([0, car.id])
+        message.locations.append([0, car.carID])
         car.preReceiveFromRsu = message.currentTime
 
         # Check the currentTime of message

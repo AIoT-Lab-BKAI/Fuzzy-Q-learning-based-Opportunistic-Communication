@@ -25,7 +25,7 @@ class GnbSimulator(Object):
 
         # Add current location to list locations of message
         # and change preReceiveFromGnb of this car
-        message.locations.append([0, car.id])
+        message.locations.append([0, car.carID])
         car.preReceiveFromGnb = message.currentTime
 
         if message.currentTime > currentTime + Config.cycleTime:
