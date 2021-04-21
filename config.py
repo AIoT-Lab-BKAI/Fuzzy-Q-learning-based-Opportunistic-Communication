@@ -39,7 +39,7 @@ class Config:
     packetSize = 1
     # simulator Time
     simStartTime = None
-    simTime = 800
+    simTime = 500
     cycleTime = 1
     # deltaTime
     deltaTime = 5

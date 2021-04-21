@@ -1,4 +1,6 @@
 from config import Config
+import pandas as pd
+import numpy as np
 
 
 def dumpOutputPerCycle(network, currentTime, showCarInfor=False):
@@ -40,11 +42,16 @@ def dumpOutputPerCycle(network, currentTime, showCarInfor=False):
 def dumpOutputFinal(network):
     f = open(Config.dumDelayGeneral, "a")
 
+    carQTable = {}
     totalCountCar, totalCountRsu, totalCountGnb = 0, 0, 0
     for car in network.carList:
+        carQTable[car.carID] = np.array(car.optimizer.QTable).tolist()
         totalCountCar += car.cntSendToCar
         totalCountRsu += car.cntSendToRsu
         totalCountGnb += car.cntSendToGnb
+
+    carQTableDataFrame = pd.DataFrame(list(carQTable.items()), columns=['CarID', 'QTable'])
+    carQTableDataFrame.to_csv("results/carQTableDay1.csv")
     f.write(f"{Config.current_date_and_time_string} \t {Config.carPacketStrategy} \t {Config.carData} \t \
         {Config.rsuNumbers} \t {network.countDropt + network.countDone} \t{network.countPacketFail} \t {network.countDropt} \t {network.countDone} \t \
         {totalCountCar} \t {totalCountRsu} \t {totalCountGnb}\n")
