@@ -80,7 +80,7 @@ class CarSimulator(Object):
 
         return res
 
-    def sendToCar(self, car, message, currentTime, network, numOfPacket):
+    def sendToCar(self, car, message, currentTime, network, numOfPacket, delayPacketTime=Config.delayPacketTime):
         """Simualte send message from car to car
 
         Args:
@@ -92,6 +92,9 @@ class CarSimulator(Object):
         # Update received num message
         car.receivedNumMessage += 1
         car.currentNumMessage += 1
+
+        # Update time Delay in car
+        message.currentTime += delayPacketTime
 
         # Add index car to list indexCar of message
         message.indexCar.append(car.id)

@@ -14,6 +14,7 @@ class Config:
     rsuPath = "resources/cityData/rsu.csv"
 
     rsuCoverRadius = 1000
+    # TODO:
     rsuRsuMeanTranfer = 0.00001
     rsuCarMeanTranfer = 0.0004768371582
     rsuGnbMeanTranfer = 0.00004768371582
