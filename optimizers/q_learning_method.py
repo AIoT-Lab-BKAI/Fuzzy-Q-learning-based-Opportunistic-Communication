@@ -43,20 +43,20 @@ def getState(car, message):
     # Time of message
     messageDelayTime = message.currentTime - message.sendTime[0]
 
-    res.append(int(messageDelayTime))
+    res.append(int(messageDelayTime) / 2)
 
     # Infor of this car
-    res.append(int(car.currentNumMessage / 2))
+    res.append(int(car.currentNumMessage / 4))
 
     # Infor of it's neighbor car
     neighborCarInfo = getNeighborCar(car, message)
 
-    if car.currentNumMessage > neighborCarInfo[0]:
-        res.append(1)
-    else:
-        res.append(0)
+    # if car.currentNumMessage > neighborCarInfo[0]:
+    #     res.append(1)
+    # else:
+    #     res.append(0)
 
-    # res.append(int(neighborCarInfo[0] / 2))
+    res.append(int(neighborCarInfo[0] / 4))
 
     # Infor of it's neghbor Rsu
     neighborRsuInfo = getNeighborRsu(car)

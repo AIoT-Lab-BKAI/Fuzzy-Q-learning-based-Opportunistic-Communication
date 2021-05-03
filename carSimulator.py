@@ -94,6 +94,7 @@ class CarSimulator(Object):
         car.currentNumMessage += 1
 
         # Update time Delay in car
+        # TODO: ???
         message.currentTime += delayPacketTime
 
         # Add index car to list indexCar of message

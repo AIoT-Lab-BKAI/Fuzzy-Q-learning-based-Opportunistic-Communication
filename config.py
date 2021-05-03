@@ -11,9 +11,9 @@ class Config:
 
     # rsu config
     rsuNumbers = None
-    rsuPath = "resources/cityData/rsu.csv"
+    rsuPath = "resources/cityData/newRSU.csv"
 
-    rsuCoverRadius = 1000
+    rsuCoverRadius = 350
     # TODO:
     rsuRsuMeanTranfer = 0.00001
     rsuCarMeanTranfer = 0.0004768371582
@@ -22,7 +22,7 @@ class Config:
     # car and sensor config
     carMaxCapacity = "resources/capacity10_30.inp"
 
-    carCoverRadius = 150
+    carCoverRadius = 120
     carCarMeanTranfer = 0.00001
     carRsuMeanTranfer = 0.0009765625
     carGnbMeanTranfer = 0.0004768371582
@@ -31,11 +31,11 @@ class Config:
     nStatesCar = 1000  # TODO
     policyParamatersCar = {"epsilon": 0.01}
     disCountingFactorCar = 0.9
-    learningRateCar = 0.001
+    learningRateCar = 0.005
 
     # other
     carData = "resources/cityData/dataDay11.csv"
-    carPacketStrategy = "resources/packet_deu5.inp"
+    carPacketStrategy = "resources/packet_deu3.inp"
     carQTablePath = "results/carQTableDay1.csv"
 
     packetSize = 1
@@ -44,7 +44,7 @@ class Config:
     simTime = 800
     cycleTime = 1
     # deltaTime
-    deltaTime = 5
+    deltaTime = 10
     # Thời gian trễ gói tin (nếu không truyền) => Sang lần xử lý tiếp theo
     delayPacketTime = 1
 
