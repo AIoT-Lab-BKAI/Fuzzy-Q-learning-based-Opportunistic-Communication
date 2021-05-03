@@ -43,7 +43,7 @@ def getState(car, message):
     # Time of message
     messageDelayTime = message.currentTime - message.sendTime[0]
 
-    res.append(int(messageDelayTime) / 2)
+    res.append(int(messageDelayTime / 2))
 
     # Infor of this car
     res.append(int(car.currentNumMessage / 4))
