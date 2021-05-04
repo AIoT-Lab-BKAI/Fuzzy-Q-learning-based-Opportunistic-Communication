@@ -43,7 +43,7 @@ def getState(car, message):
     # Time of message
     messageDelayTime = message.currentTime - message.sendTime[0]
 
-    res.append(int(messageDelayTime / 2))
+    res.append(int(messageDelayTime / 4))
 
     # Infor of this car
     res.append(int(car.currentNumMessage / 4))
@@ -51,12 +51,12 @@ def getState(car, message):
     # Infor of it's neighbor car
     neighborCarInfo = getNeighborCar(car, message)
 
-    # if car.currentNumMessage > neighborCarInfo[0]:
-    #     res.append(1)
-    # else:
-    #     res.append(0)
+    if car.currentNumMessage > neighborCarInfo[0]:
+        res.append(1)
+    else:
+        res.append(0)
 
-    res.append(int(neighborCarInfo[0] / 4))
+    # res.append(int(neighborCarInfo[0] / 4))
 
     # Infor of it's neghbor Rsu
     neighborRsuInfo = getNeighborRsu(car)
@@ -77,14 +77,19 @@ def mappingStateToInt(carQLearning, state):
 
 
 def calculateReward(carQLearning, message, carReceived):
-    # TODO: cần thêm các thông tin về carDelayPackage + carCantGenerate
     # 0: sendToCar, 1:sendToRsu, 2: sendToGnb, 3:noChange
     deltaTime = message.currentTime - message.sendTime[0]
     theta = carQLearning.car.fuzzyInference.inference(carQLearning.car.currentNumMessage, deltaTime)
     theta = theta['Theta']
+
+    if deltaTime >= Config.deltaTime:
+        reward = - carQLearning.car.carMaxCapacity
     # sendToCar
-    if carQLearning.policyAction == 0:
-        reward = carQLearning.car.currentNumMessage - carReceived.currentNumMessage
+    elif carQLearning.policyAction == 0 and carReceived is not None:
+        if carQLearning.car.currentNumMessage < carReceived.currentNumMessage:
+            reward = +1
+        else:
+            reward = -1
     # sendToRsu
     elif carQLearning.policyAction == 1:
         # (C* - C_r) / (1 + t)
@@ -95,9 +100,6 @@ def calculateReward(carQLearning, message, carReceived):
     # noChange
     else:
         reward = 0
-
-    if deltaTime >= Config.deltaTime:
-        reward = reward - 1000
     carQLearning.reward = reward
 
 

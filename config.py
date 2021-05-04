@@ -31,20 +31,20 @@ class Config:
     nStatesCar = 1000  # TODO
     policyParamatersCar = {"epsilon": 0.01}
     disCountingFactorCar = 0.9
-    learningRateCar = 0.005
+    learningRateCar = 0.01
 
     # other
     carData = "resources/cityData/dataDay11.csv"
-    carPacketStrategy = "resources/packet_deu3.inp"
+    carPacketStrategy = "resources/packet_deu5.inp"
     carQTablePath = "results/carQTableDay1.csv"
 
     packetSize = 1
     # simulator Time
     simStartTime = None
-    simTime = 800
+    simTime = 50
     cycleTime = 1
     # deltaTime
-    deltaTime = 10
+    deltaTime = 20
     # Thời gian trễ gói tin (nếu không truyền) => Sang lần xử lý tiếp theo
     delayPacketTime = 1
 
