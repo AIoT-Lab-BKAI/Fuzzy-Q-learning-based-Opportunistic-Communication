@@ -15,9 +15,10 @@ class FuzzyInference:
         ### INPUT
         MAX_CAPACITY = self.MAX_CAPACITY
         capacity = FuzzyInputVariable('Capacity', 0, MAX_CAPACITY, 100)
-        capacity.add_trapezoidal('Low', 0, 0, 0.75 * MAX_CAPACITY, 0.8 * MAX_CAPACITY)
-        capacity.add_triangular('Medium', 0.75 * MAX_CAPACITY, 0.85 * MAX_CAPACITY, 0.95 * MAX_CAPACITY)
-        capacity.add_trapezoidal('High', 0.9 * MAX_CAPACITY, 0.95 * MAX_CAPACITY, MAX_CAPACITY, MAX_CAPACITY)
+        capacity.add_trapezoidal('Low', 0, 0, 0.5 * MAX_CAPACITY, 0.6 * MAX_CAPACITY)
+        capacity.add_trapezoidal('Medium', 0.5 * MAX_CAPACITY, 0.6 * MAX_CAPACITY, 0.7 * MAX_CAPACITY, 0.8 * MAX_CAPACITY)
+        # capacity.add_triangular('Medium', 0.6 * MAX_CAPACITY, 0.7 * MAX_CAPACITY, 0.85 * MAX_CAPACITY)
+        capacity.add_trapezoidal('High', 0.7 * MAX_CAPACITY, 0.8 * MAX_CAPACITY, MAX_CAPACITY, MAX_CAPACITY)
 
         MAX_DELAY_TIME = self.MAX_DELAY_TIME
         timeDelay = FuzzyInputVariable('Time Delay', 0, MAX_DELAY_TIME, 100)
@@ -29,9 +30,9 @@ class FuzzyInference:
         ### OUTPUT
         thetaValue = FuzzyOutputVariable('Theta', 0, 1, 100)
         thetaValue.add_triangular('Very Low', 0, 0, 0.1)
-        thetaValue.add_trapezoidal('Low', 0.05, 0.1, 0.55, 0.6)
-        thetaValue.add_trapezoidal('Medium', 0.55, 0.6, 0.75, 0.8)
-        thetaValue.add_trapezoidal('High', 0.75, 0.8, 0.9, 0.95)
+        thetaValue.add_trapezoidal('Low', 0.05, 0.1, 0.4, 0.45)
+        thetaValue.add_trapezoidal('Medium', 0.4, 0.45, 0.7, 0.75)
+        thetaValue.add_trapezoidal('High', 0.7, 0.75, 0.9, 0.95)
         # thetaValue.add_triangular('High', 0.75, 0.85, 0.95)
         thetaValue.add_triangular('Very High', 0.9, 1, 1)
 
@@ -109,7 +110,7 @@ class FuzzyInference:
         return output
 
 
-# fuzzy = FuzzyInference(20, 3)
+# fuzzy = FuzzyInference(20, 20)
 #
 # currentC = 15
 # deltaTime = 2

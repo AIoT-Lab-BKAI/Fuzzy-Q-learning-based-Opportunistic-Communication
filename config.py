@@ -28,8 +28,8 @@ class Config:
     carGnbMeanTranfer = 0.0004768371582
 
     nActionsCar = 4
-    nStatesCar = 1000  # TODO
-    policyParamatersCar = {"epsilon": 0.01}
+    nStatesCar = 2000  # TODO
+    policyParamatersCar = {"epsilon": 0.1}
     disCountingFactorCar = 0.9
     learningRateCar = 0.01
 
@@ -41,7 +41,7 @@ class Config:
     packetSize = 1
     # simulator Time
     simStartTime = None
-    simTime = 50
+    simTime = 800
     cycleTime = 1
     # deltaTime
     deltaTime = 20
