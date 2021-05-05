@@ -43,7 +43,7 @@ def getState(car, message):
     # Time of message
     messageDelayTime = message.currentTime - message.sendTime[0]
 
-    res.append(int(messageDelayTime / 2))
+    res.append(int(messageDelayTime / 3))
 
     # Infor of this car
     res.append(int(car.currentNumMessage / 2))
@@ -82,8 +82,8 @@ def calculateReward(carQLearning, message, carReceived):
     theta = carQLearning.car.fuzzyInference.inference(carQLearning.car.currentNumMessage, deltaTime)
     theta = theta['Theta']
 
-    if deltaTime >= Config.deltaTime:
-        reward = - carQLearning.car.carMaxCapacity
+    if deltaTime >= Config.deltaTime - 4:
+        reward = - 1000
     # sendToCar
     elif carQLearning.policyAction == 0 and carReceived is not None:
         if carQLearning.car.currentNumMessage < carReceived.currentNumMessage:

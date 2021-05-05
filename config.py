@@ -28,7 +28,7 @@ class Config:
     carGnbMeanTranfer = 0.0004768371582
 
     nActionsCar = 4
-    nStatesCar = 2000  # TODO
+    nStatesCar = 1000  # TODO
     policyParamatersCar = {"epsilon": 0.1}
     disCountingFactorCar = 0.9
     learningRateCar = 0.01

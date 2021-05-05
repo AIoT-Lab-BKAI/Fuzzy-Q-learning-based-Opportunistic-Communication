@@ -95,7 +95,7 @@ class CarSimulator(Object):
 
         # Update time Delay in car
         # TODO: ???
-        message.currentTime += delayPacketTime
+        # message.currentTime += delayPacketTime
 
         # Add index car to list indexCar of message
         message.indexCar.append(car.id)
@@ -211,7 +211,7 @@ class CarSimulator(Object):
             if message.currentTime - message.sendTime[0] >= Config.deltaTime:
                 message.isDropt = True
                 network.output.append(message)
-                # self.optimizer.update(message)
+                self.optimizer.update(message)
             else:
                 network.output.append(message)
         else:
