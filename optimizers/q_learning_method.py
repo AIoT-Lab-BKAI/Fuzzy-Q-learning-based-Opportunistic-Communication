@@ -43,10 +43,10 @@ def getState(car, message):
     # Time of message
     messageDelayTime = message.currentTime - message.sendTime[0]
 
-    res.append(int(messageDelayTime / 3))
+    res.append(int(messageDelayTime / 1))
 
     # Infor of this car
-    res.append(int(car.currentNumMessage / 2))
+    res.append(int(car.currentNumMessage / 1))
 
     # Infor of it's neighbor car
     neighborCarInfo = getNeighborCar(car, message)
@@ -56,7 +56,7 @@ def getState(car, message):
     else:
         res.append(0)
 
-    # res.append(int(neighborCarInfo[0] / 4))
+    # res.append(int(neighborCarInfo[0] / 1))
 
     # Infor of it's neghbor Rsu
     neighborRsuInfo = getNeighborRsu(car)
@@ -82,21 +82,22 @@ def calculateReward(carQLearning, message, carReceived):
     theta = carQLearning.car.fuzzyInference.inference(carQLearning.car.currentNumMessage, deltaTime)
     theta = theta['Theta']
 
-    if deltaTime >= Config.deltaTime - 4:
+    if deltaTime >= Config.deltaTime:
         reward = - 1000
     # sendToCar
     elif carQLearning.policyAction == 0 and carReceived is not None:
+        # reward = +1 / (1 + deltaTime)
         if carQLearning.car.currentNumMessage < carReceived.currentNumMessage:
-            reward = +1
+            reward = +1 / (1 + deltaTime)
         else:
-            reward = -1
+            reward = -1 / (1 + deltaTime)
     # sendToRsu
     elif carQLearning.policyAction == 1:
         # (C* - C_r) / (1 + t)
-        reward = (carQLearning.car.carMaxCapacity - int(theta * carQLearning.car.currentNumMessage))
+        reward = (carQLearning.car.carMaxCapacity - int(theta * carQLearning.car.currentNumMessage)) / (1 + deltaTime)
     # sendToGnb
     elif carQLearning.policyAction == 2:
-        reward = - (int(theta * carQLearning.car.carMaxCapacity) - carQLearning.car.currentNumMessage)
+        reward = - (int(theta * carQLearning.car.carMaxCapacity) - carQLearning.car.currentNumMessage) / (1 + deltaTime)
     # noChange
     else:
         reward = 0

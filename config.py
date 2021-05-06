@@ -34,17 +34,17 @@ class Config:
     learningRateCar = 0.01
 
     # other
-    carData = "resources/cityData/dataDay11.csv"
+    carData = "resources/cityData/dataDay11_240.csv"
     carPacketStrategy = "resources/packet_deu5.inp"
     carQTablePath = "results/carQTableDay1.csv"
 
     packetSize = 1
     # simulator Time
     simStartTime = None
-    simTime = 800
+    simTime = 50
     cycleTime = 1
     # deltaTime
-    deltaTime = 20
+    deltaTime = 10
     # Thời gian trễ gói tin (nếu không truyền) => Sang lần xử lý tiếp theo
     delayPacketTime = 1
 

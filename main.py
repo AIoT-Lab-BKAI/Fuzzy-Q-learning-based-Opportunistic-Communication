@@ -100,7 +100,7 @@ def carAppear():
             lambda g: list(map(tuple, g.values.tolist()))).to_dict()
 
         car = CarSimulator(carIDNetwork=carIDNetwork, carID=id, startTime=startTime[id], endTime=endTime[id],
-                           carMaxCapacity=20, timeLocation=timeLocation)
+                           carMaxCapacity=10, timeLocation=timeLocation)
         optimizer = CarQLearning(car=car)
         car.optimizer = optimizer
 
