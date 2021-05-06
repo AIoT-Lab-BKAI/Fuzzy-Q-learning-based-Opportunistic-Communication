@@ -1,3 +1,4 @@
+import pickle
 from config import Config
 import pandas as pd
 import numpy as np
@@ -45,13 +46,18 @@ def dumpOutputFinal(network):
     carQTable = {}
     totalCountCar, totalCountRsu, totalCountGnb = 0, 0, 0
     for car in network.carList:
-        carQTable[car.carID] = np.asarray(car.optimizer.QTable).tolist()
+        carQTable[car.carID] = car.optimizer.QTable
         totalCountCar += car.cntSendToCar
         totalCountRsu += car.cntSendToRsu
         totalCountGnb += car.cntSendToGnb
 
     carQTableDataFrame = pd.DataFrame(list(carQTable.items()), columns=['CarID', 'QTable'])
     carQTableDataFrame.to_csv("results/carQTableDay1.csv")
+
+    a_file = open(Config.carQTablePath, "wb")
+    pickle.dump(carQTable, a_file)
+    a_file.close()
+
     f.write(f"{Config.current_date_and_time_string} \t {Config.carPacketStrategy} \t {Config.carData} \t \
         {Config.rsuNumbers} \t {network.countDropt + network.countDone} \t{network.countPacketFail} \t {network.countDropt} \t {network.countDone} \t \
         {totalCountCar} \t {totalCountRsu} \t {totalCountGnb}\n")

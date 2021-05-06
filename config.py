@@ -35,13 +35,13 @@ class Config:
 
     # other
     carData = "resources/cityData/dataDay11_240.csv"
-    carPacketStrategy = "resources/packet_deu5.inp"
-    carQTablePath = "results/carQTableDay1.csv"
+    carPacketStrategy = "resources/packet_deu1.inp"
+    carQTablePath = "results/carQTableDay1.pkl"
 
     packetSize = 1
     # simulator Time
     simStartTime = None
-    simTime = 50
+    simTime = 10
     cycleTime = 1
     # deltaTime
     deltaTime = 10

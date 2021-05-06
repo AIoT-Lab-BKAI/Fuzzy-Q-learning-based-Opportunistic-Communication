@@ -61,19 +61,25 @@ def getState(car, message):
     # Infor of it's neghbor Rsu
     neighborRsuInfo = getNeighborRsu(car)
 
-    # print(res)
     # only one rsu
     return (tuple(res), neighborCarInfo[-1], neighborRsuInfo)
 
 
-def mappingStateToInt(carQLearning, state):
-    if state in carQLearning.dictState:
-        return carQLearning.dictState[state]
-    else:
-        carQLearning.numState += 1
-        carQLearning.dictState[state] = carQLearning.numState
+def mappingState(state):
+    state = list(state)
+    state[1] = 0 if state[1] is None else 1
+    state[2] = 0 if state[2] is None else 1
+    state = tuple(state)
+    return state
 
-    return carQLearning.dictState[state]
+
+def mappingStateToValue(carQLearning, state):
+    state = mappingState(state)
+    if state in carQLearning.QTable:
+        return carQLearning.QTable[state]
+    else:
+        carQLearning.QTable[state] = np.zeros(carQLearning.nActions)
+    return carQLearning.QTable[state]
 
 
 def calculateReward(carQLearning, message, carReceived):
@@ -137,12 +143,24 @@ def updateQTable(carQLearning, learning_rate=Config.learningRateCar, gamma=Confi
     Update Q(s,a):= Q(s,a) + lr [R(s,a) + gamma * max Q(s',a') - Q(s,a)]
     """
 
-    currentStateInt = carQLearning.mappingStateToInt(carQLearning.currentState)
-    newStateInt = carQLearning.mappingStateToInt(carQLearning.newState)
+    # currentStateInt = carQLearning.mappingStateToInt(carQLearning.currentState)
+    # newStateInt = carQLearning.mappingStateToInt(carQLearning.newState)
+    # actionInt = carQLearning.policyAction
+    #
+    # carQLearning.QTable[currentStateInt][actionInt] = carQLearning.QTable[currentStateInt][
+    #                                                       actionInt] + learning_rate * (
+    #                                                           carQLearning.reward + gamma * np.max(
+    #                                                       carQLearning.QTable[newStateInt]) -
+    #                                                           carQLearning.QTable[currentStateInt][actionInt])
+
+    currentStateValue = carQLearning.mappingStateToValue(carQLearning.currentState)
+    newStateValue = carQLearning.mappingStateToValue(carQLearning.newState)
     actionInt = carQLearning.policyAction
 
-    carQLearning.QTable[currentStateInt][actionInt] = carQLearning.QTable[currentStateInt][
-                                                          actionInt] + learning_rate * (
-                                                              carQLearning.reward + gamma * np.max(
-                                                          carQLearning.QTable[newStateInt]) -
-                                                              carQLearning.QTable[currentStateInt][actionInt])
+    # print("Current: ", carQLearning.mappingStateToValue(carQLearning.currentState))
+    # calculate QValue
+    currentStateValue[actionInt] = currentStateValue[actionInt] + learning_rate * (
+            carQLearning.reward + gamma * np.max(newStateValue) - currentStateValue[actionInt])
+
+    carQLearning.QTable[mappingState(carQLearning.currentState)] = currentStateValue
+    # print("Update: ", carQLearning.mappingStateToValue(carQLearning.currentState))

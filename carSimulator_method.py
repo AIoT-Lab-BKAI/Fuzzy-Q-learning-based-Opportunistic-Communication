@@ -134,9 +134,7 @@ def getAction(car, message, currentTime, network, optimizer=None):
     neighborRsu = stateInfo[2]
 
     car.optimizer.currentState = stateInfo
-    stateInforInt = car.optimizer.mappingStateToInt(stateInfo)
-
-    allActionValues = car.optimizer.getValue(stateInforInt)
+    allActionValues = car.optimizer.mappingStateToValue(stateInfo)
 
     exclude_actions = []
     if neighborCar is None:
