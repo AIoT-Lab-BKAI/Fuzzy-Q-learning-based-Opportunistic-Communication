@@ -41,9 +41,10 @@ class Config:
     packetSize = 1
     # simulator Time
     simStartTime = None
-    simTime = 10
+    simTime = 1000
     cycleTime = 1
     # deltaTime
+    #
     deltaTime = 10
     # Thời gian trễ gói tin (nếu không truyền) => Sang lần xử lý tiếp theo
     delayPacketTime = 1

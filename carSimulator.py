@@ -184,7 +184,7 @@ class CarSimulator(Object):
 
         if message.currentTime - message.sendTime[0] >= Config.deltaTime:
             message.isDropt = True
-            network.addToHeap(message)
+            network.output.append(message)
         elif message.currentTime > currentTime + Config.cycleTime:
             self.waitList.append(message)
         else:

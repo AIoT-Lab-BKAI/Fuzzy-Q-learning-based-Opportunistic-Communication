@@ -34,6 +34,18 @@ class CarQLearning(Optimizer):
         func(self)
 
     def update(self, message, carReceived=None):
-        self.calculateReward(message=message, carReceived=carReceived)
         self.newState = self.getState(message)
+        self.calculateReward(message=message, carReceived=carReceived)
         self.updateQTable()
+
+        # def mappingState(state):
+        #     state = list(state)
+        #     state[1] = 0 if state[1] is None else 1
+        #     state[2] = 0 if state[2] is None else 1
+        #     state = tuple(state)
+        #     return state
+        #
+        # if message.currentTime - message.sendTime[0] >= Config.deltaTime:
+        #     print(mappingState(self.currentState))
+        #     print(self.reward)
+        #     print(self.QTable)

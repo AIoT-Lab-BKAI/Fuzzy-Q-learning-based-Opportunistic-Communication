@@ -1,5 +1,5 @@
 import numpy as np
-
+import math
 from behaviorPolicy.epsilonGreedy import EpsilonGreedy
 from config import Config
 
@@ -43,10 +43,13 @@ def getState(car, message):
     # Time of message
     messageDelayTime = message.currentTime - message.sendTime[0]
 
-    res.append(int(messageDelayTime / 1))
+    if messageDelayTime >= Config.deltaTime:
+        res.append(int(Config.deltaTime))
+    else:
+        res.append(math.ceil(messageDelayTime / 1))
 
     # Infor of this car
-    res.append(int(car.currentNumMessage / 1))
+    res.append(math.ceil(car.currentNumMessage / 1))
 
     # Infor of it's neighbor car
     neighborCarInfo = getNeighborCar(car, message)
@@ -88,11 +91,10 @@ def calculateReward(carQLearning, message, carReceived):
     theta = carQLearning.car.fuzzyInference.inference(carQLearning.car.currentNumMessage, deltaTime)
     theta = theta['Theta']
 
-    if deltaTime >= Config.deltaTime:
-        reward = - 1000
+    if deltaTime >= Config.deltaTime or carQLearning.car.currentNumMessage >= carQLearning.car.carMaxCapacity:
+        reward = - 10000
     # sendToCar
     elif carQLearning.policyAction == 0 and carReceived is not None:
-        # reward = +1 / (1 + deltaTime)
         if carQLearning.car.currentNumMessage < carReceived.currentNumMessage:
             reward = +1 / (1 + deltaTime)
         else:
