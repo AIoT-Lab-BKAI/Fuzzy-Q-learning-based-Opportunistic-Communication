@@ -1,6 +1,6 @@
-from fuzzy_system.fuzzy_variable_output import FuzzyOutputVariable
-from fuzzy_system.fuzzy_variable_input import FuzzyInputVariable
-from fuzzy_system.fuzzy_system import FuzzySystem
+from .fuzzy_system.fuzzy_variable_output import FuzzyOutputVariable
+from .fuzzy_system.fuzzy_variable_input import FuzzyInputVariable
+from .fuzzy_system.fuzzy_system import FuzzySystem
 
 
 class FuzzyInference:
