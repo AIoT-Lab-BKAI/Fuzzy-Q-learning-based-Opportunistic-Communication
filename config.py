@@ -20,8 +20,8 @@ class Config:
     rsuGnbMeanTranfer = 0.00004768371582
 
     # car and sensor config
-    # carMaxCapacity = "resources/capacity10_30.inp"
-    carMaxCapacity = 20
+    carMaxCapacity = "resources/capacity10_30.inp"
+    # carMaxCapacity = 20
 
     carCoverRadius = 120
     carCarMeanTranfer = 0.00001

@@ -49,8 +49,8 @@ def getState(car, message):
         res.append(math.ceil(messageDelayTime / 1))
 
     # Infor of this car
-    if car.currentNumMessage >= Config.carMaxCapacity:
-        res.append(int(Config.carMaxCapacity))
+    if car.currentNumMessage >= car.carMaxCapacity:
+        res.append(int(car.carMaxCapacity))
     else:
         res.append(math.ceil(car.currentNumMessage / 1))
 
