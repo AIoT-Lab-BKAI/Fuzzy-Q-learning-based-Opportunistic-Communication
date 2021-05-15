@@ -20,7 +20,8 @@ class Config:
     rsuGnbMeanTranfer = 0.00004768371582
 
     # car and sensor config
-    carMaxCapacity = "resources/capacity10_30.inp"
+    # carMaxCapacity = "resources/capacity10_30.inp"
+    carMaxCapacity = 20
 
     carCoverRadius = 120
     carCarMeanTranfer = 0.00001
@@ -29,7 +30,7 @@ class Config:
 
     nActionsCar = 4
     nStatesCar = 1000  # TODO
-    policyParamatersCar = {"epsilon": 0.1}
+    policyParamatersCar = {"epsilon": 0.2}
     disCountingFactorCar = 0.9
     learningRateCar = 0.01
 

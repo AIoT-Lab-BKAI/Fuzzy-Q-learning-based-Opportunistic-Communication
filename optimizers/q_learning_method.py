@@ -49,7 +49,10 @@ def getState(car, message):
         res.append(math.ceil(messageDelayTime / 1))
 
     # Infor of this car
-    res.append(math.ceil(car.currentNumMessage / 1))
+    if car.currentNumMessage >= Config.carMaxCapacity:
+        res.append(int(Config.carMaxCapacity))
+    else:
+        res.append(math.ceil(car.currentNumMessage / 1))
 
     # Infor of it's neighbor car
     neighborCarInfo = getNeighborCar(car, message)

@@ -1,6 +1,6 @@
-from .fuzzy_system.fuzzy_variable_output import FuzzyOutputVariable
-from .fuzzy_system.fuzzy_variable_input import FuzzyInputVariable
-from .fuzzy_system.fuzzy_system import FuzzySystem
+from fuzzy_system.fuzzy_variable_output import FuzzyOutputVariable
+from fuzzy_system.fuzzy_variable_input import FuzzyInputVariable
+from fuzzy_system.fuzzy_system import FuzzySystem
 
 
 class FuzzyInference:
@@ -16,7 +16,8 @@ class FuzzyInference:
         MAX_CAPACITY = self.MAX_CAPACITY
         capacity = FuzzyInputVariable('Capacity', 0, MAX_CAPACITY, 100)
         capacity.add_trapezoidal('Low', 0, 0, 0.4 * MAX_CAPACITY, 0.5 * MAX_CAPACITY)
-        capacity.add_trapezoidal('Medium', 0.4 * MAX_CAPACITY, 0.5 * MAX_CAPACITY, 0.7 * MAX_CAPACITY, 0.8 * MAX_CAPACITY)
+        capacity.add_trapezoidal('Medium', 0.4 * MAX_CAPACITY, 0.5 * MAX_CAPACITY, 0.7 * MAX_CAPACITY,
+                                 0.8 * MAX_CAPACITY)
         # capacity.add_triangular('Medium', 0.6 * MAX_CAPACITY, 0.7 * MAX_CAPACITY, 0.85 * MAX_CAPACITY)
         capacity.add_trapezoidal('High', 0.7 * MAX_CAPACITY, 0.8 * MAX_CAPACITY, MAX_CAPACITY, MAX_CAPACITY)
 
@@ -110,15 +111,28 @@ class FuzzyInference:
         return output
 
 
+# import numpy as np
+#
 # fuzzy = FuzzyInference(15, 10)
 #
-# currentC = 6
-# deltaTime = 9
-# x = fuzzy.inference(currentC, deltaTime, showResult=True, plot=True)
+# currentC = np.array(range(0, 16))
+# deltaTime = np.array(range(0, 11))
 #
+# resRSU = []
+# resGnb = []
+#
+# for i in currentC:
+#     x = (fuzzy.inference(i, 10, False, False)['Theta'])
+#     resRSU.append(15 - int(x * i))
+#     resGnb.append(-(int(x * 15) - i))
+#
+# print(resRSU)
+# print(resGnb)
+
+# x = fuzzy.inference(currentC, deltaTime, showResult=False, plot=False)
 # theta = x['Theta']
 # print(theta)
-# print("Reward RSU: ", (10 - theta * currentC) / (1 + deltaTime))
-# print("Reward Gnb: ", - (theta * 10 - currentC) / (1 + deltaTime))
+# print("Reward RSU: ", (15 - int(theta * currentC)))  # / (1 + deltaTime))
+# print("Reward Gnb: ", - (int(theta * 15) - currentC))  # / (1 + deltaTime))
 # print("Reward noChange: ", - 1 / (1 + deltaTime))
 # print(1 / theta)
