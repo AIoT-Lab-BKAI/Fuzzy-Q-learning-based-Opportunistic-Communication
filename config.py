@@ -30,19 +30,19 @@ class Config:
 
     nActionsCar = 4
     nStatesCar = 1000  # TODO
-    policyParamatersCar = {"epsilon": 0.2}
+    policyParamatersCar = {"epsilon": 0.15}
     disCountingFactorCar = 0.9
     learningRateCar = 0.01
 
     # other
-    carData = "resources/cityData/dataDay11_240.csv"
+    carData = "resources/cityData/finalDataset/dataDayFinal_19_776.csv"
     carPacketStrategy = "resources/packet_deu1.inp"
     carQTablePath = "results/carQTableDay1.pkl"
 
     packetSize = 1
     # simulator Time
     simStartTime = None
-    simTime = 1000
+    simTime = 1440
     cycleTime = 1
     # deltaTime
     #
