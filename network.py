@@ -1,7 +1,7 @@
 from queue import PriorityQueue
 from utils import PrioritizedItem
 from config import Config
-from network_method import dumpOutputPerCycle, dumpOutputFinal
+from network_method import dumpOutputPerCycle, dumpOutputFinal, dumpOutputPerHour
 
 
 class Network:
@@ -106,6 +106,10 @@ class Network:
                 totalCountGnb += car.cntSendToGnb
             print("-> RSU: ", totalCountRsu)
             print("-> Gnb: ", totalCountGnb)
+
+            if currentTime % 60 == 0:
+                self.dumpOutputPerHour(currentTime)
+
         self.dumpOutputFinal()
 
     # Save result
@@ -114,3 +118,6 @@ class Network:
 
     def dumpOutputFinal(self, func=dumpOutputFinal):
         func(self)
+
+    def dumpOutputPerHour(self, currentTime, func=dumpOutputPerHour):
+        func(self, currentTime)

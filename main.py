@@ -58,24 +58,24 @@ def getRsuList():
     return res
 
 
-def carCapacity():
-    try:
-        f = open(Config.carMaxCapacity, "r")
-    except:
-        print("File carCapacity not found")
-        exit()
-    res = []
-    for x in f:
-        tmp = int(x)
-        res.append(tmp)
-    return res
+# def carCapacity():
+#     try:
+#         f = open(Config.carMaxCapacity, "r")
+#     except:
+#         print("File carCapacity not found")
+#         exit()
+#     res = []
+#     for x in f:
+#         tmp = int(x)
+#         res.append(tmp)
+#     return res
 
 
 # Generate Sensor on Car
 def carAppear():
     global data, a_file
     carQTable = None
-    carMaxCapacity = carCapacity()
+    # carMaxCapacity = carCapacity()
     try:
         data = pd.read_csv(Config.carData)
 
@@ -108,7 +108,7 @@ def carAppear():
             lambda g: list(map(tuple, g.values.tolist()))).to_dict()
 
         car = CarSimulator(carIDNetwork=carIDNetwork, carID=id, startTime=startTime[id], endTime=endTime[id],
-                           carMaxCapacity=20, timeLocation=timeLocation)
+                           carMaxCapacity=Config.carMaxCapacity, timeLocation=timeLocation)
         optimizer = CarQLearning(car=car)
         car.optimizer = optimizer
 

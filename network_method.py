@@ -40,6 +40,18 @@ def dumpOutputPerCycle(network, currentTime, showCarInfor=False):
     network.output = []
 
 
+def dumpOutputPerHour(network, currentTime):
+    f = open(Config.dumpDelayPerHour, "a")
+    totalCountCar, totalCountRsu, totalCountGnb = 0, 0, 0
+    for car in network.carList:
+        totalCountRsu += car.cntSendToRsu
+        totalCountGnb += car.cntSendToGnb
+
+    f.write(
+        f" {currentTime} \t {totalCountRsu} \t {totalCountGnb} \t {network.countDropt} \t{network.countPacketFail} \n")
+    f.close()
+
+
 def dumpOutputFinal(network):
     f = open(Config.dumDelayGeneral, "a")
 

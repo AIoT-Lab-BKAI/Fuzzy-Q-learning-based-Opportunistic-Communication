@@ -20,8 +20,8 @@ class Config:
     rsuGnbMeanTranfer = 0.00004768371582
 
     # car and sensor config
-    carMaxCapacity = "resources/capacity10_30.inp"
-    # carMaxCapacity = 20
+    # carMaxCapacity = "resources/capacity10_30.inp"
+    carMaxCapacity = 25
 
     carCoverRadius = 120
     carCarMeanTranfer = 0.00001
@@ -43,6 +43,8 @@ class Config:
     # simulator Time
     simStartTime = None
     simTime = 1440
+    # simTime = 10
+
     cycleTime = 1
     # deltaTime
     #
@@ -51,4 +53,5 @@ class Config:
     delayPacketTime = 1
 
     dumpDelayDetail = "results/detail/" + current_date_and_time_string + ".txt"
+    dumpDelayPerHour = "results/detail/" + current_date_and_time_string + "PerHour.txt"
     dumDelayGeneral = "results/general.txt"
