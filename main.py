@@ -73,12 +73,12 @@ def getRsuList():
 
 # Generate Sensor on Car
 def carAppear():
-    global data, a_file
+    global data, a_file, b_file
     carQTable = None
-    # carMaxCapacity = carCapacity()
+    timeCarInSimulator = None
+
     try:
         data = pd.read_csv(Config.carData)
-
     except:
         print('Read data failed!')
         exit()
@@ -89,6 +89,13 @@ def carAppear():
     except:
         print("Create new file carQTable")
         a_file = open(Config.carQTablePath, "wb")
+
+    try:
+        b_file = open(Config.dumpTimeCarInSimulator, "rb")
+        timeCarInSimulator = pickle.load(b_file)
+    except:
+        print("Create new file dumpTimeCarInSimulator")
+        b_file = open(Config.dumpTimeCarInSimulator, "wb")
 
     carTime = data.sort_values(['Time']).groupby('CarID').head(1)[['CarID', 'Time']]
     carID = carTime['CarID'].values
@@ -108,6 +115,7 @@ def carAppear():
             lambda g: list(map(tuple, g.values.tolist()))).to_dict()
 
         car = CarSimulator(carIDNetwork=carIDNetwork, carID=id, startTime=startTime[id], endTime=endTime[id],
+                           timeInSimulator=0,
                            carMaxCapacity=Config.carMaxCapacity, timeLocation=timeLocation)
         optimizer = CarQLearning(car=car)
         car.optimizer = optimizer
@@ -118,13 +126,15 @@ def carAppear():
         if carQTable is not None and id in carQTable:
             qTable = carQTable[id]
             car.optimizer.QTable = qTable
+        if timeCarInSimulator is not None and id in timeCarInSimulator:
+            car.timeInSimulator = timeCarInSimulator[id]
 
         res.append(car)
-        print("Number: ", id, car.optimizer.QTable)
-
+        print("Number: ", id, car.timeInSimulator)
         carIDNetwork += 1
 
     a_file.close()
+    b_file.close()
     return res
 
 

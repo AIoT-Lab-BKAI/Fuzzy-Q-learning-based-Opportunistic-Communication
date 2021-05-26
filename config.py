@@ -30,19 +30,19 @@ class Config:
 
     nActionsCar = 4
     nStatesCar = 1000  # TODO
-    policyParamatersCar = {"epsilon": 0.15}
+    policyParamatersCar = {"epsilon": 0.2}
     disCountingFactorCar = 0.9
     learningRateCar = 0.01
 
     # other
     carData = "resources/cityData/finalDataset/dataDayFinal_19_776.csv"
     carPacketStrategy = "resources/packet_deu1.inp"
-    carQTablePath = "results/carQTableDay1.pkl"
+    carQTablePath = "results/carQTableDay.pkl"
 
     packetSize = 1
     # simulator Time
     simStartTime = None
-    simTime = 1440
+    simTime = 10
     # simTime = 10
 
     cycleTime = 1
@@ -55,3 +55,4 @@ class Config:
     dumpDelayDetail = "results/detail/" + current_date_and_time_string + ".txt"
     dumpDelayPerHour = "results/detail/" + current_date_and_time_string + "PerHour.txt"
     dumDelayGeneral = "results/general.txt"
+    dumpTimeCarInSimulator = "results/carTime.pkl"

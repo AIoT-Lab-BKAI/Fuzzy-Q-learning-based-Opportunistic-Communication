@@ -10,12 +10,15 @@ from fuzzy_inference.fuzzy_inference import FuzzyInference
 
 class CarSimulator(Object):
 
-    def __init__(self, carIDNetwork, carID, startTime, endTime, carMaxCapacity, timeLocation, optimizer=None):
+    def __init__(self, carIDNetwork, carID, startTime, endTime, timeInSimulator, carMaxCapacity, timeLocation,
+                 optimizer=None):
         Object.__init__(self)
         self.id = carIDNetwork
         self.carID = carID
         self.startTime = startTime
         self.endTime = endTime
+        self.timeInSimulator = timeInSimulator
+
         self.timeLocation = timeLocation
         self.currentLocation = timeLocation[startTime][0]
 

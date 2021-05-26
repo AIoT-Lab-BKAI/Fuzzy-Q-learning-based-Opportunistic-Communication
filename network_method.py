@@ -56,19 +56,28 @@ def dumpOutputFinal(network):
     f = open(Config.dumDelayGeneral, "a")
 
     carQTable = {}
+    carTimeInSimulator = {}
     totalCountCar, totalCountRsu, totalCountGnb = 0, 0, 0
     for car in network.carList:
         carQTable[car.carID] = car.optimizer.QTable
+        carTimeInSimulator[car.carID] = car.timeInSimulator
+
         totalCountCar += car.cntSendToCar
         totalCountRsu += car.cntSendToRsu
         totalCountGnb += car.cntSendToGnb
 
     carQTableDataFrame = pd.DataFrame(list(carQTable.items()), columns=['CarID', 'QTable'])
-    carQTableDataFrame.to_csv("results/carQTableDay1.csv")
+    carQTableDataFrame.to_csv("results/carQTable.csv")
+    carTimeDataFrame = pd.DataFrame(list(carTimeInSimulator.items()), columns=['CarID', 'Time'])
+    carTimeDataFrame.to_csv("results/carTime.csv")
 
     a_file = open(Config.carQTablePath, "wb")
     pickle.dump(carQTable, a_file)
     a_file.close()
+
+    b_file = open(Config.dumpTimeCarInSimulator, "wb")
+    pickle.dump(carTimeInSimulator, b_file)
+    b_file.close()
 
     f.write(f"{Config.current_date_and_time_string} \t {Config.carPacketStrategy} \t {Config.carData} \t \
         {Config.rsuNumbers} \t {network.countDropt + network.countDone} \t{network.countPacketFail} \t {network.countDropt} \t {network.countDone} \t \

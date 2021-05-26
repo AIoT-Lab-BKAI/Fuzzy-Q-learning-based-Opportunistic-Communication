@@ -104,6 +104,23 @@ class Network:
             for car in self.carList:
                 totalCountRsu += car.cntSendToRsu
                 totalCountGnb += car.cntSendToGnb
+
+                if (car.endTime - Config.simStartTime) / 60 < currentTime or \
+                        (car.startTime - Config.simStartTime) / 60 > currentTime:
+                    continue
+                else:
+                    car.timeInSimulator += Config.cycleTime
+                    if car.timeInSimulator < 360:
+                        car.optimizer.policy_parameters = {"epsilon": 0.2}
+                    elif car.timeInSimulator < 720:
+                        car.optimizer.policy_parameters = {"epsilon": 0.15}
+                    elif car.timeInSimulator < 1080:
+                        car.optimizer.policy_parameters = {"epsilon": 0.1}
+                    elif car.timeInSimulator < 1440:
+                        car.optimizer.policy_parameters = {"epsilon": 0.05}
+                    else:
+                        car.optimizer.policy_parameters = {"epsilon": 0.01}
+
             print("-> RSU: ", totalCountRsu)
             print("-> Gnb: ", totalCountGnb)
 
