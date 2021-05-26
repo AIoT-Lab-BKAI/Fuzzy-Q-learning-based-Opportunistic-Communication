@@ -110,11 +110,9 @@ class Network:
                     continue
                 else:
                     car.timeInSimulator += Config.cycleTime
-                    if car.timeInSimulator < 360:
-                        car.optimizer.policy_parameters = {"epsilon": 0.2}
-                    elif car.timeInSimulator < 720:
+                    if car.timeInSimulator < 480:
                         car.optimizer.policy_parameters = {"epsilon": 0.15}
-                    elif car.timeInSimulator < 1080:
+                    elif car.timeInSimulator < 960:
                         car.optimizer.policy_parameters = {"epsilon": 0.1}
                     elif car.timeInSimulator < 1440:
                         car.optimizer.policy_parameters = {"epsilon": 0.05}

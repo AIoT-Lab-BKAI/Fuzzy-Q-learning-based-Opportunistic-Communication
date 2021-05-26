@@ -30,7 +30,7 @@ class Config:
 
     nActionsCar = 4
     nStatesCar = 1000  # TODO
-    policyParamatersCar = {"epsilon": 0.2}
+    policyParamatersCar = {"epsilon": 0.15}
     disCountingFactorCar = 0.9
     learningRateCar = 0.01
 
