@@ -113,11 +113,13 @@ class Network:
                     if car.timeInSimulator < 480:
                         car.optimizer.policy_parameters = {"epsilon": 0.15}
                     elif car.timeInSimulator < 960:
-                        car.optimizer.policy_parameters = {"epsilon": 0.1}
+                        car.optimizer.policy_parameters = {"epsilon": 0.12}
                     elif car.timeInSimulator < 1440:
-                        car.optimizer.policy_parameters = {"epsilon": 0.05}
+                        car.optimizer.policy_parameters = {"epsilon": 0.09}
+                    elif car.timeInSimulator < 1920:
+                        car.optimizer.policy_parameters = {"epsilon": 0.06}
                     else:
-                        car.optimizer.policy_parameters = {"epsilon": 0.01}
+                        car.optimizer.policy_parameters = {"epsilon": 0.03}
 
             print("-> RSU: ", totalCountRsu)
             print("-> Gnb: ", totalCountGnb)

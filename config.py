@@ -42,7 +42,7 @@ class Config:
     packetSize = 1
     # simulator Time
     simStartTime = None
-    simTime = 10
+    simTime = 1440
     # simTime = 10
 
     cycleTime = 1
